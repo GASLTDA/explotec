@@ -1,0 +1,30 @@
+<data noupdate="1">
+    <record id='province_1' model='province'>
+        <field name='name'>San José</field>
+        <field name='code'>1</field>
+    </record>
+    <record id='province_2' model='province'>
+        <field name='name'>Alajuela</field>
+        <field name='code'>2</field>
+    </record>
+    <record id='province_3' model='province'>
+        <field name='name'>Cartago</field>
+        <field name='code'>3</field>
+    </record>
+    <record id='province_4' model='province'>
+        <field name='name'>Heredia</field>
+        <field name='code'>4</field>
+    </record>
+    <record id='province_5' model='province'>
+        <field name='name'>Guanacaste</field>
+        <field name='code'>5</field>
+    </record>
+    <record id='province_6' model='province'>
+        <field name='name'>Puntarenas</field>
+        <field name='code'>6</field>
+    </record>
+    <record id='province_7' model='province'>
+        <field name='name'>Limón</field>
+        <field name='code'>7</field>
+    </record>
+</data>

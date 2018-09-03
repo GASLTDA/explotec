@@ -1,0 +1,92 @@
+<data>
+    <record id="account_invoice_inherit_form" model="ir.ui.view">
+        <field name="name">account.invoice.form.inherit</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                <attribute name="required">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='name']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='action_invoice_open']" position="after">
+                <button name="check_status" type="object" attrs="{'invisible': [('show_button','=',False)]}"
+                        string="Verifique el estado de Hacienda" class="oe_highlight o_invoice_validate"
+                        groups="account.group_account_invoice"/>
+                <button name="check_status" type="object" string="Verify Hacienda"
+                        class="oe_highlight o_invoice_validate" groups="base.group_no_one"/>
+                <button name="generate_xml_file" type="object" attrs="{'invisible': [('show_submit_button','=',False)]}"
+                        string="Enviar a Hacienda" class="oe_highlight o_invoice_validate"
+                        groups="account.group_account_invoice"/>
+                <button name="generate_xml_file" type="object" string="Send to Hacienda"
+                        class="oe_highlight o_invoice_validate" groups="base.group_no_one"/>
+                <button name="download_xml" type="object" string="Descargar XML" class="oe_highlight o_invoice_validate"
+                        attrs="{'invisible': [('electronic_invoice','=',False)]}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='payment_term_id']" position="before">
+                <field name="sale_condition" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="show_button" invisible="1"/>
+                <field name="electronic_invoice" invisible="1"/>
+                <field name="show_submit_button" invisible="1"/>
+            </xpath>
+
+
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="payment_method" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="terminal" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+            </xpath>
+
+            <xpath expr="//notebook/page[1]" position="after">
+                <page string="Hacienda Information" attrs="{'invisible': [('electronic_invoice','=',False)]}">
+                    <group>
+                        <group>
+                            <field name="clave_numerica" readonly="1"/>
+                            <field name="folio" readonly="1"/>
+                            <field name="haicenda_status" readonly="1"/>
+                            <field name="request_datetime" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="response" readonly="1" groups="base.group_no_one"/>
+                            <field name="response_xml" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="invoice_tree" model="ir.ui.view">
+        <field name="name">account.invoice.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree/field[@name='number']" position="after">
+                <field name="folio"/>
+                <field name="clave_numerica"/>
+            </xpath>
+            <xpath expr="//tree/field[@name='type']" position="after">
+                <field name="haicenda_status" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">account.invoice.select</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='number']" position="after">
+                <field name="clave_numerica" />
+                <field name="folio" />
+            </xpath>
+        </field>
+    </record>
+</data>

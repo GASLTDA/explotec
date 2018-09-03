@@ -1,0 +1,11 @@
+<data>
+    <record id="avd_text_file_action" model="ir.actions.server">
+        <field name="name">XML File</field>
+        <field name="model_id" ref="model_account_invoice"/>
+        <field name="state">code</field>
+        <field name="condition">True</field>
+        <field name="binding_model_id" ref="model_account_invoice"/>
+        <field name="binding_type">action</field>
+        <field name="code">action = model.download_xml()</field>
+    </record>
+</data>

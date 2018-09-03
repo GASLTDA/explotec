@@ -1,0 +1,477 @@
+<data noupdate="1">
+    <record id='district_111' model='district'><field name='name'>CARMEN</field><field name='code'>1</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_112' model='district'><field name='name'>MERCED</field><field name='code'>2</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_113' model='district'><field name='name'>HOSPITAL</field><field name='code'>3</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_114' model='district'><field name='name'>CATEDRAL</field><field name='code'>4</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_115' model='district'><field name='name'>ZAPOTE</field><field name='code'>5</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_116' model='district'><field name='name'>SAN FRANCISCO DE DOS RÍOS</field><field name='code'>6</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_117' model='district'><field name='name'>URUCA</field><field name='code'>7</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_118' model='district'><field name='name'>MATA REDONDA</field><field name='code'>8</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_119' model='district'><field name='name'>PAVAS</field><field name='code'>9</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_1110' model='district'><field name='name'>HATILLO</field><field name='code'>10</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_1111' model='district'><field name='name'>SAN SEBASTIÁN</field><field name='code'>11</field><field name='canton_id' ref='canton_11'/></record>
+    <record id='district_121' model='district'><field name='name'>ESCAZÚ</field><field name='code'>1</field><field name='canton_id' ref='canton_12'/></record>
+    <record id='district_122' model='district'><field name='name'>SAN ANTONIO</field><field name='code'>2</field><field name='canton_id' ref='canton_12'/></record>
+    <record id='district_123' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>3</field><field name='canton_id' ref='canton_12'/></record>
+    <record id='district_131' model='district'><field name='name'>DESAMPARADOS</field><field name='code'>1</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_132' model='district'><field name='name'>SAN MIGUEL</field><field name='code'>2</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_133' model='district'><field name='name'>SAN JUAN DE DIOS</field><field name='code'>3</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_134' model='district'><field name='name'>SAN RAFAEL ARRIBA</field><field name='code'>4</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_135' model='district'><field name='name'>SAN ANTONIO</field><field name='code'>5</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_136' model='district'><field name='name'>FRAILES</field><field name='code'>6</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_137' model='district'><field name='name'>PATARRÁ</field><field name='code'>7</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_138' model='district'><field name='name'>SAN CRISTÓBAL</field><field name='code'>8</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_139' model='district'><field name='name'>ROSARIO</field><field name='code'>9</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_1310' model='district'><field name='name'>DAMAS</field><field name='code'>10</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_1311' model='district'><field name='name'>SAN RAFAEL ABAJO</field><field name='code'>11</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_1312' model='district'><field name='name'>GRAVILIAS</field><field name='code'>12</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_1313' model='district'><field name='name'>LOS GUIDO</field><field name='code'>13</field><field name='canton_id' ref='canton_13'/></record>
+    <record id='district_141' model='district'><field name='name'>SANTIAGO</field><field name='code'>1</field><field name='canton_id' ref='canton_14'/></record>
+    <record id='district_142' model='district'><field name='name'>MERCEDES SUR</field><field name='code'>2</field><field name='canton_id' ref='canton_14'/></record>
+    <record id='district_143' model='district'><field name='name'>BARBACOAS</field><field name='code'>3</field><field name='canton_id' ref='canton_14'/></record>
+    <record id='district_144' model='district'><field name='name'>GRIFO ALTO</field><field name='code'>4</field><field name='canton_id' ref='canton_14'/></record>
+    <record id='district_145' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>5</field><field name='canton_id' ref='canton_14'/></record>
+    <record id='district_146' model='district'><field name='name'>CANDELARITA</field><field name='code'>6</field><field name='canton_id' ref='canton_14'/></record>
+    <record id='district_147' model='district'><field name='name'>DESAMPARADITOS</field><field name='code'>7</field><field name='canton_id' ref='canton_14'/></record>
+    <record id='district_148' model='district'><field name='name'>SAN ANTONIO</field><field name='code'>8</field><field name='canton_id' ref='canton_14'/></record>
+    <record id='district_149' model='district'><field name='name'>CHIRES</field><field name='code'>9</field><field name='canton_id' ref='canton_14'/></record>
+    <record id='district_151' model='district'><field name='name'>SAN MARCOS</field><field name='code'>1</field><field name='canton_id' ref='canton_15'/></record>
+    <record id='district_152' model='district'><field name='name'>SAN LORENZO</field><field name='code'>2</field><field name='canton_id' ref='canton_15'/></record>
+    <record id='district_153' model='district'><field name='name'>SAN CARLOS</field><field name='code'>3</field><field name='canton_id' ref='canton_15'/></record>
+    <record id='district_161' model='district'><field name='name'>ASERRI</field><field name='code'>1</field><field name='canton_id' ref='canton_16'/></record>
+    <record id='district_162' model='district'><field name='name'>TARBACA</field><field name='code'>2</field><field name='canton_id' ref='canton_16'/></record>
+    <record id='district_163' model='district'><field name='name'>VUELTA DE JORCO</field><field name='code'>3</field><field name='canton_id' ref='canton_16'/></record>
+    <record id='district_164' model='district'><field name='name'>SAN GABRIEL</field><field name='code'>4</field><field name='canton_id' ref='canton_16'/></record>
+    <record id='district_165' model='district'><field name='name'>LEGUA</field><field name='code'>5</field><field name='canton_id' ref='canton_16'/></record>
+    <record id='district_166' model='district'><field name='name'>MONTERREY</field><field name='code'>6</field><field name='canton_id' ref='canton_16'/></record>
+    <record id='district_167' model='district'><field name='name'>SALITRILLOS</field><field name='code'>7</field><field name='canton_id' ref='canton_16'/></record>
+    <record id='district_171' model='district'><field name='name'>COLÓN</field><field name='code'>1</field><field name='canton_id' ref='canton_17'/></record>
+    <record id='district_172' model='district'><field name='name'>GUAYABO</field><field name='code'>2</field><field name='canton_id' ref='canton_17'/></record>
+    <record id='district_173' model='district'><field name='name'>TABARCIA</field><field name='code'>3</field><field name='canton_id' ref='canton_17'/></record>
+    <record id='district_174' model='district'><field name='name'>PIEDRAS NEGRAS</field><field name='code'>4</field><field name='canton_id' ref='canton_17'/></record>
+    <record id='district_175' model='district'><field name='name'>PICAGRES</field><field name='code'>5</field><field name='canton_id' ref='canton_17'/></record>
+    <record id='district_176' model='district'><field name='name'>JARIS</field><field name='code'>6</field><field name='canton_id' ref='canton_17'/></record>
+    <record id='district_177' model='district'><field name='name'>QUITIRRISI</field><field name='code'>7</field><field name='canton_id' ref='canton_17'/></record>
+    <record id='district_181' model='district'><field name='name'>GUADALUPE</field><field name='code'>1</field><field name='canton_id' ref='canton_18'/></record>
+    <record id='district_182' model='district'><field name='name'>SAN FRANCISCO</field><field name='code'>2</field><field name='canton_id' ref='canton_18'/></record>
+    <record id='district_183' model='district'><field name='name'>CALLE BLANCOS</field><field name='code'>3</field><field name='canton_id' ref='canton_18'/></record>
+    <record id='district_184' model='district'><field name='name'>MATA DE PLÁTANO</field><field name='code'>4</field><field name='canton_id' ref='canton_18'/></record>
+    <record id='district_185' model='district'><field name='name'>IPÍS</field><field name='code'>5</field><field name='canton_id' ref='canton_18'/></record>
+    <record id='district_186' model='district'><field name='name'>RANCHO REDONDO</field><field name='code'>6</field><field name='canton_id' ref='canton_18'/></record>
+    <record id='district_187' model='district'><field name='name'>PURRAL</field><field name='code'>7</field><field name='canton_id' ref='canton_18'/></record>
+    <record id='district_191' model='district'><field name='name'>SANTA ANA</field><field name='code'>1</field><field name='canton_id' ref='canton_19'/></record>
+    <record id='district_192' model='district'><field name='name'>SALITRAL</field><field name='code'>2</field><field name='canton_id' ref='canton_19'/></record>
+    <record id='district_193' model='district'><field name='name'>POZOS</field><field name='code'>3</field><field name='canton_id' ref='canton_19'/></record>
+    <record id='district_194' model='district'><field name='name'>URUCA</field><field name='code'>4</field><field name='canton_id' ref='canton_19'/></record>
+    <record id='district_195' model='district'><field name='name'>PIEDADES</field><field name='code'>5</field><field name='canton_id' ref='canton_19'/></record>
+    <record id='district_196' model='district'><field name='name'>BRASIL</field><field name='code'>6</field><field name='canton_id' ref='canton_19'/></record>
+    <record id='district_1101' model='district'><field name='name'>ALAJUELITA</field><field name='code'>1</field><field name='canton_id' ref='canton_110'/></record>
+    <record id='district_1102' model='district'><field name='name'>SAN JOSECITO</field><field name='code'>2</field><field name='canton_id' ref='canton_110'/></record>
+    <record id='district_1103' model='district'><field name='name'>SAN ANTONIO</field><field name='code'>3</field><field name='canton_id' ref='canton_110'/></record>
+    <record id='district_1104' model='district'><field name='name'>CONCEPCIÓN</field><field name='code'>4</field><field name='canton_id' ref='canton_110'/></record>
+    <record id='district_1105' model='district'><field name='name'>SAN FELIPE</field><field name='code'>5</field><field name='canton_id' ref='canton_110'/></record>
+    <record id='district_1111' model='district'><field name='name'>SAN ISIDRO</field><field name='code'>1</field><field name='canton_id' ref='canton_111'/></record>
+    <record id='district_1112' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>2</field><field name='canton_id' ref='canton_111'/></record>
+    <record id='district_1113' model='district'><field name='name'>DULCE NOMBRE DE JESÚS</field><field name='code'>3</field><field name='canton_id' ref='canton_111'/></record>
+    <record id='district_1114' model='district'><field name='name'>PATALILLO</field><field name='code'>4</field><field name='canton_id' ref='canton_111'/></record>
+    <record id='district_1115' model='district'><field name='name'>CASCAJAL</field><field name='code'>5</field><field name='canton_id' ref='canton_111'/></record>
+    <record id='district_1121' model='district'><field name='name'>SAN IGNACIO</field><field name='code'>1</field><field name='canton_id' ref='canton_112'/></record>
+    <record id='district_1122' model='district'><field name='name'>GUAITIL Villa</field><field name='code'>2</field><field name='canton_id' ref='canton_112'/></record>
+    <record id='district_1123' model='district'><field name='name'>PALMICHAL</field><field name='code'>3</field><field name='canton_id' ref='canton_112'/></record>
+    <record id='district_1124' model='district'><field name='name'>CANGREJAL</field><field name='code'>4</field><field name='canton_id' ref='canton_112'/></record>
+    <record id='district_1125' model='district'><field name='name'>SABANILLAS</field><field name='code'>5</field><field name='canton_id' ref='canton_112'/></record>
+    <record id='district_1131' model='district'><field name='name'>SAN JUAN</field><field name='code'>1</field><field name='canton_id' ref='canton_113'/></record>
+    <record id='district_1132' model='district'><field name='name'>CINCO ESQUINAS</field><field name='code'>2</field><field name='canton_id' ref='canton_113'/></record>
+    <record id='district_1133' model='district'><field name='name'>ANSELMO LLORENTE</field><field name='code'>3</field><field name='canton_id' ref='canton_113'/></record>
+    <record id='district_1134' model='district'><field name='name'>LEON XIII</field><field name='code'>4</field><field name='canton_id' ref='canton_113'/></record>
+    <record id='district_1135' model='district'><field name='name'>COLIMA</field><field name='code'>5</field><field name='canton_id' ref='canton_113'/></record>
+    <record id='district_1141' model='district'><field name='name'>SAN VICENTE</field><field name='code'>1</field><field name='canton_id' ref='canton_114'/></record>
+    <record id='district_1142' model='district'><field name='name'>SAN JERÓNIMO</field><field name='code'>2</field><field name='canton_id' ref='canton_114'/></record>
+    <record id='district_1143' model='district'><field name='name'>LA TRINIDAD</field><field name='code'>3</field><field name='canton_id' ref='canton_114'/></record>
+    <record id='district_1151' model='district'><field name='name'>SAN PEDRO</field><field name='code'>1</field><field name='canton_id' ref='canton_115'/></record>
+    <record id='district_1152' model='district'><field name='name'>SABANILLA</field><field name='code'>2</field><field name='canton_id' ref='canton_115'/></record>
+    <record id='district_1153' model='district'><field name='name'>MERCEDES</field><field name='code'>3</field><field name='canton_id' ref='canton_115'/></record>
+    <record id='district_1154' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>4</field><field name='canton_id' ref='canton_115'/></record>
+    <record id='district_1161' model='district'><field name='name'>SAN PABLO</field><field name='code'>1</field><field name='canton_id' ref='canton_116'/></record>
+    <record id='district_1162' model='district'><field name='name'>SAN PEDRO</field><field name='code'>2</field><field name='canton_id' ref='canton_116'/></record>
+    <record id='district_1163' model='district'><field name='name'>SAN JUAN DE MATA</field><field name='code'>3</field><field name='canton_id' ref='canton_116'/></record>
+    <record id='district_1164' model='district'><field name='name'>SAN LUIS</field><field name='code'>4</field><field name='canton_id' ref='canton_116'/></record>
+    <record id='district_1165' model='district'><field name='name'>CARARA</field><field name='code'>5</field><field name='canton_id' ref='canton_116'/></record>
+    <record id='district_1171' model='district'><field name='name'>SANTA MARÍA</field><field name='code'>1</field><field name='canton_id' ref='canton_117'/></record>
+    <record id='district_1172' model='district'><field name='name'>JARDÍN</field><field name='code'>2</field><field name='canton_id' ref='canton_117'/></record>
+    <record id='district_1173' model='district'><field name='name'>COPEY</field><field name='code'>3</field><field name='canton_id' ref='canton_117'/></record>
+    <record id='district_1181' model='district'><field name='name'>CURRIDABAT</field><field name='code'>1</field><field name='canton_id' ref='canton_118'/></record>
+    <record id='district_1182' model='district'><field name='name'>GRANADILLA</field><field name='code'>2</field><field name='canton_id' ref='canton_118'/></record>
+    <record id='district_1183' model='district'><field name='name'>SÁNCHEZ</field><field name='code'>3</field><field name='canton_id' ref='canton_118'/></record>
+    <record id='district_1184' model='district'><field name='name'>TIRRASES</field><field name='code'>4</field><field name='canton_id' ref='canton_118'/></record>
+    <record id='district_1191' model='district'><field name='name'>SAN ISIDRO DE EL GENERAL</field><field name='code'>1</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_1192' model='district'><field name='name'>EL GENERAL</field><field name='code'>2</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_1193' model='district'><field name='name'>DANIEL FLORES</field><field name='code'>3</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_1194' model='district'><field name='name'>RIVAS</field><field name='code'>4</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_1195' model='district'><field name='name'>SAN PEDRO</field><field name='code'>5</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_1196' model='district'><field name='name'>PLATANARES</field><field name='code'>6</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_1197' model='district'><field name='name'>PEJIBAYE</field><field name='code'>7</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_1198' model='district'><field name='name'>CAJÓN</field><field name='code'>8</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_1199' model='district'><field name='name'>BARÚ</field><field name='code'>9</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_11910' model='district'><field name='name'>RÍO NUEVO</field><field name='code'>10</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_11911' model='district'><field name='name'>PÁRAMO</field><field name='code'>11</field><field name='canton_id' ref='canton_119'/></record>
+    <record id='district_1201' model='district'><field name='name'>SAN PABLO</field><field name='code'>1</field><field name='canton_id' ref='canton_120'/></record>
+    <record id='district_1202' model='district'><field name='name'>SAN ANDRÉS</field><field name='code'>2</field><field name='canton_id' ref='canton_120'/></record>
+    <record id='district_1203' model='district'><field name='name'>LLANO BONITO</field><field name='code'>3</field><field name='canton_id' ref='canton_120'/></record>
+    <record id='district_1204' model='district'><field name='name'>SAN ISIDRO</field><field name='code'>4</field><field name='canton_id' ref='canton_120'/></record>
+    <record id='district_1205' model='district'><field name='name'>SANTA CRUZ</field><field name='code'>5</field><field name='canton_id' ref='canton_120'/></record>
+    <record id='district_1206' model='district'><field name='name'>SAN ANTONIO</field><field name='code'>6</field><field name='canton_id' ref='canton_120'/></record>
+    <record id='district_211' model='district'><field name='name'>ALAJUELA</field><field name='code'>1</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_212' model='district'><field name='name'>SAN JOSÉ</field><field name='code'>2</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_213' model='district'><field name='name'>CARRIZAL</field><field name='code'>3</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_214' model='district'><field name='name'>SAN ANTONIO</field><field name='code'>4</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_215' model='district'><field name='name'>GUÁCIMA</field><field name='code'>5</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_216' model='district'><field name='name'>SAN ISIDRO</field><field name='code'>6</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_217' model='district'><field name='name'>SABANILLA</field><field name='code'>7</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_218' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>8</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_219' model='district'><field name='name'>RÍO SEGUNDO</field><field name='code'>9</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_2110' model='district'><field name='name'>DESAMPARADOS</field><field name='code'>10</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_2112' model='district'><field name='name'>TAMBOR</field><field name='code'>12</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_2113' model='district'><field name='name'>GARITA</field><field name='code'>13</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_2114' model='district'><field name='name'>SARAPIQUÍ</field><field name='code'>14</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_2111' model='district'><field name='name'>TURRÚCARES</field><field name='code'>11</field><field name='canton_id' ref='canton_21'/></record>
+    <record id='district_221' model='district'><field name='name'>SAN RAMÓN</field><field name='code'>1</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_222' model='district'><field name='name'>SANTIAGO</field><field name='code'>2</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_223' model='district'><field name='name'>SAN JUAN</field><field name='code'>3</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_224' model='district'><field name='name'>PIEDADES NORTE</field><field name='code'>4</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_225' model='district'><field name='name'>PIEDADES SUR</field><field name='code'>5</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_226' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>6</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_227' model='district'><field name='name'>SAN ISIDRO</field><field name='code'>7</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_228' model='district'><field name='name'>ÁNGELES</field><field name='code'>8</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_229' model='district'><field name='name'>ALFARO</field><field name='code'>9</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_2210' model='district'><field name='name'>VOLIO</field><field name='code'>10</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_2211' model='district'><field name='name'>CONCEPCIÓN</field><field name='code'>11</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_2212' model='district'><field name='name'>ZAPOTAL</field><field name='code'>12</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_2213' model='district'><field name='name'>PEÑAS BLANCAS</field><field name='code'>13</field><field name='canton_id' ref='canton_22'/></record>
+    <record id='district_231' model='district'><field name='name'>GRECIA</field><field name='code'>1</field><field name='canton_id' ref='canton_23'/></record>
+    <record id='district_232' model='district'><field name='name'>SAN ISIDRO</field><field name='code'>2</field><field name='canton_id' ref='canton_23'/></record>
+    <record id='district_233' model='district'><field name='name'>SAN JOSÉ</field><field name='code'>3</field><field name='canton_id' ref='canton_23'/></record>
+    <record id='district_234' model='district'><field name='name'>SAN ROQUE</field><field name='code'>4</field><field name='canton_id' ref='canton_23'/></record>
+    <record id='district_235' model='district'><field name='name'>TACARES</field><field name='code'>5</field><field name='canton_id' ref='canton_23'/></record>
+    <record id='district_236' model='district'><field name='name'>RÍO CUARTO</field><field name='code'>6</field><field name='canton_id' ref='canton_23'/></record>
+    <record id='district_237' model='district'><field name='name'>PUENTE DE PIEDRA</field><field name='code'>7</field><field name='canton_id' ref='canton_23'/></record>
+    <record id='district_238' model='district'><field name='name'>BOLÍVAR</field><field name='code'>8</field><field name='canton_id' ref='canton_23'/></record>
+    <record id='district_241' model='district'><field name='name'>SAN MATEO</field><field name='code'>1</field><field name='canton_id' ref='canton_24'/></record>
+    <record id='district_242' model='district'><field name='name'>DESMONTE</field><field name='code'>2</field><field name='canton_id' ref='canton_24'/></record>
+    <record id='district_243' model='district'><field name='name'>JESÚS MARÍA</field><field name='code'>3</field><field name='canton_id' ref='canton_24'/></record>
+    <record id='district_244' model='district'><field name='name'>LABRADOR</field><field name='code'>4</field><field name='canton_id' ref='canton_24'/></record>
+    <record id='district_251' model='district'><field name='name'>ATENAS</field><field name='code'>1</field><field name='canton_id' ref='canton_25'/></record>
+    <record id='district_252' model='district'><field name='name'>JESÚS</field><field name='code'>2</field><field name='canton_id' ref='canton_25'/></record>
+    <record id='district_253' model='district'><field name='name'>MERCEDES</field><field name='code'>3</field><field name='canton_id' ref='canton_25'/></record>
+    <record id='district_254' model='district'><field name='name'>SAN ISIDRO</field><field name='code'>4</field><field name='canton_id' ref='canton_25'/></record>
+    <record id='district_255' model='district'><field name='name'>CONCEPCIÓN</field><field name='code'>5</field><field name='canton_id' ref='canton_25'/></record>
+    <record id='district_256' model='district'><field name='name'>SAN JOSE</field><field name='code'>6</field><field name='canton_id' ref='canton_25'/></record>
+    <record id='district_257' model='district'><field name='name'>SANTA EULALIA</field><field name='code'>7</field><field name='canton_id' ref='canton_25'/></record>
+    <record id='district_258' model='district'><field name='name'>ESCOBAL</field><field name='code'>8</field><field name='canton_id' ref='canton_25'/></record>
+    <record id='district_261' model='district'><field name='name'>NARANJO</field><field name='code'>1</field><field name='canton_id' ref='canton_26'/></record>
+    <record id='district_262' model='district'><field name='name'>SAN MIGUEL</field><field name='code'>2</field><field name='canton_id' ref='canton_26'/></record>
+    <record id='district_263' model='district'><field name='name'>SAN JOSÉ</field><field name='code'>3</field><field name='canton_id' ref='canton_26'/></record>
+    <record id='district_264' model='district'><field name='name'>CIRRÍ SUR</field><field name='code'>4</field><field name='canton_id' ref='canton_26'/></record>
+    <record id='district_265' model='district'><field name='name'>SAN JERÓNIMO</field><field name='code'>5</field><field name='canton_id' ref='canton_26'/></record>
+    <record id='district_266' model='district'><field name='name'>SAN JUAN</field><field name='code'>6</field><field name='canton_id' ref='canton_26'/></record>
+    <record id='district_267' model='district'><field name='name'>EL ROSARIO</field><field name='code'>7</field><field name='canton_id' ref='canton_26'/></record>
+    <record id='district_268' model='district'><field name='name'>PALMITOS</field><field name='code'>8</field><field name='canton_id' ref='canton_26'/></record>
+    <record id='district_271' model='district'><field name='name'>PALMARES</field><field name='code'>1</field><field name='canton_id' ref='canton_27'/></record>
+    <record id='district_272' model='district'><field name='name'>ZARAGOZA</field><field name='code'>2</field><field name='canton_id' ref='canton_27'/></record>
+    <record id='district_273' model='district'><field name='name'>BUENOS AIRES</field><field name='code'>3</field><field name='canton_id' ref='canton_27'/></record>
+    <record id='district_274' model='district'><field name='name'>SANTIAGO</field><field name='code'>4</field><field name='canton_id' ref='canton_27'/></record>
+    <record id='district_275' model='district'><field name='name'>CANDELARIA</field><field name='code'>5</field><field name='canton_id' ref='canton_27'/></record>
+    <record id='district_276' model='district'><field name='name'>ESQUÍPULAS</field><field name='code'>6</field><field name='canton_id' ref='canton_27'/></record>
+    <record id='district_277' model='district'><field name='name'>LA GRANJA</field><field name='code'>7</field><field name='canton_id' ref='canton_27'/></record>
+    <record id='district_281' model='district'><field name='name'>SAN PEDRO</field><field name='code'>1</field><field name='canton_id' ref='canton_28'/></record>
+    <record id='district_282' model='district'><field name='name'>SAN JUAN</field><field name='code'>2</field><field name='canton_id' ref='canton_28'/></record>
+    <record id='district_283' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>3</field><field name='canton_id' ref='canton_28'/></record>
+    <record id='district_284' model='district'><field name='name'>CARRILLOS</field><field name='code'>4</field><field name='canton_id' ref='canton_28'/></record>
+    <record id='district_285' model='district'><field name='name'>SABANA REDONDA</field><field name='code'>5</field><field name='canton_id' ref='canton_28'/></record>
+    <record id='district_291' model='district'><field name='name'>OROTINA</field><field name='code'>1</field><field name='canton_id' ref='canton_29'/></record>
+    <record id='district_292' model='district'><field name='name'>EL MASTATE</field><field name='code'>2</field><field name='canton_id' ref='canton_29'/></record>
+    <record id='district_293' model='district'><field name='name'>HACIENDA VIEJA</field><field name='code'>3</field><field name='canton_id' ref='canton_29'/></record>
+    <record id='district_294' model='district'><field name='name'>COYOLAR</field><field name='code'>4</field><field name='canton_id' ref='canton_29'/></record>
+    <record id='district_295' model='district'><field name='name'>LA CEIBA</field><field name='code'>5</field><field name='canton_id' ref='canton_29'/></record>
+    <record id='district_2101' model='district'><field name='name'>QUESADA</field><field name='code'>1</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_2102' model='district'><field name='name'>FLORENCIA</field><field name='code'>2</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_2103' model='district'><field name='name'>BUENAVISTA</field><field name='code'>3</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_2104' model='district'><field name='name'>AGUAS ZARCAS</field><field name='code'>4</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_2105' model='district'><field name='name'>VENECIA</field><field name='code'>5</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_2106' model='district'><field name='name'>PITAL</field><field name='code'>6</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_2107' model='district'><field name='name'>LA FORTUNA</field><field name='code'>7</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_2108' model='district'><field name='name'>LA TIGRA</field><field name='code'>8</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_2109' model='district'><field name='name'>LA PALMERA</field><field name='code'>9</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_21010' model='district'><field name='name'>VENADO</field><field name='code'>10</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_21011' model='district'><field name='name'>CUTRIS</field><field name='code'>11</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_21012' model='district'><field name='name'>MONTERREY</field><field name='code'>12</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_21013' model='district'><field name='name'>POCOSOL</field><field name='code'>13</field><field name='canton_id' ref='canton_210'/></record>
+    <record id='district_2111' model='district'><field name='name'>ZARCERO</field><field name='code'>1</field><field name='canton_id' ref='canton_211'/></record>
+    <record id='district_2112' model='district'><field name='name'>LAGUNA</field><field name='code'>2</field><field name='canton_id' ref='canton_211'/></record>
+    <record id='district_2114' model='district'><field name='name'>GUADALUPE</field><field name='code'>4</field><field name='canton_id' ref='canton_211'/></record>
+    <record id='district_2115' model='district'><field name='name'>PALMIRA</field><field name='code'>5</field><field name='canton_id' ref='canton_211'/></record>
+    <record id='district_2116' model='district'><field name='name'>ZAPOTE</field><field name='code'>6</field><field name='canton_id' ref='canton_211'/></record>
+    <record id='district_2117' model='district'><field name='name'>BRISAS</field><field name='code'>7</field><field name='canton_id' ref='canton_211'/></record>
+    <record id='district_2121' model='district'><field name='name'>SARCHÍ NORTE</field><field name='code'>1</field><field name='canton_id' ref='canton_212'/></record>
+    <record id='district_2122' model='district'><field name='name'>SARCHÍ SUR</field><field name='code'>2</field><field name='canton_id' ref='canton_212'/></record>
+    <record id='district_2123' model='district'><field name='name'>TORO AMARILLO</field><field name='code'>3</field><field name='canton_id' ref='canton_212'/></record>
+    <record id='district_2124' model='district'><field name='name'>SAN PEDRO</field><field name='code'>4</field><field name='canton_id' ref='canton_212'/></record>
+    <record id='district_2125' model='district'><field name='name'>RODRÍGUEZ</field><field name='code'>5</field><field name='canton_id' ref='canton_212'/></record>
+    <record id='district_2131' model='district'><field name='name'>UPALA</field><field name='code'>1</field><field name='canton_id' ref='canton_213'/></record>
+    <record id='district_2132' model='district'><field name='name'>AGUAS CLARAS</field><field name='code'>2</field><field name='canton_id' ref='canton_213'/></record>
+    <record id='district_2133' model='district'><field name='name'>SAN JOSÉ o PIZOTE</field><field name='code'>3</field><field name='canton_id' ref='canton_213'/></record>
+    <record id='district_2134' model='district'><field name='name'>BIJAGUA</field><field name='code'>4</field><field name='canton_id' ref='canton_213'/></record>
+    <record id='district_2135' model='district'><field name='name'>DELICIAS</field><field name='code'>5</field><field name='canton_id' ref='canton_213'/></record>
+    <record id='district_2136' model='district'><field name='name'>DOS RÍOS</field><field name='code'>6</field><field name='canton_id' ref='canton_213'/></record>
+    <record id='district_2137' model='district'><field name='name'>YOLILLAL</field><field name='code'>7</field><field name='canton_id' ref='canton_213'/></record>
+    <record id='district_2138' model='district'><field name='name'>CANALETE</field><field name='code'>8</field><field name='canton_id' ref='canton_213'/></record>
+    <record id='district_2141' model='district'><field name='name'>LOS CHILES</field><field name='code'>1</field><field name='canton_id' ref='canton_214'/></record>
+    <record id='district_2142' model='district'><field name='name'>CAÑO NEGRO</field><field name='code'>2</field><field name='canton_id' ref='canton_214'/></record>
+    <record id='district_2143' model='district'><field name='name'>EL AMPARO</field><field name='code'>3</field><field name='canton_id' ref='canton_214'/></record>
+    <record id='district_2144' model='district'><field name='name'>SAN JORGE</field><field name='code'>4</field><field name='canton_id' ref='canton_214'/></record>
+    <record id='district_2152' model='district'><field name='name'>BUENAVISTA</field><field name='code'>2</field><field name='canton_id' ref='canton_215'/></record>
+    <record id='district_2153' model='district'><field name='name'>COTE</field><field name='code'>3</field><field name='canton_id' ref='canton_215'/></record>
+    <record id='district_2154' model='district'><field name='name'>KATIRA</field><field name='code'>4</field><field name='canton_id' ref='canton_215'/></record>
+    <record id='district_311' model='district'><field name='name'>ORIENTAL</field><field name='code'>1</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_312' model='district'><field name='name'>OCCIDENTAL</field><field name='code'>2</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_313' model='district'><field name='name'>CARMEN</field><field name='code'>3</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_314' model='district'><field name='name'>SAN NICOLÁS</field><field name='code'>4</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_315' model='district'><field name='name'>AGUACALIENTE o SAN FRANCISCO</field><field name='code'>5</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_316' model='district'><field name='name'>GUADALUPE o ARENILLA</field><field name='code'>6</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_317' model='district'><field name='name'>CORRALILLO</field><field name='code'>7</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_318' model='district'><field name='name'>TIERRA BLANCA</field><field name='code'>8</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_319' model='district'><field name='name'>DULCE NOMBRE</field><field name='code'>9</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_3110' model='district'><field name='name'>LLANO GRANDE</field><field name='code'>10</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_3111' model='district'><field name='name'>QUEBRADILLA</field><field name='code'>11</field><field name='canton_id' ref='canton_31'/></record>
+    <record id='district_321' model='district'><field name='name'>PARAÍSO</field><field name='code'>1</field><field name='canton_id' ref='canton_32'/></record>
+    <record id='district_322' model='district'><field name='name'>SANTIAGO</field><field name='code'>2</field><field name='canton_id' ref='canton_32'/></record>
+    <record id='district_323' model='district'><field name='name'>OROSI</field><field name='code'>3</field><field name='canton_id' ref='canton_32'/></record>
+    <record id='district_324' model='district'><field name='name'>CACHÍ</field><field name='code'>4</field><field name='canton_id' ref='canton_32'/></record>
+    <record id='district_325' model='district'><field name='name'>LLANOS DE SANTA LUCÍA</field><field name='code'>5</field><field name='canton_id' ref='canton_32'/></record>
+    <record id='district_331' model='district'><field name='name'>TRES RÍOS</field><field name='code'>1</field><field name='canton_id' ref='canton_33'/></record>
+    <record id='district_332' model='district'><field name='name'>SAN DIEGO</field><field name='code'>2</field><field name='canton_id' ref='canton_33'/></record>
+    <record id='district_333' model='district'><field name='name'>SAN JUAN</field><field name='code'>3</field><field name='canton_id' ref='canton_33'/></record>
+    <record id='district_334' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>4</field><field name='canton_id' ref='canton_33'/></record>
+    <record id='district_335' model='district'><field name='name'>CONCEPCIÓN</field><field name='code'>5</field><field name='canton_id' ref='canton_33'/></record>
+    <record id='district_336' model='district'><field name='name'>DULCE NOMBRE</field><field name='code'>6</field><field name='canton_id' ref='canton_33'/></record>
+    <record id='district_337' model='district'><field name='name'>SAN RAMÓN</field><field name='code'>7</field><field name='canton_id' ref='canton_33'/></record>
+    <record id='district_338' model='district'><field name='name'>RÍO AZUL</field><field name='code'>8</field><field name='canton_id' ref='canton_33'/></record>
+    <record id='district_341' model='district'><field name='name'>JUAN VIÑAS</field><field name='code'>1</field><field name='canton_id' ref='canton_34'/></record>
+    <record id='district_342' model='district'><field name='name'>TUCURRIQUE</field><field name='code'>2</field><field name='canton_id' ref='canton_34'/></record>
+    <record id='district_343' model='district'><field name='name'>PEJIBAYE</field><field name='code'>3</field><field name='canton_id' ref='canton_34'/></record>
+    <record id='district_351' model='district'><field name='name'>TURRIALBA</field><field name='code'>1</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_352' model='district'><field name='name'>LA SUIZA</field><field name='code'>2</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_353' model='district'><field name='name'>PERALTA</field><field name='code'>3</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_354' model='district'><field name='name'>SANTA CRUZ</field><field name='code'>4</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_355' model='district'><field name='name'>SANTA TERESITA</field><field name='code'>5</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_356' model='district'><field name='name'>PAVONES</field><field name='code'>6</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_357' model='district'><field name='name'>TUIS</field><field name='code'>7</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_358' model='district'><field name='name'>TAYUTIC</field><field name='code'>8</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_359' model='district'><field name='name'>SANTA ROSA</field><field name='code'>9</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_3510' model='district'><field name='name'>TRES EQUIS</field><field name='code'>10</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_3511' model='district'><field name='name'>LA ISABEL</field><field name='code'>11</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_3512' model='district'><field name='name'>CHIRRIPÓ</field><field name='code'>12</field><field name='canton_id' ref='canton_35'/></record>
+    <record id='district_361' model='district'><field name='name'>PACAYAS</field><field name='code'>1</field><field name='canton_id' ref='canton_36'/></record>
+    <record id='district_362' model='district'><field name='name'>CERVANTES</field><field name='code'>2</field><field name='canton_id' ref='canton_36'/></record>
+    <record id='district_363' model='district'><field name='name'>CAPELLADES</field><field name='code'>3</field><field name='canton_id' ref='canton_36'/></record>
+    <record id='district_371' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>1</field><field name='canton_id' ref='canton_37'/></record>
+    <record id='district_372' model='district'><field name='name'>COT</field><field name='code'>2</field><field name='canton_id' ref='canton_37'/></record>
+    <record id='district_373' model='district'><field name='name'>POTRERO CERRADO</field><field name='code'>3</field><field name='canton_id' ref='canton_37'/></record>
+    <record id='district_374' model='district'><field name='name'>CIPRESES</field><field name='code'>4</field><field name='canton_id' ref='canton_37'/></record>
+    <record id='district_375' model='district'><field name='name'>SANTA ROSA</field><field name='code'>5</field><field name='canton_id' ref='canton_37'/></record>
+    <record id='district_381' model='district'><field name='name'>EL TEJAR</field><field name='code'>1</field><field name='canton_id' ref='canton_38'/></record>
+    <record id='district_382' model='district'><field name='name'>SAN ISIDRO</field><field name='code'>2</field><field name='canton_id' ref='canton_38'/></record>
+    <record id='district_383' model='district'><field name='name'>TOBOSI</field><field name='code'>3</field><field name='canton_id' ref='canton_38'/></record>
+    <record id='district_384' model='district'><field name='name'>PATIO DE AGUA</field><field name='code'>4</field><field name='canton_id' ref='canton_38'/></record>
+    <record id='district_411' model='district'><field name='name'>HEREDIA</field><field name='code'>1</field><field name='canton_id' ref='canton_41'/></record>
+    <record id='district_412' model='district'><field name='name'>MERCEDES</field><field name='code'>2</field><field name='canton_id' ref='canton_41'/></record>
+    <record id='district_413' model='district'><field name='name'>SAN FRANCISCO</field><field name='code'>3</field><field name='canton_id' ref='canton_41'/></record>
+    <record id='district_414' model='district'><field name='name'>ULLOA</field><field name='code'>4</field><field name='canton_id' ref='canton_41'/></record>
+    <record id='district_415' model='district'><field name='name'>VARABLANCA</field><field name='code'>5</field><field name='canton_id' ref='canton_41'/></record>
+    <record id='district_421' model='district'><field name='name'>BARVA</field><field name='code'>1</field><field name='canton_id' ref='canton_42'/></record>
+    <record id='district_422' model='district'><field name='name'>SAN PEDRO</field><field name='code'>2</field><field name='canton_id' ref='canton_42'/></record>
+    <record id='district_423' model='district'><field name='name'>SAN PABLO</field><field name='code'>3</field><field name='canton_id' ref='canton_42'/></record>
+    <record id='district_424' model='district'><field name='name'>SAN ROQUE</field><field name='code'>4</field><field name='canton_id' ref='canton_42'/></record>
+    <record id='district_425' model='district'><field name='name'>SANTA LUCÍA</field><field name='code'>5</field><field name='canton_id' ref='canton_42'/></record>
+    <record id='district_426' model='district'><field name='name'>SAN JOSÉ DE LA MONTAÑA</field><field name='code'>6</field><field name='canton_id' ref='canton_42'/></record>
+    <record id='district_432' model='district'><field name='name'>SAN VICENTE</field><field name='code'>2</field><field name='canton_id' ref='canton_43'/></record>
+    <record id='district_433' model='district'><field name='name'>SAN MIGUEL</field><field name='code'>3</field><field name='canton_id' ref='canton_43'/></record>
+    <record id='district_434' model='district'><field name='name'>PARACITO</field><field name='code'>4</field><field name='canton_id' ref='canton_43'/></record>
+    <record id='district_435' model='district'><field name='name'>SANTO TOMÁS</field><field name='code'>5</field><field name='canton_id' ref='canton_43'/></record>
+    <record id='district_436' model='district'><field name='name'>SANTA ROSA</field><field name='code'>6</field><field name='canton_id' ref='canton_43'/></record>
+    <record id='district_437' model='district'><field name='name'>TURES</field><field name='code'>7</field><field name='canton_id' ref='canton_43'/></record>
+    <record id='district_438' model='district'><field name='name'>PARÁ</field><field name='code'>8</field><field name='canton_id' ref='canton_43'/></record>
+    <record id='district_441' model='district'><field name='name'>SANTA BÁRBARA</field><field name='code'>1</field><field name='canton_id' ref='canton_44'/></record>
+    <record id='district_442' model='district'><field name='name'>SAN PEDRO</field><field name='code'>2</field><field name='canton_id' ref='canton_44'/></record>
+    <record id='district_443' model='district'><field name='name'>SAN JUAN</field><field name='code'>3</field><field name='canton_id' ref='canton_44'/></record>
+    <record id='district_444' model='district'><field name='name'>JESÚS</field><field name='code'>4</field><field name='canton_id' ref='canton_44'/></record>
+    <record id='district_445' model='district'><field name='name'>SANTO DOMINGO</field><field name='code'>5</field><field name='canton_id' ref='canton_44'/></record>
+    <record id='district_446' model='district'><field name='name'>PURABÁ</field><field name='code'>6</field><field name='canton_id' ref='canton_44'/></record>
+    <record id='district_451' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>1</field><field name='canton_id' ref='canton_45'/></record>
+    <record id='district_452' model='district'><field name='name'>SAN JOSECITO</field><field name='code'>2</field><field name='canton_id' ref='canton_45'/></record>
+    <record id='district_453' model='district'><field name='name'>SANTIAGO</field><field name='code'>3</field><field name='canton_id' ref='canton_45'/></record>
+    <record id='district_454' model='district'><field name='name'>ÁNGELES</field><field name='code'>4</field><field name='canton_id' ref='canton_45'/></record>
+    <record id='district_455' model='district'><field name='name'>CONCEPCIÓN</field><field name='code'>5</field><field name='canton_id' ref='canton_45'/></record>
+    <record id='district_461' model='district'><field name='name'>SAN ISIDRO</field><field name='code'>1</field><field name='canton_id' ref='canton_46'/></record>
+    <record id='district_462' model='district'><field name='name'>SAN JOSÉ</field><field name='code'>2</field><field name='canton_id' ref='canton_46'/></record>
+    <record id='district_463' model='district'><field name='name'>CONCEPCIÓN</field><field name='code'>3</field><field name='canton_id' ref='canton_46'/></record>
+    <record id='district_464' model='district'><field name='name'>SAN FRANCISCO</field><field name='code'>4</field><field name='canton_id' ref='canton_46'/></record>
+    <record id='district_471' model='district'><field name='name'>SAN ANTONIO</field><field name='code'>1</field><field name='canton_id' ref='canton_47'/></record>
+    <record id='district_472' model='district'><field name='name'>LA RIBERA</field><field name='code'>2</field><field name='canton_id' ref='canton_47'/></record>
+    <record id='district_473' model='district'><field name='name'>LA ASUNCIÓN</field><field name='code'>3</field><field name='canton_id' ref='canton_47'/></record>
+    <record id='district_481' model='district'><field name='name'>SAN JOAQUÍN</field><field name='code'>1</field><field name='canton_id' ref='canton_48'/></record>
+    <record id='district_482' model='district'><field name='name'>BARRANTES</field><field name='code'>2</field><field name='canton_id' ref='canton_48'/></record>
+    <record id='district_483' model='district'><field name='name'>LLORENTE</field><field name='code'>3</field><field name='canton_id' ref='canton_48'/></record>
+    <record id='district_491' model='district'><field name='name'>SAN PABLO</field><field name='code'>1</field><field name='canton_id' ref='canton_49'/></record>
+    <record id='district_4101' model='district'><field name='name'>PUERTO VIEJO</field><field name='code'>1</field><field name='canton_id' ref='canton_410'/></record>
+    <record id='district_4102' model='district'><field name='name'>LA VIRGEN</field><field name='code'>2</field><field name='canton_id' ref='canton_410'/></record>
+    <record id='district_4103' model='district'><field name='name'>LAS HORQUETAS</field><field name='code'>3</field><field name='canton_id' ref='canton_410'/></record>
+    <record id='district_4104' model='district'><field name='name'>LLANURAS DEL GASPAR</field><field name='code'>4</field><field name='canton_id' ref='canton_410'/></record>
+    <record id='district_4105' model='district'><field name='name'>CUREÑA</field><field name='code'>5</field><field name='canton_id' ref='canton_410'/></record>
+    <record id='district_511' model='district'><field name='name'>LIBERIA</field><field name='code'>1</field><field name='canton_id' ref='canton_51'/></record>
+    <record id='district_512' model='district'><field name='name'>CAÑAS DULCES</field><field name='code'>2</field><field name='canton_id' ref='canton_51'/></record>
+    <record id='district_513' model='district'><field name='name'>MAYORGA</field><field name='code'>3</field><field name='canton_id' ref='canton_51'/></record>
+    <record id='district_514' model='district'><field name='name'>NACASCOLO</field><field name='code'>4</field><field name='canton_id' ref='canton_51'/></record>
+    <record id='district_515' model='district'><field name='name'>CURUBANDÉ</field><field name='code'>5</field><field name='canton_id' ref='canton_51'/></record>
+    <record id='district_521' model='district'><field name='name'>NICOYA</field><field name='code'>1</field><field name='canton_id' ref='canton_52'/></record>
+    <record id='district_522' model='district'><field name='name'>MANSIÓN</field><field name='code'>2</field><field name='canton_id' ref='canton_52'/></record>
+    <record id='district_523' model='district'><field name='name'>SAN ANTONIO</field><field name='code'>3</field><field name='canton_id' ref='canton_52'/></record>
+    <record id='district_524' model='district'><field name='name'>QUEBRADA HONDA</field><field name='code'>4</field><field name='canton_id' ref='canton_52'/></record>
+    <record id='district_525' model='district'><field name='name'>SÁMARA</field><field name='code'>5</field><field name='canton_id' ref='canton_52'/></record>
+    <record id='district_526' model='district'><field name='name'>NOSARA</field><field name='code'>6</field><field name='canton_id' ref='canton_52'/></record>
+    <record id='district_527' model='district'><field name='name'>BELÉN DE NOSARITA</field><field name='code'>7</field><field name='canton_id' ref='canton_52'/></record>
+    <record id='district_531' model='district'><field name='name'>SANTA CRUZ</field><field name='code'>1</field><field name='canton_id' ref='canton_53'/></record>
+    <record id='district_532' model='district'><field name='name'>BOLSÓN</field><field name='code'>2</field><field name='canton_id' ref='canton_53'/></record>
+    <record id='district_533' model='district'><field name='name'>VEINTISIETE DE ABRIL</field><field name='code'>3</field><field name='canton_id' ref='canton_53'/></record>
+    <record id='district_534' model='district'><field name='name'>TEMPATE</field><field name='code'>4</field><field name='canton_id' ref='canton_53'/></record>
+    <record id='district_535' model='district'><field name='name'>CARTAGENA</field><field name='code'>5</field><field name='canton_id' ref='canton_53'/></record>
+    <record id='district_536' model='district'><field name='name'>CUAJINIQUIL</field><field name='code'>6</field><field name='canton_id' ref='canton_53'/></record>
+    <record id='district_537' model='district'><field name='name'>DIRIÁ</field><field name='code'>7</field><field name='canton_id' ref='canton_53'/></record>
+    <record id='district_538' model='district'><field name='name'>CABO VELAS</field><field name='code'>8</field><field name='canton_id' ref='canton_53'/></record>
+    <record id='district_539' model='district'><field name='name'>TAMARINDO</field><field name='code'>9</field><field name='canton_id' ref='canton_53'/></record>
+    <record id='district_541' model='district'><field name='name'>BAGACES</field><field name='code'>1</field><field name='canton_id' ref='canton_54'/></record>
+    <record id='district_542' model='district'><field name='name'>LA FORTUNA</field><field name='code'>2</field><field name='canton_id' ref='canton_54'/></record>
+    <record id='district_543' model='district'><field name='name'>MOGOTE</field><field name='code'>3</field><field name='canton_id' ref='canton_54'/></record>
+    <record id='district_544' model='district'><field name='name'>RÍO NARANJO</field><field name='code'>4</field><field name='canton_id' ref='canton_54'/></record>
+    <record id='district_551' model='district'><field name='name'>FILADELFIA</field><field name='code'>1</field><field name='canton_id' ref='canton_55'/></record>
+    <record id='district_552' model='district'><field name='name'>PALMIRA</field><field name='code'>2</field><field name='canton_id' ref='canton_55'/></record>
+    <record id='district_553' model='district'><field name='name'>SARDINAL</field><field name='code'>3</field><field name='canton_id' ref='canton_55'/></record>
+    <record id='district_554' model='district'><field name='name'>BELÉN</field><field name='code'>4</field><field name='canton_id' ref='canton_55'/></record>
+    <record id='district_561' model='district'><field name='name'>CAÑAS</field><field name='code'>1</field><field name='canton_id' ref='canton_56'/></record>
+    <record id='district_562' model='district'><field name='name'>PALMIRA</field><field name='code'>2</field><field name='canton_id' ref='canton_56'/></record>
+    <record id='district_563' model='district'><field name='name'>SAN MIGUEL</field><field name='code'>3</field><field name='canton_id' ref='canton_56'/></record>
+    <record id='district_564' model='district'><field name='name'>BEBEDERO</field><field name='code'>4</field><field name='canton_id' ref='canton_56'/></record>
+    <record id='district_565' model='district'><field name='name'>POROZAL</field><field name='code'>5</field><field name='canton_id' ref='canton_56'/></record>
+    <record id='district_571' model='district'><field name='name'>LAS JUNTAS</field><field name='code'>1</field><field name='canton_id' ref='canton_57'/></record>
+    <record id='district_572' model='district'><field name='name'>SIERRA</field><field name='code'>2</field><field name='canton_id' ref='canton_57'/></record>
+    <record id='district_573' model='district'><field name='name'>SAN JUAN</field><field name='code'>3</field><field name='canton_id' ref='canton_57'/></record>
+    <record id='district_574' model='district'><field name='name'>COLORADO</field><field name='code'>4</field><field name='canton_id' ref='canton_57'/></record>
+    <record id='district_581' model='district'><field name='name'>TILARÁN</field><field name='code'>1</field><field name='canton_id' ref='canton_58'/></record>
+    <record id='district_582' model='district'><field name='name'>QUEBRADA GRANDE</field><field name='code'>2</field><field name='canton_id' ref='canton_58'/></record>
+    <record id='district_583' model='district'><field name='name'>TRONADORA</field><field name='code'>3</field><field name='canton_id' ref='canton_58'/></record>
+    <record id='district_584' model='district'><field name='name'>SANTA ROSA</field><field name='code'>4</field><field name='canton_id' ref='canton_58'/></record>
+    <record id='district_585' model='district'><field name='name'>LÍBANO</field><field name='code'>5</field><field name='canton_id' ref='canton_58'/></record>
+    <record id='district_586' model='district'><field name='name'>TIERRAS MORENAS</field><field name='code'>6</field><field name='canton_id' ref='canton_58'/></record>
+    <record id='district_587' model='district'><field name='name'>ARENAL</field><field name='code'>7</field><field name='canton_id' ref='canton_58'/></record>
+    <record id='district_591' model='district'><field name='name'>CARMONA</field><field name='code'>1</field><field name='canton_id' ref='canton_59'/></record>
+    <record id='district_592' model='district'><field name='name'>SANTA RITA</field><field name='code'>2</field><field name='canton_id' ref='canton_59'/></record>
+    <record id='district_593' model='district'><field name='name'>ZAPOTAL</field><field name='code'>3</field><field name='canton_id' ref='canton_59'/></record>
+    <record id='district_594' model='district'><field name='name'>SAN PABLO</field><field name='code'>4</field><field name='canton_id' ref='canton_59'/></record>
+    <record id='district_595' model='district'><field name='name'>PORVENIR</field><field name='code'>5</field><field name='canton_id' ref='canton_59'/></record>
+    <record id='district_596' model='district'><field name='name'>BEJUCO</field><field name='code'>6</field><field name='canton_id' ref='canton_59'/></record>
+    <record id='district_5101' model='district'><field name='name'>LA CRUZ</field><field name='code'>1</field><field name='canton_id' ref='canton_510'/></record>
+    <record id='district_5102' model='district'><field name='name'>SANTA CECILIA</field><field name='code'>2</field><field name='canton_id' ref='canton_510'/></record>
+    <record id='district_5103' model='district'><field name='name'>LA GARITA</field><field name='code'>3</field><field name='canton_id' ref='canton_510'/></record>
+    <record id='district_5104' model='district'><field name='name'>SANTA ELENA</field><field name='code'>4</field><field name='canton_id' ref='canton_510'/></record>
+    <record id='district_5111' model='district'><field name='name'>HOJANCHA</field><field name='code'>1</field><field name='canton_id' ref='canton_511'/></record>
+    <record id='district_5112' model='district'><field name='name'>MONTE ROMO</field><field name='code'>2</field><field name='canton_id' ref='canton_511'/></record>
+    <record id='district_5113' model='district'><field name='name'>PUERTO CARRILLO</field><field name='code'>3</field><field name='canton_id' ref='canton_511'/></record>
+    <record id='district_5114' model='district'><field name='name'>HUACAS</field><field name='code'>4</field><field name='canton_id' ref='canton_511'/></record>
+    <record id='district_611' model='district'><field name='name'>PUNTARENAS</field><field name='code'>1</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_612' model='district'><field name='name'>PITAHAYA</field><field name='code'>2</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_613' model='district'><field name='name'>CHOMES</field><field name='code'>3</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_614' model='district'><field name='name'>LEPANTO</field><field name='code'>4</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_615' model='district'><field name='name'>PAQUERA</field><field name='code'>5</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_616' model='district'><field name='name'>MANZANILLO</field><field name='code'>6</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_617' model='district'><field name='name'>GUACIMAL</field><field name='code'>7</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_618' model='district'><field name='name'>BARRANCA</field><field name='code'>8</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_619' model='district'><field name='name'>MONTE VERDE</field><field name='code'>9</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_6111' model='district'><field name='name'>CÓBANO</field><field name='code'>11</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_6112' model='district'><field name='name'>CHACARITA</field><field name='code'>12</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_6113' model='district'><field name='name'>CHIRA</field><field name='code'>13</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_6114' model='district'><field name='name'>ACAPULCO</field><field name='code'>14</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_6115' model='district'><field name='name'>EL ROBLE</field><field name='code'>15</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_6116' model='district'><field name='name'>ARANCIBIA</field><field name='code'>16</field><field name='canton_id' ref='canton_61'/></record>
+    <record id='district_621' model='district'><field name='name'>ESPÍRITU SANTO</field><field name='code'>1</field><field name='canton_id' ref='canton_62'/></record>
+    <record id='district_622' model='district'><field name='name'>SAN JUAN GRANDE</field><field name='code'>2</field><field name='canton_id' ref='canton_62'/></record>
+    <record id='district_623' model='district'><field name='name'>MACACONA</field><field name='code'>3</field><field name='canton_id' ref='canton_62'/></record>
+    <record id='district_624' model='district'><field name='name'>SAN RAFAEL</field><field name='code'>4</field><field name='canton_id' ref='canton_62'/></record>
+    <record id='district_625' model='district'><field name='name'>SAN JERÓNIMO</field><field name='code'>5</field><field name='canton_id' ref='canton_62'/></record>
+    <record id='district_626' model='district'><field name='name'>CALDERA</field><field name='code'>6</field><field name='canton_id' ref='canton_62'/></record>
+    <record id='district_631' model='district'><field name='name'>BUENOS AIRES</field><field name='code'>1</field><field name='canton_id' ref='canton_63'/></record>
+    <record id='district_632' model='district'><field name='name'>VOLCÁN</field><field name='code'>2</field><field name='canton_id' ref='canton_63'/></record>
+    <record id='district_633' model='district'><field name='name'>POTRERO GRANDE</field><field name='code'>3</field><field name='canton_id' ref='canton_63'/></record>
+    <record id='district_634' model='district'><field name='name'>BORUCA</field><field name='code'>4</field><field name='canton_id' ref='canton_63'/></record>
+    <record id='district_635' model='district'><field name='name'>PILAS</field><field name='code'>5</field><field name='canton_id' ref='canton_63'/></record>
+    <record id='district_636' model='district'><field name='name'>COLINAS</field><field name='code'>6</field><field name='canton_id' ref='canton_63'/></record>
+    <record id='district_637' model='district'><field name='name'>CHÁNGUENA</field><field name='code'>7</field><field name='canton_id' ref='canton_63'/></record>
+    <record id='district_638' model='district'><field name='name'>BIOLLEY</field><field name='code'>8</field><field name='canton_id' ref='canton_63'/></record>
+    <record id='district_639' model='district'><field name='name'>BRUNKA</field><field name='code'>9</field><field name='canton_id' ref='canton_63'/></record>
+    <record id='district_641' model='district'><field name='name'>MIRAMAR</field><field name='code'>1</field><field name='canton_id' ref='canton_64'/></record>
+    <record id='district_642' model='district'><field name='name'>LA UNIÓN</field><field name='code'>2</field><field name='canton_id' ref='canton_64'/></record>
+    <record id='district_643' model='district'><field name='name'>SAN ISIDRO</field><field name='code'>3</field><field name='canton_id' ref='canton_64'/></record>
+    <record id='district_651' model='district'><field name='name'>PUERTO CORTÉS</field><field name='code'>1</field><field name='canton_id' ref='canton_65'/></record>
+    <record id='district_652' model='district'><field name='name'>PALMAR</field><field name='code'>2</field><field name='canton_id' ref='canton_65'/></record>
+    <record id='district_653' model='district'><field name='name'>SIERPE</field><field name='code'>3</field><field name='canton_id' ref='canton_65'/></record>
+    <record id='district_654' model='district'><field name='name'>BAHÍA BALLENA</field><field name='code'>4</field><field name='canton_id' ref='canton_65'/></record>
+    <record id='district_655' model='district'><field name='name'>PIEDRAS BLANCAS</field><field name='code'>5</field><field name='canton_id' ref='canton_65'/></record>
+    <record id='district_656' model='district'><field name='name'>BAHÍA DRAKE</field><field name='code'>6</field><field name='canton_id' ref='canton_65'/></record>
+    <record id='district_661' model='district'><field name='name'>QUEPOS</field><field name='code'>1</field><field name='canton_id' ref='canton_66'/></record>
+    <record id='district_662' model='district'><field name='name'>SAVEGRE</field><field name='code'>2</field><field name='canton_id' ref='canton_66'/></record>
+    <record id='district_663' model='district'><field name='name'>NARANJITO</field><field name='code'>3</field><field name='canton_id' ref='canton_66'/></record>
+    <record id='district_671' model='district'><field name='name'>GOLFITO</field><field name='code'>1</field><field name='canton_id' ref='canton_67'/></record>
+    <record id='district_672' model='district'><field name='name'>PUERTO JIMÉNEZ</field><field name='code'>2</field><field name='canton_id' ref='canton_67'/></record>
+    <record id='district_673' model='district'><field name='name'>GUAYCARÁ</field><field name='code'>3</field><field name='canton_id' ref='canton_67'/></record>
+    <record id='district_674' model='district'><field name='name'>PAVÓN</field><field name='code'>4</field><field name='canton_id' ref='canton_67'/></record>
+    <record id='district_681' model='district'><field name='name'>SAN VITO</field><field name='code'>1</field><field name='canton_id' ref='canton_68'/></record>
+    <record id='district_682' model='district'><field name='name'>SABALITO</field><field name='code'>2</field><field name='canton_id' ref='canton_68'/></record>
+    <record id='district_683' model='district'><field name='name'>AGUABUENA</field><field name='code'>3</field><field name='canton_id' ref='canton_68'/></record>
+    <record id='district_684' model='district'><field name='name'>LIMONCITO</field><field name='code'>4</field><field name='canton_id' ref='canton_68'/></record>
+    <record id='district_685' model='district'><field name='name'>PITTIER</field><field name='code'>5</field><field name='canton_id' ref='canton_68'/></record>
+    <record id='district_686' model='district'><field name='name'>GUTIERREZ BRAUN</field><field name='code'>6</field><field name='canton_id' ref='canton_68'/></record>
+    <record id='district_691' model='district'><field name='name'>PARRITA</field><field name='code'>1</field><field name='canton_id' ref='canton_69'/></record>
+    <record id='district_6101' model='district'><field name='name'>CORREDOR</field><field name='code'>1</field><field name='canton_id' ref='canton_610'/></record>
+    <record id='district_6102' model='district'><field name='name'>LA CUESTA</field><field name='code'>2</field><field name='canton_id' ref='canton_610'/></record>
+    <record id='district_6103' model='district'><field name='name'>CANOAS</field><field name='code'>3</field><field name='canton_id' ref='canton_610'/></record>
+    <record id='district_6104' model='district'><field name='name'>LAUREL</field><field name='code'>4</field><field name='canton_id' ref='canton_610'/></record>
+    <record id='district_6111' model='district'><field name='name'>JACÓ</field><field name='code'>1</field><field name='canton_id' ref='canton_611'/></record>
+    <record id='district_6112' model='district'><field name='name'>TÁRCOLES</field><field name='code'>2</field><field name='canton_id' ref='canton_611'/></record>
+    <record id='district_711' model='district'><field name='name'>LIMÓN</field><field name='code'>1</field><field name='canton_id' ref='canton_71'/></record>
+    <record id='district_712' model='district'><field name='name'>VALLE LA ESTRELLA</field><field name='code'>2</field><field name='canton_id' ref='canton_71'/></record>
+    <record id='district_714' model='district'><field name='name'>MATAMA</field><field name='code'>4</field><field name='canton_id' ref='canton_71'/></record>
+    <record id='district_721' model='district'><field name='name'>GUÁPILES</field><field name='code'>1</field><field name='canton_id' ref='canton_72'/></record>
+    <record id='district_722' model='district'><field name='name'>JIMÉNEZ</field><field name='code'>2</field><field name='canton_id' ref='canton_72'/></record>
+    <record id='district_723' model='district'><field name='name'>RITA</field><field name='code'>3</field><field name='canton_id' ref='canton_72'/></record>
+    <record id='district_724' model='district'><field name='name'>ROXANA</field><field name='code'>4</field><field name='canton_id' ref='canton_72'/></record>
+    <record id='district_725' model='district'><field name='name'>CARIARI</field><field name='code'>5</field><field name='canton_id' ref='canton_72'/></record>
+    <record id='district_726' model='district'><field name='name'>COLORADO</field><field name='code'>6</field><field name='canton_id' ref='canton_72'/></record>
+    <record id='district_727' model='district'><field name='name'>LA COLONIA</field><field name='code'>7</field><field name='canton_id' ref='canton_72'/></record>
+    <record id='district_731' model='district'><field name='name'>SIQUIRRES</field><field name='code'>1</field><field name='canton_id' ref='canton_73'/></record>
+    <record id='district_732' model='district'><field name='name'>PACUARITO</field><field name='code'>2</field><field name='canton_id' ref='canton_73'/></record>
+    <record id='district_733' model='district'><field name='name'>FLORIDA</field><field name='code'>3</field><field name='canton_id' ref='canton_73'/></record>
+    <record id='district_734' model='district'><field name='name'>GERMANIA</field><field name='code'>4</field><field name='canton_id' ref='canton_73'/></record>
+    <record id='district_735' model='district'><field name='name'>EL CAIRO</field><field name='code'>5</field><field name='canton_id' ref='canton_73'/></record>
+    <record id='district_736' model='district'><field name='name'>ALEGRÍA</field><field name='code'>6</field><field name='canton_id' ref='canton_73'/></record>
+    <record id='district_741' model='district'><field name='name'>BRATSI</field><field name='code'>1</field><field name='canton_id' ref='canton_74'/></record>
+    <record id='district_742' model='district'><field name='name'>SIXAOLA</field><field name='code'>2</field><field name='canton_id' ref='canton_74'/></record>
+    <record id='district_743' model='district'><field name='name'>CAHUITA</field><field name='code'>3</field><field name='canton_id' ref='canton_74'/></record>
+    <record id='district_744' model='district'><field name='name'>TELIRE</field><field name='code'>4</field><field name='canton_id' ref='canton_74'/></record>
+    <record id='district_751' model='district'><field name='name'>MATINA</field><field name='code'>1</field><field name='canton_id' ref='canton_75'/></record>
+    <record id='district_752' model='district'><field name='name'>BATÁN</field><field name='code'>2</field><field name='canton_id' ref='canton_75'/></record>
+    <record id='district_753' model='district'><field name='name'>CARRANDI</field><field name='code'>3</field><field name='canton_id' ref='canton_75'/></record>
+    <record id='district_761' model='district'><field name='name'>GUÁCIMO</field><field name='code'>1</field><field name='canton_id' ref='canton_76'/></record>
+    <record id='district_762' model='district'><field name='name'>MERCEDES</field><field name='code'>2</field><field name='canton_id' ref='canton_76'/></record>
+    <record id='district_763' model='district'><field name='name'>POCORA</field><field name='code'>3</field><field name='canton_id' ref='canton_76'/></record>
+    <record id='district_764' model='district'><field name='name'>RÍO JIMÉNEZ</field><field name='code'>4</field><field name='canton_id' ref='canton_76'/></record>
+    <record id='district_765' model='district'><field name='name'>DUACARÍ</field><field name='code'>5</field><field name='canton_id' ref='canton_76'/></record>
+</data>

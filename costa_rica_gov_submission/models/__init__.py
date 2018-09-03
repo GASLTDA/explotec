@@ -1,0 +1,1 @@
+from . import locality, AccountInvoice, res_partner, res_company, product_uom, account_tax, terminal

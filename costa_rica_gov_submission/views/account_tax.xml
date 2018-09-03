@@ -1,0 +1,18 @@
+<data>
+    <record id="account_tax_inherit_form" model="ir.ui.view">
+        <field name="name">account.tax.form.inherit</field>
+        <field name="model">account.tax</field>
+        <field name="inherit_id" ref="account.view_tax_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="tax_code" />
+                <field name="tax_exemption_code" />
+                <field name="tax_exemption_number" />
+                <field name="tax_exemption_issuer_number" />
+                <field name="tax_exemption_date_time" />
+                <field name="tax_authorized_amount" />
+                <field name="tax_authorized_percentage" />
+            </xpath>
+        </field>
+    </record>
+</data>
