@@ -5,10 +5,10 @@
         <field name="inherit_id" ref="base.view_company_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='city']" position="after">
-                <field name="province_id" placeholder="Province" required="1"/>
-                <field name="canton_id" placeholder="Canton" required="1"/>
-                <field name="district_id" placeholder="District" required="1"/>
-                <field name="locality_id" placeholder="Locality" required="1"/>
+                <field name="province_id" placeholder="Province"  attrs="{'invisible': [('electronic_invoice','=',False)],'required':[('electronic_invoice','=',True)]}"/>
+                <field name="canton_id" placeholder="Canton"  attrs="{'invisible': [('electronic_invoice','=',False)],'required':[('electronic_invoice','=',True)]}"/>
+                <field name="district_id" placeholder="District" attrs="{'invisible': [('electronic_invoice','=',False)],'required':[('electronic_invoice','=',True)]}"/>
+                <field name="locality_id" placeholder="Locality" attrs="{'invisible': [('electronic_invoice','=',False)],'required':[('electronic_invoice','=',True)]}"/>
             </xpath>
 
             <xpath expr="//field[@name='country_id']" position="attributes">
@@ -23,12 +23,12 @@
                 <attribute name="required">1</attribute>
             </xpath>
 
-            <xpath expr="//field[@name='city']" position="attributes">
-                <attribute name="invisible">1</attribute>
+            <xpath expr="//field[@name='city']" position="replace">
+                <field name="city" attrs="{'invisible': [('electronic_invoice','=',False)]}"/>
             </xpath>
 
-            <xpath expr="//field[@name='state_id']" position="attributes">
-                <attribute name="invisible">1</attribute>
+            <xpath expr="//field[@name='state_id']" position="replace">
+                <field name="state_id" />
             </xpath>
 
             <xpath expr="//field[@name='phone']" position="attributes">
@@ -40,11 +40,11 @@
             </xpath>
 
             <xpath expr="//field[@name='phone']" position="after">
-                <field name="fax_no" required="1"  widget="phone"/>
+                <field name="fax_no" widget="phone" attrs="{'invisible': [('electronic_invoice','=',False)],'required':[('electronic_invoice','=',True)]}"/>
             </xpath>
 
             <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="store_branch" required="1"  />
+                <field name="store_branch" attrs="{'invisible': [('electronic_invoice','=',False)],'required':[('electronic_invoice','=',True)]}"/>
             </xpath>
             <xpath expr="//notebook/page[1]" position="after">
                 <page string="Hacienda Information">

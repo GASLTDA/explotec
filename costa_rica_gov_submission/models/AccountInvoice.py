@@ -4,6 +4,7 @@ import time
 import datetime
 
 import base64
+
 import requests
 import string
 
@@ -117,11 +118,10 @@ class AccountInvoice(models.Model):
             try:
                 res = json.loads(res.content.decode())
                 message = res['message'].strip('\n')
-
+                id.response = res
                 message = json.loads(message)
                 if 'ind-estado' in message:
                     id.haicenda_status = message['ind-estado']
-                    id.response = res
                 if 'respuesta-xml' in message:
                     id.response_xml = base64.b64decode(message['respuesta-xml'])
                 if 'fecha' in message:
@@ -437,11 +437,10 @@ class AccountInvoice(models.Model):
                 try:
                     res = json.loads(res.content.decode())
                     message = res['message'].strip('\n')
-
+                    id.response = res
                     message = json.loads(message)
                     if 'ind-estado' in message:
                         id.haicenda_status = message['ind-estado']
-                        id.response = res
                     if 'respuesta-xml' in message:
                         id.response_xml = base64.b64decode(message['respuesta-xml'])
 
@@ -616,3 +615,116 @@ class AccountInvoice(models.Model):
             value = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
         date_time = datetime.datetime.strptime(value.strftime(format), format) - datetime.timedelta(hours=6)
         return date_time.strftime(format) + '-06:00'
+
+    #
+    #
+    # state_send_invoice = fields.Selection([('aceptado', 'Aceptado'), ('rechazado', 'Rechazado'),], 'Estado FE Proveedor')
+    # state_tributacion = fields.Selection([('aceptado', 'Aceptado'), ('rechazado', 'Rechazado'), ('no_encontrado', 'No encontrado')], 'Estado FE', copy=False)
+    # state_invoice_partner = fields.Selection([('1', 'Aceptado'), ('3', 'Rechazado'), ('2', 'Aceptacion parcial')], 'Respuesta del Cliente')
+    # xml_respuesta_tributacion = fields.Binary(string="Respuesta Tributación XML", required=False, copy=False, attachment=True)
+    # xml_supplier_approval = fields.Binary(string="XML Proveedor", required=False, copy=False, attachment=True)
+    #
+    #
+    # @api.onchange('xml_supplier_approval')
+    # def _onchange_xml_supplier_approval(self):
+    #     if self.xml_supplier_approval:
+    #         root = ET.fromstring(re.sub(' xmlns="[^"]+"', '', base64.b64decode(self.xml_supplier_approval).decode(), count=1))#quita el namespace de los elementos
+    #         if not root.findall('Clave'):
+    #             return {'value': {'xml_supplier_approval': False},'warning': {'title': 'Atención','message': 'El archivo xml no contiene el nodo Clave. Por favor cargue un archivo con el formato correcto.'}}
+    #         if not root.findall('FechaEmision'):
+    #             return {'value': {'xml_supplier_approval': False},'warning': {'title': 'Atención','message': 'El archivo xml no contiene el nodo FechaEmision. Por favor cargue un archivo con el formato correcto.'}}
+    #         if not root.findall('Emisor'):
+    #             return {'value': {'xml_supplier_approval': False},'warning': {'title': 'Atención','message': 'El archivo xml no contiene el nodo Emisor. Por favor cargue un archivo con el formato correcto.'}}
+    #         if not root.findall('Emisor')[0].findall('Identificacion'):
+    #             return {'value': {'xml_supplier_approval': False},'warning': {'title': 'Atención','message': 'El archivo xml no contiene el nodo Identificacion. Por favor cargue un archivo con el formato correcto.'}}
+    #         if not root.findall('Emisor')[0].findall('Identificacion')[0].findall('Tipo'):
+    #             return {'value': {'xml_supplier_approval': False},'warning': {'title': 'Atención','message': 'El archivo xml no contiene el nodo Tipo. Por favor cargue un archivo con el formato correcto.'}}
+    #         if not root.findall('Emisor')[0].findall('Identificacion')[0].findall('Numero'):
+    #             return {'value': {'xml_supplier_approval': False},'warning': {'title': 'Atención','message': 'El archivo xml no contiene el nodo Numero. Por favor cargue un archivo con el formato correcto.'}}
+    #         if not (root.findall('ResumenFactura') and root.findall('ResumenFactura')[0].findall('TotalImpuesto')):
+    #             return {'value': {'xml_supplier_approval': False},'warning': {'title': 'Atención','message': 'No se puede localizar el nodo TotalImpuesto. Por favor cargue un archivo con el formato correcto.'}}
+    #         if not (root.findall('ResumenFactura') and root.findall('ResumenFactura')[0].findall('TotalComprobante')):
+    #             return {'value': {'xml_supplier_approval': False},'warning': {'title': 'Atención','message': 'No se puede localizar el nodo TotalComprobante. Por favor cargue un archivo con el formato correcto.'}}
+    #
+    # @api.multi
+    # def charge_xml_data(self):
+    #     if self.xml_supplier_approval:
+    #         root = ET.fromstring(re.sub(' xmlns="[^"]+"', '', base64.b64decode(self.xml_supplier_approval).decode(), count=1))#quita el namespace de los elementos
+    #         self.clave_numerica = root.findall('Clave')[0].text
+    #         self.date = root.findall('FechaEmision')[0].text
+    #         partner = self.env['res.partner'].search([('vat', '=', root.findall('Emisor')[0].find('Identificacion')[1].text)])
+    #         if partner:
+    #             self.partner_id = partner.id
+    #         else:
+    #             raise UserError('El proveedor con identificación '+root.findall('Emisor')[0].find('Identificacion')[1].text+' no existe. Por favor creelo primero en el sistema.')
+    #
+    #
+    # @api.multi
+    # def send_xml(self):
+    #     for inv in self:
+    #         if inv.xml_supplier_approval:
+    #             root = ET.fromstring(re.sub(' xmlns="[^"]+"', '', base64.b64decode(inv.xml_supplier_approval).decode(), count=1))
+    #             if not inv.state_invoice_partner:
+    #                 raise UserError('Debe primero seleccionar el tipo de respuesta para el archivo cargado.')
+    #             if float(root.findall('ResumenFactura')[0].findall('TotalComprobante')[0].text) == inv.amount_total:
+    #                 if inv.company_id.frm_ws_ambiente != 'disabled' and inv.state_invoice_partner:
+    #                     if inv.state_invoice_partner == '1':
+    #                         detalle_mensaje = 'Aceptado'
+    #                         tipo = "05"
+    #                     if inv.state_invoice_partner == '2':
+    #                         detalle_mensaje = 'Aceptado parcial'
+    #                         tipo = "06"
+    #                     if inv.state_invoice_partner == '3':
+    #                         detalle_mensaje = 'Rechazado'
+    #                         tipo = "07"
+    #                     payload = {
+    #                         'clave': {
+    #                             'tipo': tipo,
+    #                             'sucursal': '1',#sucursal,#TODO
+    #                             'terminal': '1',#terminal,
+    #                             'numero_documento': root.findall('Clave')[0].text,
+    #                             'numero_cedula_emisor': root.findall('Emisor')[0].find('Identificacion')[1].text,
+    #                             'fecha_emision_doc': root.findall('FechaEmision')[0].text,
+    #                             'mensaje': inv.state_invoice_partner,
+    #                             'detalle_mensaje': detalle_mensaje,
+    #                             'monto_total_impuesto': root.findall('ResumenFactura')[0].findall('TotalImpuesto')[0].text,
+    #                             'total_factura': root.findall('ResumenFactura')[0].findall('TotalComprobante')[0].text,
+    #                             'numero_cedula_receptor': inv.company_id.vat,
+    #                             'num_consecutivo_receptor': inv.number[:20],
+    #                             'emisor': {
+    #                                 'identificacion': {
+    #                                     'tipo': root.findall('Emisor')[0].findall('Identificacion')[0].findall('Tipo')[0].text,
+    #                                     'numero': root.findall('Emisor')[0].findall('Identificacion')[0].findall('Numero')[0].text,
+    #                                 },
+    #                             },
+    #                         },
+    #                     }
+    #                     headers = {
+    #                         #'content-type': 'application/json',
+    #                         #'authorization': "Bearer " + token['access_token'],
+    #                     }
+    #                     if inv.company_id.frm_ws_ambiente == 'stag':
+    #                         requests_url = 'https://url_to_stag/accept_msg'
+    #                     else:
+    #                         requests_url = 'https://url_to_prod/accept_msg'
+    #                     response_document = requests.post(requests_url,
+    #                                                       headers=headers,
+    #                                                       data=json.dumps(payload))
+    #                     response_content = json.loads(response_document._content)
+    #
+    #
+    #                     if response_content.get('code'):
+    #                         if response_content.get('code') == 'XX':  #aprovado
+    #                             inv.fname_xml_respuesta_tributacion = 'Respuesta_aprobacion' + inv.number + '.xml'
+    #                             inv.xml_respuesta_tributacion = response_content.get('data')
+    #                             inv.state_send_invoice = 'aceptado'
+    #                         else:
+    #                             raise UserError('Error con el comprobante: \n' + str(response_document._content))
+    #                     if response_document.status_code == 'YY': #error
+    #                         if response_document._content and response_document._content.split(',')[1][5:] == 'false':
+    #                             raise UserError('Error con el comprobante: \n' + str(response_document._content))
+    #                     else:
+    #                         raise UserError('Error con el comprobante: \n'+str(response_document._content))
+    #             else:
+    #                 raise UserError('Error!.\nEl monto total de la factura no coincide con el monto total del archivo XML')
+    #
