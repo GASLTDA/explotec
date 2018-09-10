@@ -18,7 +18,7 @@ class AccountTax(models.Model):
         ('10','General sales tax Public institutions and other bodies'),
         ('11','Selective Consumer Tax unauthorized purchases'),
         ('99','Others'),
-    ])
+    ], default='01')
 
     tax_exemption_code = fields.Selection([
         ('01','Compras autorizadas'),

@@ -44,8 +44,8 @@
             </xpath>
 
             <xpath expr="//notebook/page[1]" position="after">
-                <page string="Hacienda Information" attrs="{'invisible': [('electronic_invoice','=',False)]}">
-                    <group>
+                <page string="Hacienda Información" attrs="{'invisible': [('electronic_invoice','=',False)]}">
+                    <group string="Hacienda Estado">
                         <group>
                             <field name="clave_numerica" readonly="1"/>
                             <field name="folio" readonly="1"/>
@@ -87,6 +87,89 @@
                 <field name="clave_numerica" />
                 <field name="folio" />
             </xpath>
+        </field>
+    </record>
+
+    <record id="invoice_supplier_form_inherit" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.form.inherit</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='payment_term_id']" position="after">
+                <field name="terminal" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="type" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//notebook/page[1]" position="after">
+                <page string="Hacienda Información" attrs="{'invisible': ['|',('electronic_invoice','=',False),('type','=','in_refund')]}">
+                    <group string="Facturación Electrónica (Confirmar XML)" >
+                        <group>
+                            <field name="xml_supplier_approval" />
+                            <button name="charge_xml_data" type="object" string="Cargar datos desde XML" colspan="2" attrs="{'invisible':[('state','!=','draft')]}"/>
+                            <button name="send_xml" type="object" string="Enviar XML" colspan="2" attrs="{'invisible':[('state','!=','open')]}"/>
+                        </group>
+                        <group>
+                            <field name="state_invoice_partner"/>
+                            <field name="clave_numerica" readonly="1"/>
+
+                            <field name="electronic_invoice" />
+                        </group>
+                    </group>
+
+                    <group string="Hacienda Estado">
+                        <group>
+                            <field name="clave_numerica" readonly="1"/>
+                            <field name="folio" readonly="1"/>
+                            <field name="haicenda_status" readonly="1"/>
+                            <field name="request_datetime" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="response" readonly="1" groups="base.group_no_one"/>
+                            <field name="response_xml" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="invoice_form_cancel_inherit" model="ir.ui.view">
+        <field name="name">invoice.form.cancel.inherit</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_cancel.invoice_form_cancel_inherit"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_invoice_cancel']" position="replace">
+                <button name="action_invoice_cancel" type="object" states="draft,open" string="Cancel Invoice" groups="base.group_no_one"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account.view_account_invoice_refund" model="ir.ui.view">
+        <field name="name">account.invoice.refund.form</field>
+        <field name="model">account.invoice.refund</field>
+        <field name="arch" type="xml">
+            <form string="Credit Note">
+                <group invisible="1">
+                    <group>
+                        <field name="refund_only" invisible="1"/>
+                        <field name="filter_refund" attrs="{'invisible': [('refund_only','=',True)]}" widget="radio" invisible="1"/>
+                    </group>
+                </group>
+                <group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                    <group>
+                        <field name="date_invoice"/>
+                        <field name="date" groups="base.group_no_one"/>
+                    </group>
+                </group>
+                <footer>
+                    <button string='Add Credit Note' name="invoice_refund" type="object" class="btn-primary"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
         </field>
     </record>
 </data>

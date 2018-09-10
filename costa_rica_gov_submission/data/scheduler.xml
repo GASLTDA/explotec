@@ -9,6 +9,7 @@
         <field name="state">code</field>
         <field name="code">model._auto_status_check()</field>
     </record>
+
     <record id="ir_cron_scheduler_resubmit_action" model="ir.cron">
         <field name="name">Resubmit</field>
         <field name="user_id" ref="base.user_root"/>
@@ -20,4 +21,14 @@
         <field name="numbercall">-1</field>
     </record>
 
+    <record id="ir_cron_scheduler_pdf_submit_action" model="ir.cron">
+        <field name="name">PDF Submit</field>
+        <field name="user_id" ref="base.user_root"/>
+        <field name="model_id" ref="model_account_invoice"/>
+        <field name="state">code</field>
+        <field name="code">model._auto_pdf_submit()</field>
+        <field name="interval_number">1</field>
+        <field name="interval_type">minutes</field>
+        <field name="numbercall">-1</field>
+    </record>
 </data>

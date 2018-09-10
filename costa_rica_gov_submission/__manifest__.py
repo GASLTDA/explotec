@@ -6,7 +6,7 @@
     'sequence': 30,
     'description': """Text file to submit invoice information""",
     'category': 'Accounting',
-    'depends' : ['base','base_setup', 'account'],
+    'depends' : ['base','base_setup', 'account','account_cancel'],
     'installable': True,
     'website': 'https://janeindiran.com',
     'application': False,

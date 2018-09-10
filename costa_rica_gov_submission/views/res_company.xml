@@ -24,11 +24,11 @@
             </xpath>
 
             <xpath expr="//field[@name='city']" position="replace">
-                <field name="city" attrs="{'invisible': [('electronic_invoice','=',False)]}"/>
+                <field name="city" attrs="{'invisible': [('electronic_invoice','=',True)]}"/>
             </xpath>
 
             <xpath expr="//field[@name='state_id']" position="replace">
-                <field name="state_id" />
+                <field name="state_id" attrs="{'invisible': [('electronic_invoice','=',True)]}"/>
             </xpath>
 
             <xpath expr="//field[@name='phone']" position="attributes">

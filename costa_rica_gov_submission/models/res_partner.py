@@ -13,7 +13,7 @@ class ResPartner(models.Model):
     locality_id = fields.Many2one('locality', string='Locality', placeholder='Locality',domain="[('district_id','=',district_id)]")
     phone = fields.Char('Phone', size=20)
     phone_code = fields.Char('Phone Code', size=3)
-    tipo = fields.Selection([('01','Cédula Física'),('02','Cédula Jurídica'),('03','DIMEX'),('04','NITE')])
+    tipo = fields.Selection([('01','Cédula Física'),('02','Cédula Jurídica'),('03','DIMEX'),('04','NITE')],default='02')
 
     # @api.onchange('name')
     # def onchange_name(self):

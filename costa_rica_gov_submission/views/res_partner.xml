@@ -5,10 +5,10 @@
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
             <xpath expr="//field[@name='city']" position="after">
-                <field name="province_id" placeholder="Province" required="1"/>
-                <field name="canton_id" placeholder="Canton" required="1"/>
-                <field name="district_id" placeholder="District" required="1"/>
-                <field name="locality_id" placeholder="Locality" required="1"/>
+                <field name="province_id" placeholder="Province" />
+                <field name="canton_id" placeholder="Canton" />
+                <field name="district_id" placeholder="District" />
+                <field name="locality_id" placeholder="Locality" />
             </xpath>
 
             <xpath expr="//field[@name='country_id']" position="attributes">
