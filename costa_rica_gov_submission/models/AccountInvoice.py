@@ -325,7 +325,7 @@ class AccountInvoice(models.Model):
                     line.product_id.default_code or '000') + '[|Codigo][|Codigo]'
                 LineaDetalle += '[Cantidad]' + str('%016.3F' % line.quantity) + '[|Cantidad]'
                 LineaDetalle += '[UnidadMedida]' + str(line.uom_id.code or 'Unid') + '[|UnidadMedida]'
-                LineaDetalle += '[Detalle]' + str(line.name).strip('\n').replace('[','(').replace(']',')').replace('|','') + '[|Detalle]'
+                LineaDetalle += '[Detalle]' + str(line.name).strip('\n').replace('[','(').replace(']',')').replace('|','')[:160] + '[|Detalle]'
                 LineaDetalle += '[PrecioUnitario]' + str('%023.5f' % line.price_unit) + '[|PrecioUnitario]'
                 LineaDetalle += '[MontoTotal]' + str('%023.5f' % (line.quantity * line.price_unit)) + '[|MontoTotal]'
 
@@ -416,7 +416,7 @@ class AccountInvoice(models.Model):
             TotalVenta = TotalGravado + TotalExento
             TotalVentaNeta = TotalVenta - TotalDescuentos
             ResumenFactura = '[ResumenFactura][CodigoMoneda]' + id.currency_id.name + '[|CodigoMoneda]'
-            ResumenFactura += '[TipoCambio]' + str(id.currency_id.rate) + '[|TipoCambio]'
+            ResumenFactura += '[TipoCambio]' + str('%023.5f' % id.currency_id.rate) + '[|TipoCambio]'
             ResumenFactura += '[TotalServGravados]' + str('%023.5f' % TotalServGravados) + '[|TotalServGravados]'
             ResumenFactura += '[TotalServExentos]' + str('%023.5f' % TotalServExentos) + '[|TotalServExentos]'
             ResumenFactura += '[TotalMercanciasGravadas]' + str(

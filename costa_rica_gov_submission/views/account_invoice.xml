@@ -97,7 +97,7 @@
         <field name="arch" type="xml">
 
             <xpath expr="//field[@name='payment_term_id']" position="after">
-                <field name="terminal" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="terminal" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
                 <field name="type" invisible="1"/>
             </xpath>
 
