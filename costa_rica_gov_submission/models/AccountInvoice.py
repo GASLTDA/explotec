@@ -335,6 +335,8 @@ class AccountInvoice(models.Model):
             total_lines = 0
             for line in id.invoice_line_ids:
                 total_lines += 1
+                if line.price_unit < 0:
+                    break
                 LineaDetalle += '[LineaDetalle]'
                 LineaDetalle += '[NumeroLinea]' + str(total_lines) + '[|NumeroLinea]'
                 LineaDetalle += '[Codigo][Tipo]04[|Tipo][Codigo]' + str(
@@ -356,32 +358,34 @@ class AccountInvoice(models.Model):
                     LineaDetalle += '[NaturalezaDescuento]' + str(nature_of_discount) + '[|NaturalezaDescuento]'
                 LineaDetalle += '[SubTotal]' + str('%023.5f' % line.price_subtotal) + '[|SubTotal]'
                 if line.invoice_line_tax_ids:
-                    LineaDetalle += '[Impuesto]'
+                    if line.price_total - line.price_subtotal > 0.0:
+                        LineaDetalle += '[Impuesto]'
 
-                    for tax_ids in line.invoice_line_tax_ids:
-                        LineaDetalle += '[Codigo]' + tax_ids.tax_code + '[|Codigo]'
-                        LineaDetalle += '[Tarifa]' + str(format(round_curr(tax_ids.amount), '.5f')) + '[|Tarifa]'
-                        product_amount = line.quantity * line.price_unit
-                        product_amount_after_discount = product_amount - (
-                            product_amount * (line.discount / 100))
-                        LineaDetalle += '[Monto]' + str(
-                            '%023.5f' % (product_amount_after_discount * (tax_ids.amount / 100))) + '[|Monto]'
+                        for tax_ids in line.invoice_line_tax_ids:
 
-                        if tax_ids.tax_code in ('08', '09', '10', '11', '99'):
-                            LineaDetalle += '[Exoneracion]'
-                            LineaDetalle += '[TipoDocumento]' + str(tax_ids.tax_exemption_code) + '[|TipoDocumento]'
-                            LineaDetalle += '[NumeroDocumento]' + str(
-                                tax_ids.tax_exemption_number) + '[|NumeroDocumento]'
-                            LineaDetalle += '[NombreInstitucion]' + str(
-                                tax_ids.tax_exemption_issuer_number) + '[|NombreInstitucion]'
-                            LineaDetalle += '[FechaEmision]' + str(
-                                self.get_costa_date_time(tax_ids.tax_exemption_date_time)) + '[|FechaEmision]'
-                            LineaDetalle += '[MontoImpuesto]' + str(tax_ids.tax_authorized_amount) + '[|MontoImpuesto]'
-                            LineaDetalle += '[PorcentajeCompra]' + str(
-                                tax_ids.tax_authorized_percentage) + '[|PorcentajeCompra]'
-                            LineaDetalle += '[|Exoneracion]'
+                            LineaDetalle += '[Codigo]' + tax_ids.tax_code + '[|Codigo]'
+                            LineaDetalle += '[Tarifa]' + str(format(round_curr(tax_ids.amount), '.5f')) + '[|Tarifa]'
+                            product_amount = line.quantity * line.price_unit
+                            product_amount_after_discount = product_amount - (
+                                product_amount * (line.discount / 100))
+                            LineaDetalle += '[Monto]' + str(
+                                '%023.5f' % (line.price_total - line.price_subtotal)) + '[|Monto]'
 
-                    LineaDetalle += '[|Impuesto]'
+                            if tax_ids.tax_code in ('08', '09', '10', '11', '99'):
+                                LineaDetalle += '[Exoneracion]'
+                                LineaDetalle += '[TipoDocumento]' + str(tax_ids.tax_exemption_code) + '[|TipoDocumento]'
+                                LineaDetalle += '[NumeroDocumento]' + str(
+                                    tax_ids.tax_exemption_number) + '[|NumeroDocumento]'
+                                LineaDetalle += '[NombreInstitucion]' + str(
+                                    tax_ids.tax_exemption_issuer_number) + '[|NombreInstitucion]'
+                                LineaDetalle += '[FechaEmision]' + str(
+                                    self.get_costa_date_time(tax_ids.tax_exemption_date_time)) + '[|FechaEmision]'
+                                LineaDetalle += '[MontoImpuesto]' + str(tax_ids.tax_authorized_amount) + '[|MontoImpuesto]'
+                                LineaDetalle += '[PorcentajeCompra]' + str(
+                                    tax_ids.tax_authorized_percentage) + '[|PorcentajeCompra]'
+                                LineaDetalle += '[|Exoneracion]'
+
+                        LineaDetalle += '[|Impuesto]'
 
                 LineaDetalle += '[MontoTotalLinea]' + str('%023.5f' % line.price_total) + '[|MontoTotalLinea]'
                 LineaDetalle += '[|LineaDetalle]'
@@ -394,42 +398,45 @@ class AccountInvoice(models.Model):
             total_sub_total = 0.0
             total_goods_exempt = 0.0
             diff = 0.0
+            TotalVenta = 0.0
+            TotalServGravados = 0.0
+            TotalGravado = 0.0
+            TotalMercanciasGravadas = 0.0
             for line in id.invoice_line_ids:
                 diff = line.price_total - line.price_subtotal
                 if line.product_id.type == 'service':
+                    TotalVenta += line.quantity * line.price_unit
                     if diff == 0.0:
-                        total_service_exempt += line.price_total
-                total_sub_total += line.quantity * line.price_unit
+                        total_service_exempt += line.quantity * line.price_unit
+                    else:
+                        TotalGravado += line.quantity * line.price_unit
+                        TotalServGravados += line.quantity * line.price_unit
 
             for line in id.invoice_line_ids:
                 diff = line.price_total - line.price_subtotal
                 if line.product_id.type != 'service':
+                    TotalVenta += line.quantity * line.price_unit
                     if diff == 0.0:
-                        total_goods_exempt += line.price_total
+                        total_goods_exempt += line.quantity * line.price_unit
+                    else:
+                        TotalGravado += line.quantity * line.price_unit
+                        TotalMercanciasGravadas += line.quantity * line.price_unit
 
-            TotalServGravados = 0.0
-            TotalGravado = 0.0
-            TotalMercanciasGravadas = 0.0
             TotalImpuesto = 0.0
             TotalVentaNeta = 0.0
             TotalMercanciasExentas = total_goods_exempt
             for tax_line in id.tax_line_ids:
                 if tax_line.tax_id.tax_code == '07':
                     if tax_line.amount_total > 0:
-                        TotalServGravados += tax_line.base
-                        TotalGravado += tax_line.base
                         TotalImpuesto += tax_line.amount_total
                 if tax_line.tax_id.tax_code in ('01', '02', '03', '04', '05', '06', '12', '98'):
                     if tax_line.amount_total > 0:
-                        TotalMercanciasGravadas += tax_line.base
-                        TotalGravado += tax_line.base
                         TotalImpuesto += tax_line.amount_total
             TotalGravado = TotalServGravados + TotalMercanciasGravadas
             TotalServExentos = total_service_exempt
 
             TotalExento = TotalServExentos + TotalMercanciasExentas
-            # TotalVenta = total_sub_total
-            TotalVenta = TotalGravado + TotalExento
+
             TotalVentaNeta = TotalVenta - TotalDescuentos
             ResumenFactura = '[ResumenFactura][CodigoMoneda]' + id.currency_id.name + '[|CodigoMoneda]'
             ResumenFactura += '[TipoCambio]' + str('%023.5f' % id.currency_id.rate) + '[|TipoCambio]'
