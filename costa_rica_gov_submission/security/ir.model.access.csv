@@ -1,0 +1,6 @@
+id,group_id:id,name,model_id:id,perm_unlink,perm_create,perm_write,perm_read
+costa_rica_gov_submission.province,base.group_user,Province,costa_rica_gov_submission.model_province,FALSE,FALSE,FALSE,TRUE
+costa_rica_gov_submission.canton,base.group_user,Canton,costa_rica_gov_submission.model_canton,FALSE,FALSE,FALSE,TRUE
+costa_rica_gov_submission.district,base.group_user,District,costa_rica_gov_submission.model_district,FALSE,FALSE,FALSE,TRUE
+costa_rica_gov_submission.locality,base.group_user,Locality,costa_rica_gov_submission.model_locality,FALSE,FALSE,FALSE,TRUE
+costa_rica_gov_submission.terminal,base.group_user,Terminal,costa_rica_gov_submission.model_terminal,TRUE,TRUE,TRUE,TRUE

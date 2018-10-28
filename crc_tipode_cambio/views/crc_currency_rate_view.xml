@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!--List View -->
+    <record id="currency_rate_list" model="ir.ui.view">
+      <field name="name">Costa_Rica list</field>
+      <field name="model">crc_currency_rate</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="rate"/>
+        </tree>
+      </field>
+    </record>
+  <!--  form to create a new envent-->
+	 	<record id="currency_rate_form" model="ir.ui.view">
+	 		<field name="name">Tipo de Cambio CRC</field>
+	 		<field name="model">crc_currency_rate</field>
+      <field name="arch" type="xml"> 
+        <form string ="Actualización Moneda Costa Rica">
+          <sheet>
+            <group name="main">
+              <field name="name"/>
+              <field name="rate"/>  
+              <button name="refresh_crc_currency" type="object"
+                      string="Actualizar"/>                       
+            </group>                 
+          </sheet>
+        </form>      	
+      </field>
+	  </record>
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="currency_rate_action_window">
+      <field name="name">CRC Tipo de Cambio</field>
+      <field name="res_model">crc_currency_rate</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Link to parent menu in invoicing -->
+    <menuitem id="crc_currency_rate_menu" action="currency_rate_action_window"
+        parent="account.account_account_menu" sequence="0"/>
+
+  </data>
+</odoo>

@@ -1,0 +1,83 @@
+<data noupdate="1">
+    <record id='canton_11' model='canton'><field name='name'>San José</field><field name='code'>1</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_12' model='canton'><field name='name'>Escazú</field><field name='code'>2</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_13' model='canton'><field name='name'>Desamparados</field><field name='code'>3</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_14' model='canton'><field name='name'>Puriscal</field><field name='code'>4</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_15' model='canton'><field name='name'>Tarrazú</field><field name='code'>5</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_16' model='canton'><field name='name'>Aserrí</field><field name='code'>6</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_17' model='canton'><field name='name'>Mora</field><field name='code'>7</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_18' model='canton'><field name='name'>Goicoechea</field><field name='code'>8</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_19' model='canton'><field name='name'>Santa Ana</field><field name='code'>9</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_110' model='canton'><field name='name'>Alajuelita</field><field name='code'>10</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_111' model='canton'><field name='name'>Vásquez de Coronado</field><field name='code'>11</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_112' model='canton'><field name='name'>Acosta</field><field name='code'>12</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_113' model='canton'><field name='name'>Tibás</field><field name='code'>13</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_114' model='canton'><field name='name'>Moravia</field><field name='code'>14</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_115' model='canton'><field name='name'>Montes de Oca</field><field name='code'>15</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_116' model='canton'><field name='name'>Turrubares</field><field name='code'>16</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_117' model='canton'><field name='name'>Dota</field><field name='code'>17</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_118' model='canton'><field name='name'>Curridabat</field><field name='code'>18</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_119' model='canton'><field name='name'>Pérez Zeledón</field><field name='code'>19</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_120' model='canton'><field name='name'>León Cortéz Castro</field><field name='code'>20</field><field name='province_id' ref='province_1'/></record>
+    <record id='canton_21' model='canton'><field name='name'>Alajuela</field><field name='code'>1</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_22' model='canton'><field name='name'>San Ramón</field><field name='code'>2</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_23' model='canton'><field name='name'>Grecia</field><field name='code'>3</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_24' model='canton'><field name='name'>San Mateo</field><field name='code'>4</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_25' model='canton'><field name='name'>Atenas</field><field name='code'>5</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_26' model='canton'><field name='name'>Naranjo</field><field name='code'>6</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_27' model='canton'><field name='name'>Palmares</field><field name='code'>7</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_28' model='canton'><field name='name'>Poás</field><field name='code'>8</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_29' model='canton'><field name='name'>Orotina</field><field name='code'>9</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_210' model='canton'><field name='name'>San Carlos</field><field name='code'>10</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_211' model='canton'><field name='name'>Zarcero</field><field name='code'>11</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_212' model='canton'><field name='name'>Valverde Vega</field><field name='code'>12</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_213' model='canton'><field name='name'>Upala</field><field name='code'>13</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_214' model='canton'><field name='name'>Los Chiles</field><field name='code'>14</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_215' model='canton'><field name='name'>Guatuso</field><field name='code'>15</field><field name='province_id' ref='province_2'/></record>
+    <record id='canton_31' model='canton'><field name='name'>Cartago</field><field name='code'>1</field><field name='province_id' ref='province_3'/></record>
+    <record id='canton_32' model='canton'><field name='name'>Paraíso</field><field name='code'>2</field><field name='province_id' ref='province_3'/></record>
+    <record id='canton_33' model='canton'><field name='name'>La Unión</field><field name='code'>3</field><field name='province_id' ref='province_3'/></record>
+    <record id='canton_34' model='canton'><field name='name'>Jiménez</field><field name='code'>4</field><field name='province_id' ref='province_3'/></record>
+    <record id='canton_35' model='canton'><field name='name'>Turrialba</field><field name='code'>5</field><field name='province_id' ref='province_3'/></record>
+    <record id='canton_36' model='canton'><field name='name'>Alvarado</field><field name='code'>6</field><field name='province_id' ref='province_3'/></record>
+    <record id='canton_37' model='canton'><field name='name'>Oreamuno</field><field name='code'>7</field><field name='province_id' ref='province_3'/></record>
+    <record id='canton_38' model='canton'><field name='name'>El Guarco</field><field name='code'>8</field><field name='province_id' ref='province_3'/></record>
+    <record id='canton_41' model='canton'><field name='name'>Heredia</field><field name='code'>1</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_42' model='canton'><field name='name'>Barva</field><field name='code'>2</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_43' model='canton'><field name='name'>Santo Domingo</field><field name='code'>3</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_44' model='canton'><field name='name'>Santa Bárbara</field><field name='code'>4</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_45' model='canton'><field name='name'>San Rafaél</field><field name='code'>5</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_46' model='canton'><field name='name'>San Isidro</field><field name='code'>6</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_47' model='canton'><field name='name'>Belén</field><field name='code'>7</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_48' model='canton'><field name='name'>Flores</field><field name='code'>8</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_49' model='canton'><field name='name'>San Pablo</field><field name='code'>9</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_410' model='canton'><field name='name'>Sarapiquí</field><field name='code'>10</field><field name='province_id' ref='province_4'/></record>
+    <record id='canton_51' model='canton'><field name='name'>Liberia</field><field name='code'>1</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_52' model='canton'><field name='name'>Nicoya</field><field name='code'>2</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_53' model='canton'><field name='name'>Santa Cruz</field><field name='code'>3</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_54' model='canton'><field name='name'>Bagaces</field><field name='code'>4</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_55' model='canton'><field name='name'>Carrillo</field><field name='code'>5</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_56' model='canton'><field name='name'>Cañas</field><field name='code'>6</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_57' model='canton'><field name='name'>Abangáres</field><field name='code'>7</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_58' model='canton'><field name='name'>Tilarán</field><field name='code'>8</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_59' model='canton'><field name='name'>Nandayure</field><field name='code'>9</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_510' model='canton'><field name='name'>La Cruz</field><field name='code'>10</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_511' model='canton'><field name='name'>Hojancha</field><field name='code'>11</field><field name='province_id' ref='province_5'/></record>
+    <record id='canton_61' model='canton'><field name='name'>Puntarenas</field><field name='code'>1</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_62' model='canton'><field name='name'>Esparza</field><field name='code'>2</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_63' model='canton'><field name='name'>Buenos Aires</field><field name='code'>3</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_64' model='canton'><field name='name'>Montes de Oro</field><field name='code'>4</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_65' model='canton'><field name='name'>Osa</field><field name='code'>5</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_66' model='canton'><field name='name'>Aguirre</field><field name='code'>6</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_67' model='canton'><field name='name'>Golfito</field><field name='code'>7</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_68' model='canton'><field name='name'>Coto Brus</field><field name='code'>8</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_69' model='canton'><field name='name'>Parrita</field><field name='code'>9</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_610' model='canton'><field name='name'>Corredores</field><field name='code'>10</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_611' model='canton'><field name='name'>Garabito</field><field name='code'>11</field><field name='province_id' ref='province_6'/></record>
+    <record id='canton_71' model='canton'><field name='name'>Limón</field><field name='code'>1</field><field name='province_id' ref='province_7'/></record>
+    <record id='canton_72' model='canton'><field name='name'>Pococí</field><field name='code'>2</field><field name='province_id' ref='province_7'/></record>
+    <record id='canton_73' model='canton'><field name='name'>Siquirres</field><field name='code'>3</field><field name='province_id' ref='province_7'/></record>
+    <record id='canton_74' model='canton'><field name='name'>Talamanca</field><field name='code'>4</field><field name='province_id' ref='province_7'/></record>
+    <record id='canton_75' model='canton'><field name='name'>Matina</field><field name='code'>5</field><field name='province_id' ref='province_7'/></record>
+    <record id='canton_76' model='canton'><field name='name'>Guácimo</field><field name='code'>6</field><field name='province_id' ref='province_7'/></record>
+</data>

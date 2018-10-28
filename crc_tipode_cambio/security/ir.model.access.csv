@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_crc_tipode_cambio_crc_tipode_cambio,crc_tipode_cambio.crc_tipode_cambio,model_crc_tipode_cambio_crc_tipode_cambio,,1,0,0,0

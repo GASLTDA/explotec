@@ -1,0 +1,38 @@
+<data>
+<template id="report_invoice_document" inherit_id="account.report_invoice_document">
+    <xpath expr="//h2/span[@t-field='o.number']" position="replace">
+        <t t-if="o.type == 'in_refund'">
+            <span t-field="o.number"/>
+        </t>
+        <t t-if="o.type == 'in_invoice'">
+            <span t-field="o.number"/>
+        </t>
+        <t t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">
+            <br/>
+            Folio: <span t-field="o.folio"/>
+            <br/>
+            Clave Numberia: <span t-field="o.clave_numerica"/>
+        </t>
+        <t t-if="o.type == 'out_invoice' and o.state == 'draft'">
+            <br/>
+            Folio: <span t-field="o.folio"/>
+            <br/>
+            Clave Numberia: <span t-field="o.clave_numerica"/>
+        </t>
+        <t t-if="o.type == 'out_invoice' and o.state == 'cancel'">
+            <br/>
+            Folio: <span t-field="o.folio"/>
+            <br/>
+            Clave Numberia: <span t-field="o.clave_numerica"/>
+        </t>
+        <t t-if="o.type == 'out_refund'">
+            <br/>
+            Folio: <span t-field="o.folio"/>
+            <br/>
+            Clave Numberia: <span t-field="o.clave_numerica"/>
+        </t>
+
+    </xpath>
+
+</template>
+</data>
