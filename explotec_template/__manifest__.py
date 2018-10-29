@@ -6,6 +6,7 @@
     'depends': ['professional_templates','account','account_invoicing'],
     'data': [
         'twa_invoice_template.xml',
+        'slim_order_template.xml',
         'account_move.xml',
     ],
     'installable': True,
