@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <template id="professional_templates.INVOICE_4_document" name="TVA Template">
+            <!-- Multicompany -->
+            <t t-if="o and 'company_id' in o">
+                <t t-set="company" t-value="o.company_id"></t>
+            </t>
+            <t t-if="not o or not 'company_id' in o">
+                <t t-set="company" t-value="res_company"></t>
+            </t>
+            <div t-attf-style="padding-bottom:0px; padding-left:0px; padding-right:0px; color:{{style.text_color}} !important;font-size:{{style.header_font}}px !important;font-family:{{style.font_family}} !important;" class="header col-xs-12">
+                <t t-if="style.header">
+                    <div class="col-xs-5 pull-left" t-attf-style="padding:15px; border:1px solid {{style.text_color}};">
+                        <t t-call="professional_templates.company_address"/>
+                    </div>
+                    <div class="col-xs-7 pull-right" style="text-align:right; padding-left:0px; padding-right:0px; padding-top:1px;">
+                        <div t-if="style.logo" class="pull-right" style="width:200px; text-align:right; padding-bottom:3px; padding-top:3px;">
+                            <span itemprop="image" t-field="style.logo" t-field-options='{"widget": "image"}' style="display: inline-block;"/>
+                        </div>
+                        <div t-if="not style.logo and company.logo" class="pull-right" style="width:200px; text-align:right;padding-bottom:8px;">
+                            <span itemprop="image" t-field="company.logo" t-field-options='{"widget": "image"}' style="display: inline-block;"/>
+                        </div>
+                        <div t-if="not style.logo and not company.logo" class="pull-right" style="width:200px;text-align:right;padding-bottom:8px;">
+                            <span itemprop="image" t-field="company.logo" t-field-options='{"widget": "image"}' style="display: inline-block;"/>
+                        </div>
+                        <div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:15px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="pull-right">
+                            <span t-if="company.twitter" style="padding-left:0px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
+                            <span t-if="company.facebook" style="padding-left:13px;" class="fa fa-facebook-square "/>&#160;<span t-field="company.facebook"/>
+                            <span t-if="company.googleplus" style="padding-left:13px;" class="fa fa-google-plus-square "/>&#160;<span t-field="company.googleplus" />
+                        </div>
+
+                    </div>
+                </t>
+            </div> <!--end of Header-->
+            <!-- START OF PAGE -->
+            <div class="article page" t-attf-style="color:{{style.text_color}} !important;font-size:{{style.body_font}}px !important;font-family:{{style.font_family}} !important;">
+                <div class="col-xs-12" t-attf-style="white-space:pre-line;color:#{style.wm_color};left:#{style.leftpadding}mm; top:#{style.toppadding}mm;font-size:#{style.fontsize}px; opacity:#{style.opacity};z-index:-99; -webkit-transform:rotate(-#{style.rotate}deg);position:fixed;"><t t-esc="style.wm_eval(o, time, user, res_company)"/></div>
+
+                <table class="table">
+                    <tr>
+                        <td style=" border:1px solid;">
+                            <div  t-attf-style="float:left; width:100%; margin-top:0px;padding-top:0px;padding-left:15px;padding-right:15px;color:{{style.text_color}} !important; {{style.text_color}}">
+                                <h4 id="title" style="margin-bottom:10px;">
+                                    <strong><span style="font-size:12px;" t-if="o.type == 'out_invoice' and (o.state == 'open' or o.state == 'paid')">Factura no.:</span></strong>
+                                    <strong><span style="font-size:12px;" t-if="o.type == 'out_invoice' and o.state == 'proforma2'">PRO-FORMA:</span></strong>
+                                    <strong><span style="font-size:12px;" t-if="o.type == 'out_invoice' and o.state == 'draft'">Proyecto de factura:</span></strong>
+                                    <strong><span style="font-size:12px;" t-if="o.type == 'out_invoice' and o.state == 'cancel'">Factura Cancelada:</span></strong>
+                                    <strong><span style="font-size:12px;" t-if="o.type == 'out_refund'">Refund:</span></strong>
+                                    <strong><span style="font-size:12px;" t-if="o.type == 'in_refund'">Reembolso del proveedor:</span></strong>
+                                    <strong><span style="font-size:12px;" t-if="o.type == 'in_invoice'">Factura del proveedor:</span></strong>
+                                    <br/>
+                                    <span style="font-size:12px;" t-field="o.number"/>
+                                    <br/>
+                                    <t t-if="o.clave_numerica">
+                                        <strong><span style="font-size:12px;">Clave Numerica: </span></strong>
+                                        <br/>
+                                        <span style="font-size:12px;" t-field="o.clave_numerica"/>
+                                        <br/>
+                                    </t>
+                                    <t t-if="o.folio">
+                                        <strong><span style="font-size:12px;">Folio: </span></strong>
+                                        <br/>
+                                        <span style="font-size:12px;" t-field="o.folio"/>
+                                        <br/>
+                                    </t>
+                                    <strong><span style="font-size:12px;">Fecha: </span></strong>
+                                    <br/>
+                                    <span style="font-size:12px;" t-if="o.date_invoice" t-field="o.date_invoice"></span>
+
+                                </h4>
+                            </div>
+                        </td>
+                        <td class="text-right" style=" border:1px solid;">
+                            <div  t-attf-style="float:left; width:100%; margin-top:0px;padding-top:0px;padding-left:15px;padding-right:15px;color:{{style.text_color}} !important; {{style.text_color}}">
+
+                                <div t-attf-style="padding-top:5px; padding-bottom:0px;">
+                                    <span t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id" t-attf-style="font-size:{{style.body_font+6}}px; font-weight:bold;">
+                                        <span class="fa fa-user "/> Invoicing Address:</span>
+                                    <span t-if="o.partner_shipping_id == o.partner_id or not o.partner_shipping_id" t-attf-style="font-size:{{style.body_font+6}}px; font-weight:bold;">
+                                        <span class="fa fa-user "/> Invoicing&#160; &amp;&#160; <span class="fa fa-truck "/> Shipping Address:
+                                    </span>
+                                </div>
+                                <div t-if="o.partner_id" t-attf-style="color:{{style.cust_color}}; margin-top:2px; margin-bottom:5px; margin-left:0px;font-size:{{style.body_font+6}}px;">
+                                    <t t-if="o.partner_id.parent_id">
+                                        <span t-field="o.partner_id.parent_id"/>, <span t-if="o.partner_id.title" t-field="o.partner_id.title"/> <span t-field="o.partner_id.name"/>
+                                    </t>
+                                    <t t-if="not o.partner_id.parent_id">
+                                        <span t-if="o.partner_id.title" t-field="o.partner_id.title"/> <span t-field="o.partner_id"/>
+                                    </t>
+
+                                </div>
+                                <address t-field="o.partner_id" style="margin-bottom:0px;"
+                                         t-field-options='{"widget": "contact", "fields": ["address", "phone",  "email", "website"], "no_marker": false}'/>                                       <span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+
+
+                <div  t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id" class="col-xs-5 pull-left mt8" t-attf-style="border: 1px solid {{style.text_color}}; padding:15px;">
+                    <div t-if="o.partner_shipping_id and o.partner_shipping_id != o.partner_id" t-attf-style="padding-top:5px; padding-bottom:0px;">
+                        <span t-attf-style="font-size:{{style.body_font+6}}px; font-weight:bold;"><span class="fa fa-truck "/> Shipping Address:</span>
+                    </div>
+                    <address t-field="o.partner_shipping_id" style="margin-bottom:0px;" t-field-options='{"widget": "contact", "fields": ["name", "address", "phone",  "email", "website"], "no_marker": false}'/>
+                    <span t-if="o.partner_id.vat">VAT: <span t-field="o.partner_id.vat"/></span>
+
+                </div>
+                <div class="col-xs-12" style="padding:8px;"/> <!--Spacing-->
+                <div class="col-xs-12" t-attf-style="border:1px solid {{style.text_color}}; padding-left:0px; padding-right:0px; padding-bottom:0px; padding-top:5px;"><!--start of wrapper -->
+                    <t t-set="div_style" t-value="'width:auto;max-width:100%;font-size:{}px;padding-left:10px; padding-right:10px; float:left; margin-left:25px;'.format(style.body_font+2)"></t>
+                    <div t-if="o.fiscal_position_id" t-attf-style="{{div_style}}">
+                        <strong style="white-space:nowrap;">Fiscal Position:</strong>
+                        <p t-field="o.fiscal_position_id"/>
+                    </div>
+                    <div t-if="o.origin" t-attf-style="{{div_style}}">
+                        <strong style="white-space:nowrap;">Documento fuente:</strong>
+                        <p t-field="o.origin"/>
+                    </div>
+                    <div t-if="o.name" t-attf-style="{{div_style}}">
+                        <strong style="white-space:nowrap;">Referencia:</strong>
+                        <p t-field="o.name"/>
+                    </div>
+                    <div t-if="o.date_due" t-attf-style="{{div_style}}">
+                        <strong style="white-space:nowrap;">Fecha de vencimiento:</strong>
+                        <p t-field="o.date_due"/>
+                    </div>
+                    <div t-if="o.date_invoice" t-attf-style="{{div_style}}">
+                        <strong style="white-space:nowrap;">Fecha de la factura:</strong>
+                        <p t-field="o.date_invoice"/>
+                    </div>
+
+
+                </div> <!--end of wrapper2-->
+                <div class="col-xs-12" style="padding:8px;"/> <!--Spacing-->
+                <!-- DATA-->
+                <t t-call="professional_templates.invoice_lines"/>
+                <!--/DATA-->
+                <div class="col-xs-12" style="padding:8px;"/> <!--Spacing-->
+                <table class="table table-bordered" style="background-color: #fff">
+                    <tr style="background-color: #fff">
+                        <td width="50%"></td>
+                        <td  width="50%">
+                            <p>DATOS PARA PAGO:</p>
+                            <p>BCR Cta ¢ 001-0231371-5 CC: 152010010231371-58</p>
+                            <p>BCR Cta $ 001-0232882-8 CC: 152010010232882-88</p>
+                            <p>BNCR Cta ¢ 200-01-087-014325-7 CC:151087200101432-55</p>
+                            <p>BNCR Cta $ 200-02-087-003908-0 CC:151087200200390-85</p>
+                        </td>
+                    </tr>
+                </table>
+                <div class="col-xs-12" style="padding:8px;"/> <!--Spacing-->
+                <table class="table table-bordered" style="background-color: #fff; width: 50%;">
+                    <tr style="background-color: #fff">
+                        <td>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                        </td>
+                        <td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span>Recibido Conforme</span>
+                        </td>
+                        <td>
+                            <span>Cédula No</span>
+                        </td>
+                    </tr>
+                </table>
+
+            </div><!--End of PAGE-->
+            <!--FOOTER -->
+            <div class="footer" t-attf-style="font-size:{{style.footer_font}}px !important;font-family:{{style.font_family}} !important;">
+                <t t-call="professional_templates.company_footer"/>
+                <center>
+                    Este documento constituye título ejecutivo conforme al art. 460 del Código de Comercio, prometo pagar la suma total que se detalla en el plazo estipulado, para
+                    lo cual renuncio a los trámites de juicio ejecutivo, domicilio y requerimiento de pago. Este título devengará intereses moratorios del 3% mensual a partir de su
+                    vencimiento.
+                </center>
+            </div>
+            <!--/FOOTER-->
+
+        </template>
+        <template id="professional_templates.INVOICE_4_duplicate" inherit_id="professional_templates.INVOICE_4_document" primary="True" name="TVA Duplicate">
+            <xpath expr="//h4[@id='title']" position="replace">
+                <h4>
+                    <span>Duplicar# </span>
+                    <span t-field="o.number"/>
+                </h4>
+            </xpath>
+        </template>
+    </data>
+</openerp>
