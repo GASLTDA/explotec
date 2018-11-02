@@ -136,19 +136,19 @@
                 <!-- DATA-->
                 <t t-call="professional_templates.invoice_lines"/>
                 <!--/DATA-->
-                <div class="col-xs-12" style="padding:8px;"/> <!--Spacing-->
-                <table class="table table-bordered" style="background-color: #fff">
-                    <tr style="background-color: #fff">
-                        <td width="50%"></td>
-                        <td  width="50%">
+                <!--<div class="col-xs-12" style="padding:8px;"/> &lt;!&ndash;Spacing&ndash;&gt;-->
+                <!--<table class="table table-bordered" style="background-color: #fff">-->
+                    <!--<tr style="background-color: #fff">-->
+                        <!--<td width="50%"></td>-->
+                        <!--<td  width="50%">-->
                             <!--<p>DATOS PARA PAGO:</p>-->
                             <!--<p>BCR Cta ¢ 001-0231371-5 CC: 152010010231371-58</p>-->
                             <!--<p>BCR Cta $ 001-0232882-8 CC: 152010010232882-88</p>-->
                             <!--<p>BNCR Cta ¢ 200-01-087-014325-7 CC:151087200101432-55</p>-->
                             <!--<p>BNCR Cta $ 200-02-087-003908-0 CC:151087200200390-85</p>-->
-                        </td>
-                    </tr>
-                </table>
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--</table>-->
                 <div class="col-xs-12" style="padding:8px;"/> <!--Spacing-->
                 <table class="table table-bordered" style="background-color: #fff; width: 50%;">
                     <tr style="background-color: #fff">
