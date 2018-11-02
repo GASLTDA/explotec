@@ -3,7 +3,7 @@
     'name': "Explotec Templates",
     'author': "Hadoopt Technologies Private Limited",
     'website': "https://www.hadoopt.com",
-    'depends': ['professional_templates','account','account_invoicing'],
+    'depends': ['professional_templates','account','account_invoicing','mail'],
     'data': [
         'twa_invoice_template.xml',
         'slim_order_template.xml',
