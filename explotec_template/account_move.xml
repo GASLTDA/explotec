@@ -19,21 +19,25 @@
                                 string="Reconciled entries">
                         </button>
                     </div>
-                    <h1>
-                        <group>
-                        <group>
-                            <field name="name" readonly="True" attrs="{'invisible':[('name','=','/')]}"/>
+                    <field name="image_medium" widget="image" class="oe_avatar"/>
 
-                        </group>
-                        <group>
-                            <field name="ref" attrs="{'required': [('id', '==', False)]}"/>
-                        </group>
-                        </group>
-                    </h1>
+                    <div class="oe_title">
+                            <group>
+                                <group>
+                                    <field name="name" readonly="True" attrs="{'invisible':[('name','=','/')]}"/>
+                                    <field name="partner" />
+                                </group>
+                                <group>
+                                    <field name="ref" attrs="{'required': [('id', '==', False)]}"/>
+                                </group>
+                            </group>
+
+                    </div>
                     <group>
                         <group>
                             <field name="date"/>
-
+                            <field name="exchange_rate" widget='monetary'/>
+                            <field name="curreny_exchange_rate" invisible="1"/>
                         </group>
                         <group>
                             <field name="journal_id" options="{'no_open': True, 'no_create': True}"/>

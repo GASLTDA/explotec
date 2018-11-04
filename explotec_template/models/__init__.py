@@ -1,1 +1,1 @@
-from . import mail_thread
+from . import mail_thread, account_payment, account_move
