@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle 
+ -->
+<odoo>
+    <record id="dev_bulk_invoice_view" model="ir.ui.view">
+        <field name="name">bulk.invoice.payment.view</field>
+        <field name="model">bulk.inv.payment</field>
+        <field name="arch" type="xml">
+            <form string="Multiple Invoice Payment">
+                <group>
+                    <group>
+                        <field name="payment_type"/>
+                        <field name="partner_type"/>
+                        <field name="journal_id"/>
+                    </group>
+                    <group>
+                        <field name="payment_date"/>
+                        <field name="communication"/>
+                    </group>
+                </group>
+                    <seperator string='Invoices'/>
+                    <field name="invoice_ids">
+                        <tree editable="buttom">
+                            <field name="invoice_id"/>
+                            <field name="partner_id"/>
+                            <field name="amount"/>
+                            <field name="paid_amount"/>
+                        </tree>
+                    </field>
+                <footer>
+                    <button string="Process" name="process_payment" type="object" default_focus="1" class="oe_highlight"/>
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_bulk_invoice_payment"
+        multi="True"
+        key2="client_action_multi"
+        name="Multiple Invoice Payment"
+        res_model="bulk.inv.payment"
+        src_model="account.invoice"
+        view_mode="form"
+        target="new"
+        view_type="form" />
+</odoo>
