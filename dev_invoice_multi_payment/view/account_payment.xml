@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle 
+ -->
+<odoo>
+    <record id="account_paumnet_add_method_of_paynet" model="ir.ui.view">
+        <field name="name">account.paumnet.add.method.of.paynet</field>
+        <field name="model">account.payment</field>
+        <field name="inherit_id" ref="account.view_account_payment_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//group" position="after">
+                 <field name="line_ids" nolabel="1" attrs="{'readonly':[('state','!=','draft')]}">
+                        <tree editable="bottom">
+                             <field name="invoice_id"/>
+                             <field name="account_id" />
+                             <field name="date" />
+                             <field name="due_date" />
+                             <field name="original_amount" />
+                             <field name="balance_amount" />
+                             <field name="full_reconclle" />
+                             <field name="allocation" />
+                             <field name="diff_amt"/>
+                        </tree>
+                    </field>
+            </xpath>
+               
+        </field>
+    </record>
+</odoo>

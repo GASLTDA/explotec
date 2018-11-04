@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright (C) 2015 DevIntelle Consulting Service Pvt.Ltd (<http://www.devintellecs.com>).
+
+For Module Support : devintelle@gmail.com  or Skype : devintelle 
+ -->
+<odoo>
+    <record id="dev_cemix_res_partner_bank_view_inherit" model="ir.ui.view">
+        <field name="name">dev.cemi.res.partner.bank.view.inherit</field>
+        <field name="model">res.partner.bank</field>
+        <field name="inherit_id" ref="base.view_partner_bank_form"/>
+        <field name="arch" type="xml">
+             <xpath expr="//field[@name='bank_id']" position="after">
+                 <field name="payment_type"/>
+            </xpath>
+            <xpath expr="//field[@name='acc_number']" position="replace">
+                 <field name="acc_number"/>
+            </xpath>
+               
+        </field>
+    </record>
+</odoo>
