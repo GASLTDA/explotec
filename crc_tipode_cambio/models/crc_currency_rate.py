@@ -4,8 +4,7 @@ import datetime
 import logging
 import xml.etree.ElementTree as ET
 from odoo import models, fields, api
-from odoo.exceptions import UserError, ValidationError
-import subprocess
+
 
 _logger = logging.getLogger(__name__)
 
@@ -45,18 +44,22 @@ class crc_currency_rate(models.Model):
                     #rate_date = f"{datetime.datetime.now():%Y-%m-%d}"
                     rate_date = self.i.strftime("%Y-%m-%d")
                     sql_param_rate = float(child.text)
-                    if rate_date == rate_name : 
-                        rec.env.cr.execute("UPDATE res_currency_rate SET rate = %s WHERE id = %s;",(sql_param_rate,rate_id))
-                        _logger.info('Botón actualizar presionado query: UPDATE res_currency_rate SET rate = %s WHERE id = %s;',sql_param_rate,rate_id)
+                    company_ids = self.env['res.company'].sudo().search([])
+                    if rate_date == rate_name :
+                        for company in company_ids:
+                            rec.env.cr.execute("UPDATE res_currency_rate SET rate = %s WHERE id = %s and company_id = %s;",(sql_param_rate,rate_id, company.id))
+                            _logger.info('Botón actualizar presionado query: UPDATE res_currency_rate SET rate = %s WHERE id = %s;',sql_param_rate,rate_id)
                         break
-                    else:  
-                        vals = {
-                            'currency_id': 40,
-                            'rate': float(child.text),
-                            'name': str(rec.i.year) +"-"+str(rec.i.month)+"-"+str(rec.i.day),
-                            'company_id': 1,
-                        }
-                        rate_Model.create(vals)
+                    else:
+
+                        for company in company_ids:
+                            vals = {
+                                'currency_id': 40,
+                                'rate': float(child.text),
+                                'name': str(rec.i.year) +"-"+str(rec.i.month)+"-"+str(rec.i.day),
+                                'company_id': company.id,
+                            }
+                            rate_Model.create(vals)
             except Exception as exc:
                 _logger.error(repr(exc))
         return True
@@ -85,11 +88,13 @@ class crc_currency_rate(models.Model):
             #rate_date = f"{datetime.datetime.now():%Y-%m-%d}"
             rate_date = self.i.strftime("%Y-%m-%d")
             sql_param_rate = float(child.text)
+            company_ids = self.env['res.company'].sudo().search([])
 
-            if rate_date == rate_name : 
-                self.env.cr.execute("UPDATE res_currency_rate SET rate = %s WHERE id = %s;",(sql_param_rate,rate_id))
+            if rate_date == rate_name :
+                for company in company_ids:
+                    self.env.cr.execute("UPDATE res_currency_rate SET rate = %s WHERE id = %s and company_id = %s;",(sql_param_rate,rate_id, company.id))
 
-                _logger.info('Moneda CRC actualizada, método write, valor: %s', float(child.text))
+                    _logger.info('Moneda CRC actualizada, método write, valor: %s', float(child.text))
 
                 vals ={
                     'name' : self.i.strftime("%Y-%m-%d %H:%M:%S"),
@@ -97,14 +102,15 @@ class crc_currency_rate(models.Model):
                 }
                 self.create(vals)
                 break
-            else:  
-                vals = {
-                    'currency_id': 40,
-                    'rate': float(child.text),
-                    'name': str(self.i.year) +"-"+str(self.i.month)+"-"+str(self.i.day),
-                    'company_id': 1,
-                }
-                rate_Model.create(vals)
+            else:
+                for company in company_ids:
+                    vals = {
+                        'currency_id': 40,
+                        'rate': float(child.text),
+                        'name': str(self.i.year) +"-"+str(self.i.month)+"-"+str(self.i.day),
+                        'company_id': company.id,
+                    }
+                    rate_Model.create(vals)
 
                 _logger.info('Moneda CRC actualizada método crear, valor: %s',sql_param_rate)
                 # vals2 ={

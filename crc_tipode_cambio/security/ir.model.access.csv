@@ -1,2 +1,2 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_crc_tipode_cambio_crc_tipode_cambio,crc_tipode_cambio.crc_tipode_cambio,model_crc_tipode_cambio_crc_tipode_cambio,,1,0,0,0
+access_crc_currency_rate,access_crc_currency_rate,model_crc_currency_rate,base.group_user,1,1,1,1
