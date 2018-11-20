@@ -100,7 +100,7 @@
 
             <xpath expr="//field[@name='payment_term_id']" position="after">
 
-                <field name="terminal" required="1" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="terminal" required="1" />
                 <field name="type" invisible="1"/>
 
             </xpath>
@@ -110,8 +110,8 @@
                     <group string="Facturación Electrónica (Confirmar XML)" >
                         <group>
                             <field name="xml_supplier_approval" />
-                            <button name="charge_xml_data" type="object" string="Cargar datos desde XML" colspan="2" attrs="{'invisible':[('state','!=','draft')]}"/>
-                            <button name="send_xml" type="object" string="Enviar XML" colspan="2" attrs="{'invisible':[('state','!=','open')]}"/>
+                            <button name="charge_xml_data" type="object" string="Cargar datos desde XML" colspan="2" />
+                            <button name="send_xml" type="object" string="Enviar XML" colspan="2" />
                         </group>
                         <group>
                             <field name="state_invoice_partner"/>
