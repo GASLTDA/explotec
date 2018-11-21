@@ -131,15 +131,14 @@ class AccountInvoice(models.Model):
 
     @api.multi
     def _auto_status_check(self):
-        ids = self.env['account.invoice'].search([('haicenda_status','=','procesando'),('state','not in',('draft','cancel')),('status_tries','<=','10')])
+        ids = self.env['account.invoice'].search([('haicenda_status','=','procesando'),('state','not in',('draft','cancel')),('status_tries','<=','10'),('type','in',('out_refund','out_invoice'))])
 
         for id in ids:
             if id.company_id.electronic_invoice:
-                if id.type in ('out_refund','out_invoice'):
-                    id.response = ''
-                    id.response_xml = ''
-                    id.check_status(True)
-                    id.status_tries = id.status_tries+1
+                id.response = ''
+                id.response_xml = ''
+                id.check_status(True)
+                id.status_tries = id.status_tries+1
 
     @api.multi
     def check_status(self, cron = False):
@@ -313,7 +312,14 @@ class AccountInvoice(models.Model):
             invoice_dict += Emisor
 
             Receptor = '[Receptor][Nombre]' + id.partner_id.name + '[|Nombre]'
-            Receptor += '[Identificacion][Tipo]' + id.partner_id.tipo + '[|Tipo][Numero]' + str(id.partner_id.vat).replace('-','').replace(' ','') + '[|Numero][|Identificacion]'
+            if id.partner_id.tipo =='IdentificacionExtranjero':
+               Receptor +='['+id.partner_id.tipo+']' + str(id.partner_id.vat).replace('-','').replace(' ','') + '[|'+id.partner_id.tipo+']'
+            else:
+                Receptor += '[Identificacion]'
+                Receptor +='[Tipo]' + id.partner_id.tipo + '[|Tipo][Numero]' + str(id.partner_id.vat).replace('-','').replace(' ','') + '[|Numero]'
+
+                Receptor +='[|Identificacion]'
+
             if id.partner_id.province_id and id.partner_id.canton_id and id.partner_id.district_id and id.partner_id.locality_id:
                 Receptor += '[Ubicacion]'
                 Receptor += '[Provincia]' + self._get_string(id.partner_id.province_id.code) + '[|Provincia]'
@@ -575,6 +581,16 @@ class AccountInvoice(models.Model):
             else:
                 raise UserError('El proveedor con identificación '+root.findall('Emisor')[0].find('Identificacion')[1].text+' no existe. Por favor creelo primero en el sistema.')
 
+    @api.multi
+    def _auto_status_check_supplier(self):
+        ids = self.env['account.invoice'].search([('haicenda_status','=','procesando'),('type','=','in_invoice'),('state','not in',('draft','cancel'))])
+
+        for id in ids:
+            if id.company_id.electronic_invoice:
+                id.response = ''
+                id.response_xml = ''
+                id.send_xml()
+                # id.status_tries = id.status_tries+1
 
     @api.multi
     def send_xml(self):
@@ -803,8 +819,6 @@ class AccountInvoice(models.Model):
             value = datetime.datetime.strptime(value, '%Y-%m-%dT%H:%M:%S.%f')
         date_time = datetime.datetime.strptime(value.strftime(format), format) - datetime.timedelta(hours=6)
         return date_time.strftime(format) + '-06:00'
-
-
 
     state_invoice_partner = fields.Selection([('1', 'Aceptado'), ('3', 'Rechazado'), ('2', 'Aceptacion parcial')], 'Respuesta del Cliente')
     xml_supplier_approval = fields.Binary(string="XML Proveedor", required=False, copy=False, attachment=True)

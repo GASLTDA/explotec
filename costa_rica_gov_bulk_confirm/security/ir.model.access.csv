@@ -1,0 +1,2 @@
+id,group_id:id,name,model_id:id,perm_unlink,perm_create,perm_write,perm_read
+costa_rica_gov_bulk_confirm.confimar_wizard,base.group_user,Confirmar Wizard,costa_rica_gov_bulk_confirm.model_confimar_wizard,FALSE,FALSE,FALSE,TRUE

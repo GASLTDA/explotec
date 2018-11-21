@@ -138,6 +138,20 @@
         </field>
     </record>
 
+
+    <record id="invoice_supplier_tree" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='state']" position="after">
+                <field name="haicenda_status"/>
+            </xpath>
+
+        </field>
+    </record>
+
     <record id="invoice_form_cancel_inherit" model="ir.ui.view">
         <field name="name">invoice.form.cancel.inherit</field>
         <field name="model">account.invoice</field>

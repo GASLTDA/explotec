@@ -1,0 +1,43 @@
+<data>
+    <record id="confimar_wizard_view_form" model="ir.ui.view">
+        <field name="name">confimar.wizard.view.form</field>
+        <field name="model">confimar.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="state_invoice_partner"/>
+                    </group>
+                    <group>
+                        <field name="terminal"/>
+                    </group>
+                </group>
+                <group string="Facturas de proveedores">
+                </group>
+                <field name="name">
+                    <tree  editable="bottom">
+                        <field name="number" />
+                        <field name="partner_id" />
+                        <field name="date_invoice" />
+                        <field name="currency_id" />
+                        <field name="amount_total"/>
+                        <field name="state" invisible="1"/>
+                        <field name="xml_supplier_approval" widget="binary"/>
+                    </tree>
+                </field>
+                <footer>
+                    <button name="action_bulk_confirm_xml" type="object" string="Proceso" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_account_invoice_bulk_confirmar_xml"
+                multi="True"
+                key2="client_action_multi" name="Confirmar XML"
+                res_model="confimar.wizard" src_model="account.invoice"
+                view_mode="form" target="new" view_type="form" />
+
+</data>
