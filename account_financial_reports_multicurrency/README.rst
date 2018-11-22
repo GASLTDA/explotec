@@ -138,6 +138,7 @@ Contributors
 * Edilianny Sanchez <esanchez@vauxoo.com>
 
 Maintainer
+
 ----------
 
 .. image:: https://www.vauxoo.com/logo.png
