@@ -14,7 +14,10 @@ class AccountReport(models.AbstractModel):
         if line_id == None:
             lines = self.with_context(self.set_context(options)).get_lines(options, line_id=line_id)
         else:
-            lines = self.with_context(self.set_context(options)).get_lines_no_currency(options, line_id=line_id)
+            try:
+                lines = self.with_context(self.set_context(options)).get_lines_no_currency(options, line_id=line_id)
+            except:
+                lines = self.with_context(self.set_context(options)).get_lines(options, line_id=line_id)
         if options.get('hierarchy'):
             lines = self.create_hierarchy(lines)
 
