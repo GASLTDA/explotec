@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <record id="company_partner_holding" model="res.partner">
+        <field name="name">Holding Company</field>
+    </record>
+    <record id="company_holding" model="res.company">
+        <field name="name">Holding Company</field>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="partner_id" ref="company_partner_holding"/>
+    </record>
+
+</odoo>

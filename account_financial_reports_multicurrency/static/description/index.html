@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Account Financial Reports Multicurrency</title>
+</head>
+
+<body>
+    <div style="margin: 0 auto; max-width: 1024px; background-color: #fafafa">
+        
+        <!-- HEADER -->
+        
+        <div style="margin: 0 auto; max-width: 1024px; background-image: linear-gradient(to right, #a3142c, #c9033e); margin: 0 auto;">
+            <div style="padding: 10px; font-family: 'Source Sans Pro', sans-serif; font-size: 38px; font-weight: bold; font-style: normal; font-stretch: normal; line-height: normal; letter-spacing: normal; text-align: center; color: #ffffff;">
+                Account Financial Reports Multicurrency
+            </div>
+        </div>
+        <div style="position: relative; margin: 0 auto; max-width: 1024px; min-height: 200px;">
+			<img src="imagen-o-gif.png" style="width: 100%; min-height: 200px;">
+			<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); max-width: 667px; font-family: 'Source Sans Pro', sans-serif;  font-size: 28px;  font-weight: bold;  font-style: normal;  font-stretch: normal;  line-height: normal;  letter-spacing: normal;  text-align: center;  color: #ffffff;  text-shadow: 0 3px 3px rgba(0, 0, 0, 0.35);">
+                Make financial reports for your bussiness group using the IFRS standard for consolidations in foreign currencies.
+            </div>
+        </div>
+
+        <!-- CONTENT -->
+
+        <div style="margin: 0 auto; padding-top: 30px; padding-bottom: 30px; max-width: 673px;  min-height: 102px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 16px;  font-weight: normal;  font-style: normal;  font-stretch: normal;  line-height: 1.31;  letter-spacing: -0.2px;  text-align: justify;  color: #282c2f;">
+            <div style="padding: 20px; font-size: 28px; font-weight: bold;  line-height: 1.17;  text-align: center;">
+                SUMMARY
+            </div>
+            <p>This module let you build the financial reports for your group of companies that operates in different currencies, preparing the consolidation of the statements of two or more companies based on the IFRS standard (<a style="color: #c9033e;  text-decoration: none;" href="https://www.ifrs.org/issued-standards/list-of-standards/ias-21-the-effects-of-changes-in-foreign-exchange-rates/" target="_BLANK">IAS 21 The Effects of Changes in Foreign Exchange Rates</a>) that states:</p>
+        </div>
+        <div style="margin: 0 auto; max-width: 1024px;  background-color: #f5f5f5;">
+            <div style="margin: 0 auto; padding: 30px; max-width: 673px;  min-height: 42px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 16px;  font-weight: normal;  font-style: italic;  font-stretch: normal;  line-height: 1.31;  letter-spacing: -0.2px;  text-align: justify;  color: #282c2f;">
+                <p>For translation into the functional currency or into a presentation currency, the following procedures apply, except in limited circumstan.</p>
+                  <ul>
+                      <li style="padding-bottom: 20px;">Assets and liabilities are translated at the exchange rate at the end of the period;</li>
+                      <li style="padding-bottom: 20px;">Income and expenses are translated at exchange rates at the dates of the transactions; and</li>
+                      <li style="">Resulting exchange differences are recognised in other comprehensive income and reclassified to profit or loss on disposal of the related foreign operation.</li>
+                  </ul>
+            </div>
+        </div>
+
+        <div style="margin: 0 auto; padding-top: 30px; padding-bottom: 30px; max-width: 673px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 16px;  font-weight: normal;  font-style: normal;  font-stretch: normal;  line-height: 1.31;  letter-spacing: -0.2px;  text-align: justify;">
+            <div style="padding: 20px; font-size: 28px; font-weight: bold;  line-height: 1.17;  text-align: center;">
+                HOW TO CONFIGURE IT
+            </div>
+            <p style="padding-bottom: 20px;">Here we describe how you can configure your instance with an example. In this example we have two companies <b>"Holding Company"</b> and <b>"Your Company"</b>, they operate in different functional currencies, EUR and USD respectively.</p>
+            <p style="padding-bottom: 10px;">In <b>"Your Company"</b>, the one with USD as functional currency, we have a ledger.</p>
+            <p style="padding-bottom: 10px;">In <b>"Holding Company"</b>, that is the Consolidating Company with EUR as functional
+            currency, we have exchange rates for each currency.</p>
+            <p style="padding-bottom: 10px;">For that we will create two new custom reports.</p>
+            <ol>
+                <li>Enable Multi-currency in your Odoo database at <b>Accounting</b> &gt; <b>Configuration</b> &gt; <b>Settings</b>.</li>
+                <li>Activate technical options in <b>Settings</b> &gt; <b>Activate the developer mode</b> to be able to create your custom report.</li>
+                <li>Go to <b>Accounting</b> &gt; <b>Configuration</b> &gt; <b>Financial Reports.</b></li>
+            </ol>
+            <div style="padding: 50px 0 30px 0; font-size: 28px; font-weight: bold;  line-height: 1.17;  text-align: center;">
+                MY RECEIVABLES
+            </div>
+            <ul>
+                <li>Create a new Report and call it "My Receivables".</li>
+                <li>Uncheck the option "Based on date ranges".</li>
+                <li>Add a line to the report and call it Receivables, with next parameters:
+                    <ul>
+                        <li>Formula: <b>balance = sum.balance</b></li>
+                        <li>Domain: <b>[('account_id', '=', '101200')]</b></li>
+                        <li>Level: <b>1</b></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div style="margin: 0 auto; padding-bottom: 30px; max-width: 839px;">
+            <img src="screenshot-01.png" style="max-width: 839px;">
+        </div>
+        <div style="margin: 0 auto; padding-top: 30px; padding-bottom: 30px; max-width: 673px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 16px;  font-weight: normal;  font-style: normal;  font-stretch: normal;  line-height: 1.31;  letter-spacing: -0.2px;  text-align: justify;">
+            <div style="padding: 20px; font-size: 28px; font-weight: bold;  line-height: 1.17;  text-align: center;">
+                MY INCOMES
+            </div>
+            <ul>
+                <li>Create a new Report and call it "My Incomes".</li>
+                <li>Uncheck the option "Based on date ranges".</li>
+                <li>Add a line to the report and call it Incomes, with next parameters:
+                    <ul>
+                        <li>Formula: <b>balance = sum.credit</b></li>
+                        <li>Domain: <b>[('account_id', '=', '200000')]</b></li>
+                        <li>Level: <b>1</b></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div style="margin: 0 auto; padding-bottom: 30px; max-width: 839px;">
+            <img src="screenshot-02.png" style="max-width: 839px;">
+        </div>
+        <div style="margin: 0 auto; padding-bottom: 30px; max-width: 673px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 16px;  font-weight: normal;  font-style: normal;  font-stretch: normal;  line-height: 1.31;  letter-spacing: -0.2px;  text-align: justify;">
+            <p>Refresh your browser to be sure the reports was created at the <b>Accounting</b> &gt; <b>Reporting</b> menu.</p>
+        </div>
+
+        <div style="margin: 0 auto; max-width: 1024px;  min-height: 311px;  background-color: #f5f5f5;">
+            <div style="padding-top: 40px; padding-bottom: 40px;  min-height: 42px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 16px;  font-weight: normal;  font-style: normal;  font-stretch: normal;  line-height: 1.31;  letter-spacing: -0.2px;  text-align: justify;  color: #282c2f;">
+                <div style="margin: 0 auto; padding: 20px; font-size: 28px; font-weight: bold;  line-height: 1.17;  text-align: center;">
+                    HOW TO USE IT
+                </div>
+                <div style="margin: 0 auto; max-width: 673px;">
+                    <p>The next steps are based on the example reports configured in the above section.</p>
+
+                    <p>For assets:</p>
+
+                    <ol>
+                        <li>Go to <b>Accounting</b> &gt; <b>Reporting</b> &gt; <b>My Receivables</b>  (or whatever name you used for your report)</li>
+                        <li>In the filter options select:</li>
+                        <ul>
+                            <li>Date: End of Last Quarter.</li>
+                            <li>Comparison: <b>Previous Period</b> and set the number of periods to 3.</li>
+                        </ul>
+                    </ol>
+
+                    <p>For Incomes:</p>
+
+                    <ol>
+                        <li>Go to <b>Accounting</b> &gt; <b>Reporting</b> &gt; <b>My Incomes</b> (or whatever name you used for your report)</li>
+                        <li>In the filter options select:</li>
+                        <ul>
+                            <li>Date: <b>Last Financial Year</b>.</li>
+                            <li>Comparison: <b>Previous Period</b> and set the number of periods to 3.</li>
+                        </ul>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div style="margin: 0 auto; padding-top: 30px; padding-bottom: 30px; max-width: 673px;  min-height: 80px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 16px;  font-weight: normal;  font-style: normal;  font-stretch: normal;  line-height: 1.31;  letter-spacing: -0.2px;  text-align: justify;">
+            <p>If your user is in <b>&quot;Holding Company&quot;</b> as the current company, select in the filters both companies, else use just <b>&quot;Your Company&quot;</b> in the filter.</p>
+            <p>Following the IAS 21 the expected values for the reports in the presentation currency (EUR):</p>
+        </div>
+        <div style="margin: 0 auto; margin-top: 30px; margin-bottom: 30px; max-width: 842px; background-blend-mode: multiply;  background-image: linear-gradient(#555555, #555555);">
+            <video controls="controls" style="width: 100%; height: auto; margin: 36px auto; display: block;">
+                <source src="my-receivables.webm">
+            </video>
+        </div>
+        <div style="margin: 0 auto; margin-top: 30px; margin-bottom: 30px; max-width: 842px; background-blend-mode: multiply;  background-image: linear-gradient(#555555, #555555);">
+            <video controls="controls" style="width: 100%; height: auto; margin: 36px auto; display: block;">
+                <source src="my-incomes.webm">
+            </video>
+        </div>
+        
+        <!--    FOOTER     -->
+        
+        <div style="margin: 0 auto; max-width: 350px; max-height: 50px;  object-fit: contain;  background-image: linear-gradient(to left, #c9033e, #a3142c);  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.15); transform: skew(-20deg);">
+            <div style="padding: 12px; text-align: center; transform: skew(20deg);">
+                <a style="max-width: 300px;  min-height: 30px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 21px;  font-weight: bold;  font-style: normal;  font-stretch: normal;  line-height: normal;  letter-spacing: normal;  text-align: center;  color: #ffffff; text-decoration: none;" href=" https://www.vauxoo.com/r/OB4" target="_BLANK">
+                    Live Demo
+                </a>
+            </div>
+        </div>
+        <br>
+
+        <div style="margin: 0 auto; padding:25px; background-color: #f5f5f5; max-width:1024px; font-family: 'Source Sans Pro', sans-serif; font-weight: normal;  font-style: normal;  font-stretch: normal;  line-height: normal;  letter-spacing: normal;  text-align: center;">
+            <p style="font-size: 24px; font-weight: bold;">GET TECHNICAL HELP &amp; SUPPORT</p>
+            <p style="font-size: 16px;">You will get free support and assistance in case of any issues</p>
+            <br>
+            <table style="margin: 0 auto; width: 100%; table-layout: fixed;">
+                <tr>
+                    <td>
+                        <div style="margin: 0 auto; padding: 12px; max-width: 241px; max-height: 50px;  object-fit: contain;  background-image: linear-gradient(to left, #c9033e, #a3142c);  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.15); transform: skew(-20deg);">
+                            <div style=" transform: skew(20deg);">
+                                <a style="max-width: 300px;  min-height: 30px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 21px;  font-weight: bold;  font-style: normal;  font-stretch: normal;  line-height: normal;  letter-spacing: normal;  text-align: center;  color: #ffffff; text-decoration: none;" href=" https://www.vauxoo.com/r/wlJ" target="_BLANK">
+                                    Help
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin: 0 auto; padding: 12px; max-width: 241px; max-height: 50px;  object-fit: contain;  background-image: linear-gradient(to left, #c9033e, #a3142c);  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.15); transform: skew(-20deg);">
+                            <div style=" transform: skew(20deg);">
+                                <a style="max-width: 300px;  min-height: 30px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 21px;  font-weight: bold;  font-style: normal;  font-stretch: normal;  line-height: normal;  letter-spacing: normal;  text-align: center;  color: #ffffff; text-decoration: none;" href=" https://www.vauxoo.com/r/wlJ" target="_BLANK">
+                                    Support
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="margin: 0 auto; padding: 12px; max-width: 241px; max-height: 50px;  object-fit: contain;  background-image: linear-gradient(to left, #c9033e, #a3142c);  box-shadow: 3px 3px 8px 0 rgba(0, 0, 0, 0.15); transform: skew(-20deg);">
+                            <div style=" transform: skew(20deg);">
+                                <a style="max-width: 300px;  min-height: 30px;  font-family: 'Source Sans Pro', sans-serif;  font-size: 21px;  font-weight: bold;  font-style: normal;  font-stretch: normal;  line-height: normal;  letter-spacing: normal;  text-align: center;  color: #ffffff; text-decoration: none;" href=" https://www.vauxoo.com/r/wlJ" target="_BLANK">
+                                    Request Features
+                                </a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <div style="margin: 50px;" >
+                <img src="vauxoo-logo.png" alt="Vauxoo Open Source Logo" style="max-height: 25px;">
+            </div>
+        </div>
+    </div>
+</body>

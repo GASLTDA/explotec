@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- My Receivables -->
+    <record id="my_receivables" model="account.financial.html.report">
+        <field name="name">My Receivables</field>
+        <field name="date_range" eval="False"/>
+        <field name="comparison" eval="True"/>
+        <field name="parent_id" ref="account.account_reports_legal_statements_menu"/>
+    </record>
+    <record id='my_receivables_1' model='account.financial.html.report.line'>
+        <field name='name'>RECEIVABLES</field>
+        <field name='financial_report_id' ref='my_receivables'/>
+        <field name='code'>RECEIVABLES</field>
+        <field name='formulas'>balance = sum.balance</field>
+        <field name='domain'>[('account_id','=','101200')]</field>
+        <field name='sequence' eval='10'/>
+        <field name='level' eval='1'/>
+        <field name='groupby'></field>
+        <field name='special_date_changer'></field>
+    </record>
+
+    <!-- My Incomes -->
+    <record id="my_incomes" model="account.financial.html.report">
+        <field name="name">My Incomes</field>
+        <field name="date_range" eval="True"/>
+        <field name="comparison" eval="True"/>
+        <field name="parent_id" ref="account.account_reports_legal_statements_menu"/>
+    </record>
+    <record id='my_incomes_1' model='account.financial.html.report.line'>
+        <field name='name'>INCOMES</field>
+        <field name='financial_report_id' ref='my_incomes'/>
+        <field name='code'>INCOMES</field>
+        <field name='formulas'>balance = sum.credit</field>
+        <field name='domain'>[('account_id','=','200000')]</field>
+        <field name='sequence' eval='10'/>
+        <field name='level' eval='1'/>
+        <field name='groupby'></field>
+        <field name='special_date_changer'></field>
+    </record>
+</odoo>
