@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+
+    <!-- USD Currency Rates -->
+    <record forcecreate="0" id="rateUSD_2014" model="res.currency.rate">
+        <field name="rate">1.2003</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="name">2014-12-28</field>
+        <field name="company_id" ref="company_holding"/>
+    </record>
+    <record forcecreate="0" id="rateUSD_2015" model="res.currency.rate">
+        <field name="rate">1.086</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="name">2015-12-27</field>
+        <field name="company_id" ref="company_holding"/>
+    </record>
+    <record forcecreate="0" id="rateUSD_2016" model="res.currency.rate">
+        <field name="rate">1.0516</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="name">2016-12-25</field>
+        <field name="company_id" ref="company_holding"/>
+    </record>
+    <record forcecreate="0" id="rateUSD_2017" model="res.currency.rate">
+        <field name="rate">1.203</field>
+        <field name="currency_id" ref="base.USD"/>
+        <field name="name">2017-12-31</field>
+        <field name="company_id" ref="company_holding"/>
+    </record>
+
+    <!-- EUR Currency Rates -->
+    <record forcecreate="0" id="rateEUR_2014" model="res.currency.rate">
+        <field name="rate">0.833125</field>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="name">2014-12-28</field>
+    </record>
+    <record forcecreate="0" id="rateEUR_2015" model="res.currency.rate">
+        <field name="rate">0.92081</field>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="name">2015-12-27</field>
+    </record>
+    <record forcecreate="0" id="rateEUR_2016" model="res.currency.rate">
+        <field name="rate">0.950932</field>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="name">2016-12-25</field>
+    </record>
+    <record forcecreate="0" id="rateEUR_2017" model="res.currency.rate">
+        <field name="rate">0.831255</field>
+        <field name="currency_id" ref="base.EUR"/>
+        <field name="name">2017-12-31</field>
+    </record>
+
+</odoo>
