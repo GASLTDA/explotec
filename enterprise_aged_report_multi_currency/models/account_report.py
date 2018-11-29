@@ -1,6 +1,5 @@
 from odoo import models, api
 
-
 class AccountReport(models.AbstractModel):
     _inherit = 'account.report'
 
