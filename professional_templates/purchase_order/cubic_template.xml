@@ -25,13 +25,13 @@
             </div>
             <div class="col-xs-5 pull-right mt16" style="padding-right:0px;">
                 <span t-if="style.logo">
-                    <span itemprop="image" t-field="style.logo" t-field-options='{"widget": "image", "style": "float:right;"}'/>
+                    <span itemprop="image"   t-field="style.logo" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;style&quot;: &quot;float:right;margin-right:15px;width: 235px;&quot;}"/>
                 </span>
                 <span t-if="not style.logo and company.logo">
-                    <span itemprop="image" t-field="company.logo" t-field-options='{"widget": "image", "style": "float:right;"}'/>
+                    <span itemprop="image"   t-field="company.logo" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;style&quot;: &quot;float:right;margin-right:15px;width: 235px;&quot;}"/>
                 </span>
                 <span t-if="not style.logo and not company.logo">
-                    <span itemprop="image" t-field="company.logo" t-field-options='{"widget": "image", "style": "float:right;"}'/>
+                    <span itemprop="image"   t-field="company.logo" t-field-options="{&quot;widget&quot;: &quot;image&quot;, &quot;style&quot;: &quot;float:right;margin-right:15px;width: 235px;&quot;}"/>
                 </span>
                 <div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:15px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="pull-right mb8">
                     <span t-if="company.twitter" style="padding-left:0px;" class="fa fa-twitter-square "/>&#160;<span t-field="company.twitter"/>
@@ -117,6 +117,18 @@
                </div><!--End of PAGE-->
                 <!--FOOTER -->
             <div class="footer" t-attf-style="font-size:{{style.footer_font}}px !important;font-family:{{style.font_family}} !important;">
+                <div class="col-xs-4">
+                    <p style="border-top:1px solid;"></p>
+                    <p class="text-center" style="font-size: 10px">Elaborado por</p>
+                </div>
+                <div class="col-xs-4">
+                    <p style="border-top:1px solid;"></p>
+                    <p class="text-center" style="font-size: 10px">Persona que revisa</p>
+                </div>
+                <div class="col-xs-4">
+                    <p style="border-top:1px solid;"></p>
+                    <p class="text-center" style="font-size: 10px">Persona que autoriza</p>
+                </div>
                 <t t-call="professional_templates.company_footer"/>
             </div>
                 <!--/FOOTER-->

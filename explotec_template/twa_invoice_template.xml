@@ -15,13 +15,13 @@
                         <t t-call="professional_templates.company_address"/>
                     </div>
                     <div class="col-xs-7 pull-right" style="text-align:right; padding-left:0px; padding-right:0px; padding-top:1px;">
-                        <div t-if="style.logo" class="pull-right" style="width:250px; text-align:right; padding-bottom:3px; padding-top:3px;">
+                        <div t-if="style.logo" class="pull-right" style="width:235px; text-align:right; padding-bottom:3px; padding-top:3px;">
                             <span itemprop="image" t-field="style.logo" t-field-options='{"widget": "image"}' style="display: inline-block;"/>
                         </div>
-                        <div t-if="not style.logo and company.logo" class="pull-right" style="width:250px; text-align:right;padding-bottom:8px;">
+                        <div t-if="not style.logo and company.logo" class="pull-right" style="width:235px; text-align:right;padding-bottom:8px;">
                             <span itemprop="image" t-field="company.logo" t-field-options='{"widget": "image"}' style="display: inline-block;"/>
                         </div>
-                        <div t-if="not style.logo and not company.logo" class="pull-right" style="width:250px;text-align:right;padding-bottom:8px;">
+                        <div t-if="not style.logo and not company.logo" class="pull-right" style="width:235px;text-align:right;padding-bottom:8px;">
                             <span itemprop="image" t-field="company.logo" t-field-options='{"widget": "image"}' style="display: inline-block;"/>
                         </div>
                         <div t-if="company.twitter or company.facebook or company.facebook" t-attf-style="background-color:{{style.theme_color}}; width:auto; float:right; padding-left:15px; color:{{style.theme_txt_color}}; padding-right:15px; padding-top:4px; padding-bottom:2px;" class="pull-right">
