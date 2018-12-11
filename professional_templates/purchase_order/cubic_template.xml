@@ -119,15 +119,15 @@
             <div class="footer" t-attf-style="font-size:{{style.footer_font}}px !important;font-family:{{style.font_family}} !important;">
                 <div class="col-xs-4">
                     <p style="border-top:1px solid;"></p>
-                    <p class="text-center" style="font-size: 10px">Elaborado por</p>
+                    <p class="text-center" style="font-size: 13px">Elaborado por</p>
                 </div>
                 <div class="col-xs-4">
                     <p style="border-top:1px solid;"></p>
-                    <p class="text-center" style="font-size: 10px">Persona que revisa</p>
+                    <p class="text-center" style="font-size: 13px">Persona que revisa</p>
                 </div>
                 <div class="col-xs-4">
                     <p style="border-top:1px solid;"></p>
-                    <p class="text-center" style="font-size: 10px">Persona que autoriza</p>
+                    <p class="text-center" style="font-size: 13px">Persona que autoriza</p>
                 </div>
                 <t t-call="professional_templates.company_footer"/>
             </div>
