@@ -1,0 +1,143 @@
+<odoo>
+    <record model="report.paperformat" id="paperformat_stock_movement_report">
+        <field name="name">paperformat.recap.report</field>
+        <field name="default" eval="True"/>
+        <field name="format">A4</field>
+        <field name="page_width">0</field>
+        <field name="page_width">0</field>
+        <field name="orientation">Portrait</field>
+        <field name="margin_top">30</field>
+        <field name="margin_right">5</field>
+        <field name="margin_bottom">10</field>
+        <field name="margin_left">5</field>
+        <field name="header_line" eval="False"/>
+        <!--<field name="header_spacing">20</field>-->
+        <field name="dpi">90</field>
+    </record>
+
+    <report id="stock_movement_report"
+            model="attendance.recap.report.wizard"
+            string="Stock Movement Reprot"
+            report_type="qweb-pdf"
+            name="report_inventory.stock_movement"
+            paperformat="paperformat_stock_movement_report"
+            menu="False"/>
+
+    <template id="stock_movement">
+        <div class="header" style="border-bottom: 2px solid black">
+            <t t-raw="date"/>
+                <p class="text-center">
+                    <strong><t t-raw="company_id.name"/></strong>
+                </p>
+
+                <t t-if="date">
+                    <table class="table table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>Date:</td>
+                                <td><t t-raw="date"/> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+
+                <t t-if="from_date">
+                    <table class="table table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>From Date:</td>
+                                <td><t t-raw="from_date"/> </td>
+                            </tr>
+                            <tr>
+                                <td>To Date:</td>
+                                <td><t t-raw="to_date"/> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
+
+        </div>
+
+        <div class="article">
+
+                <div class="col-xs-12">
+            <table>
+                <thead>
+
+                    <tr style="padding-top:5px;padding-bottom:5px;color: #fff !important"><td><b>Date</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Type</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Reference</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Location</b></td>
+                    <!--<td>Initial Balance</td>-->
+                    <!--<td>Closing Balance</td>-->
+                    <!--<td>Cost-In</td>-->
+                    <!--<td>Cost-Out</td>-->
+                    <!--<td>Product</td>-->
+                        <!--<td>Unit(s)</td>-->
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>In</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Out</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost In</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost Out</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Total Cost</b></td></tr>
+
+                    <tr style="padding-top:5px;padding-bottom:5px;"><td><b>Date</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Type</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Reference</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Location</b></td>
+                    <!--<td>Initial Balance</td>-->
+                    <!--<td>Closing Balance</td>-->
+                    <!--<td>Cost-In</td>-->
+                    <!--<td>Cost-Out</td>-->
+                    <!--<td>Product</td>-->
+                        <!--<td>Unit(s)</td>-->
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>In</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Out</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost In</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost Out</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Total Cost</b></td></tr>
+                </thead>
+                <tbody>
+                    <!--<t t-raw="docs"/>-->
+                    <t t-foreach="docs" t-as="d">
+                        <tr style="padding-top:10px;padding-bottom:10px;"><td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['date']"/></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['type']"/></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['reference']"/></td>
+                        <!--<td><t t-raw="d['location_id']"/></td>-->
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['location_dest_id']"/></td>
+                        <!--<td class="text-right"><t t-raw="d['initial_balance']" /></td>-->
+                        <!--<td class="text-right"><t t-raw="d['closing_balance']" /></td>-->
+                        <!--<td><t t-raw="d['cost_in']"/></td>-->
+                        <!--<td><t t-raw="d['cost_out']"/></td>-->
+                        <!--<td><t t-raw="d['product_id']"/></td>-->
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['product_uom_qty_in']" /></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['product_uom_qty_out']" /></td>
+                            <!--<td><t t-raw="d['product_uom']"/></td>        -->
+                                      <td class="text-right"><t t-raw="d['cost_in']" /></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['cost_out']" /></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['total_cost']" /></td></tr>
+
+                    </t>
+                </tbody>
+            </table>
+
+                </div>
+            </div>
+
+        <div class="footer">
+            <div class="row text-center" style="border-top: 1px solid black;">
+                <div class="col-xs-3 col-xs-offset-9 text-right">
+                    <ul class="list-inline" style="margin-top:10px;">
+                        <li>Page:</li>
+                        <li>
+                            <t class="page"/>
+                        </li>
+                        <li>/</li>
+                        <li>
+                            <t class="topage"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </template>
+</odoo>
