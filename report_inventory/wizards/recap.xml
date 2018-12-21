@@ -1,0 +1,35 @@
+<data>
+    <record id="view_wizard_stock_movement" model="ir.ui.view">
+        <field name="name">wizard.stock.movement.form.inherit</field>
+        <field name="model">stock.movement.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="name" widget="radio"/>
+                    </group>
+                    <group>
+                        <field name="date" attrs="{'invisible':[('name','not in',('selected_date'))]}"/>
+                        <field name="from_date" attrs="{'invisible':[('name','in',('this_month','today','selected_date'))]}"/>
+                        <field name="to_date" attrs="{'invisible':[('name','in',('this_month','today','selected_date'))]}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button type="object" string="Print PDF" name="print_pdf" class="btn-primary"/>
+                    <button special="cancel" string="Cancel" class="btn-default"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id='action_stock_movement_wizard' model='ir.actions.act_window'>
+        <field name="name">Stock Movement Report</field>
+        <field name="res_model">stock.movement.wizard</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <menuitem id="menu_stock_movement_wizard" action="action_stock_movement_wizard" parent="stock.menu_warehouse_report" name="Stock Movement" sequence="1"/>
+</data>
