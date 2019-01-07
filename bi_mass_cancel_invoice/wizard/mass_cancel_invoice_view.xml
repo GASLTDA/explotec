@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+		
+		<record id="wizard_mass_invoice_cancel" model="ir.ui.view">
+			<field name="name">wizard.mass.invoice.cancel.form</field>
+			<field name="model">mass.cancel.wizard.invoice</field>
+			<field name="arch" type="xml">
+				<form string="Mass Invoice Cancel" >
+					<group col="4" colspan="2" >
+						<field name="mass_cancel_invoice" string="Are you sure want to cancel all selected Invoice(s)?"/>
+					</group>
+					<footer>
+	
+						<button name="on_click_invoice" string="Cancel Invoice"
+							type="object" class="oe_highlight" />
+						<button string="Cancel" class="oe_link" special="cancel" />
+					</footer>
+				</form>
+			</field>
+		</record>
+
+		<record id="bi_act_mass_cancel_invoice_wizard" model="ir.actions.act_window">
+			<field name="name">bi.act.mass.cancel.invoice.wizard</field>
+			<field name="res_model">mass.cancel.wizard.invoice</field>
+			<field name="view_type">form</field>
+			<field name="view_mode">form</field>
+			<field name="view_id" ref="wizard_mass_invoice_cancel" />
+			<field name="target">new</field>
+		</record>
+
+	</data>
+</odoo>

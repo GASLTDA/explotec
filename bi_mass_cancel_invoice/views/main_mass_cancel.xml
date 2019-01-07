@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+	<data>
+        <act_window 
+            id="mass_order_invoice_act_window"
+            name="Mass Cancel Invoice(s)"
+            res_model="mass.cancel.wizard.invoice"
+            src_model="account.invoice"
+            view_mode="form"
+            domain="[('id','in',active_ids)]"
+            view_id="wizard_mass_invoice_cancel"
+            target="new"
+            multi="True"
+            key2="client_action_multi"
+        />
+    </data>
+
+</odoo>
