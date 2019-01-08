@@ -152,7 +152,7 @@ class StockMovementReport(models.AbstractModel):
                                   'reference': '',
                                   'location_id': '',
                                   'location_dest_id': '',})
-                docs.append({ 'date': '<b>Item: ' + line.product_id.name + '</b>',
+                docs.append({ 'date': '<b>Item: ' + line.product_id.name + ' ('+line.product_id.product_tmpl_id.x_studio_field_5iBe0+') '+ '</b>',
                                   'type': '',
                                   'product_name': '',
                                   'product_id': '',
