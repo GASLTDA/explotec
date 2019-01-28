@@ -110,33 +110,7 @@ class StockMovementReport(models.AbstractModel):
 
             if product_id != line.product_id.id:
                 if product_id != None:
-
-                    docs.append({ 'date': '',
-                                  'type': '',
-                                  'product_name': '',
-                                  'product_id': '',
-                                  'product_uom': '',
-                                  'cost_in': '',
-                                  'cost_out': '',
-                                  'total_cost': '',
-                                  'product_uom_qty_in': '',
-                                  'product_uom_qty_out': self.get_closing_balance(line.date,line.product_id.id, line.location_dest_id.id),
-                                  'reference': '<b>CLOSING BALANCE</b>',
-                                  'location_id': '',
-                                  'location_dest_id': '',})
-                    docs.append({ 'date': '',
-                                  'type': '',
-                                  'product_name': '',
-                                  'product_id': '',
-                                  'product_uom': '',
-                                  'cost_in': '',
-                                  'cost_out': '',
-                                  'total_cost': '',
-                                  'product_uom_qty_in': '',
-                                  'product_uom_qty_out': '',
-                                  'reference': '',
-                                  'location_id': '',
-                                  'location_dest_id': '',})
+                    pass
 
 
                 docs.append({ 'date': '',
@@ -234,7 +208,35 @@ class StockMovementReport(models.AbstractModel):
                     'location_dest_id': line.location_dest_id.name,
                 })
 
-            product_id = line.product_id.id
+            docs.append({ 'date': '',
+                          'type': '',
+                          'product_name': '',
+                          'product_id': '',
+                          'product_uom': '',
+                          'cost_in': '',
+                          'cost_out': '',
+                          'total_cost': '',
+                          'product_uom_qty_in': '',
+                          'product_uom_qty_out': self.get_closing_balance(line.date,line.product_id.id, line.location_dest_id.id),
+                          'reference': '<b>CLOSING BALANCE</b>',
+                          'location_id': '',
+                          'location_dest_id': '',})
+            docs.append({ 'date': '',
+                          'type': '',
+                          'product_name': '',
+                          'product_id': '',
+                          'product_uom': '',
+                          'cost_in': '',
+                          'cost_out': '',
+                          'total_cost': '',
+                          'product_uom_qty_in': '',
+                          'product_uom_qty_out': '',
+                          'reference': '',
+                          'location_id': '',
+                          'location_dest_id': '',})
+
+
+        product_id = line.product_id.id
         return {
             'doc_ids': data['ids'],
             'doc_model': data['model'],
@@ -248,7 +250,7 @@ class StockMovementReport(models.AbstractModel):
 
 
     def get_initial_balance(self, date,product_id,location):
-        res = self.env['stock.move.line'].search([('product_id','=', product_id),('location_dest_id','=', location),('date','<',date)])
+        res = self.env['stock.move.line'].search([('product_id','=', product_id),('location_dest_id','=', location),('date','<',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
         if res:
             qty = 0.0
             for l in res:
@@ -259,7 +261,7 @@ class StockMovementReport(models.AbstractModel):
 
     def get_closing_balance(self, date,product_id,location):
 
-        res = self.env['stock.move.line'].search([('product_id','=', product_id),('location_dest_id','=', location),('date','<=',date)])
+        res = self.env['stock.move.line'].search([('product_id','=', product_id),('location_dest_id','=', location),('date','<=',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
         if res:
             qty = 0.0
             for l in res:
