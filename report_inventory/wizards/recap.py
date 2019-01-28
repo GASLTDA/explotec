@@ -139,7 +139,7 @@ class StockMovementReport(models.AbstractModel):
                                   'location_id': '',
                                   'location_dest_id': '',})
 
-                if line_dest.id != line.location_dest_id.id or line_dest == None:
+                if line_dest == None or line_dest.id != line.location_dest_id.id :
 
                     docs.append({ 'date': '',
                                       'type': '',
