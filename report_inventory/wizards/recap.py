@@ -90,6 +90,8 @@ class StockMovementReport(models.AbstractModel):
         move_lines = self.env['stock.move'].search(domain, order='product_id,location_dest_id asc')
         locale = self._context.get('lang') or 'en_US'
         product_id = None
+        line_date = None
+        line_dest = None
 
         for line in move_lines:
             dest_usage =line.location_dest_id.usage
@@ -110,7 +112,32 @@ class StockMovementReport(models.AbstractModel):
 
             if product_id != line.product_id.id:
                 if product_id != None:
-                    pass
+                    docs.append({ 'date': '',
+                                  'type': '',
+                                  'product_name': '',
+                                  'product_id': '',
+                                  'product_uom': '',
+                                  'cost_in': '',
+                                  'cost_out': '',
+                                  'total_cost': '',
+                                  'product_uom_qty_in': '',
+                                  'product_uom_qty_out': self.get_closing_balance(line.date,product_id, line.location_dest_id.id),
+                                  'reference': '<b>CLOSING BALANCE</b>',
+                                  'location_id': '',
+                                  'location_dest_id': '',})
+                    docs.append({ 'date': '',
+                                  'type': '',
+                                  'product_name': '',
+                                  'product_id': '',
+                                  'product_uom': '',
+                                  'cost_in': '',
+                                  'cost_out': '',
+                                  'total_cost': '',
+                                  'product_uom_qty_in': '',
+                                  'product_uom_qty_out': '',
+                                  'reference': '',
+                                  'location_id': '',
+                                  'location_dest_id': '',})
 
 
                 docs.append({ 'date': '',
@@ -208,6 +235,11 @@ class StockMovementReport(models.AbstractModel):
                     'location_dest_id': line.location_dest_id.name,
                 })
 
+            product_id = line.product_id.id
+            line_date = line.date
+            line_dest = line.location_dest_id
+
+        if product_id != None:
             docs.append({ 'date': '',
                           'type': '',
                           'product_name': '',
@@ -217,7 +249,7 @@ class StockMovementReport(models.AbstractModel):
                           'cost_out': '',
                           'total_cost': '',
                           'product_uom_qty_in': '',
-                          'product_uom_qty_out': self.get_closing_balance(line.date,line.product_id.id, line.location_dest_id.id),
+                          'product_uom_qty_out': self.get_closing_balance(line_date,product_id.id, line_dest.id),
                           'reference': '<b>CLOSING BALANCE</b>',
                           'location_id': '',
                           'location_dest_id': '',})
@@ -236,7 +268,6 @@ class StockMovementReport(models.AbstractModel):
                           'location_dest_id': '',})
 
 
-        product_id = line.product_id.id
         return {
             'doc_ids': data['ids'],
             'doc_model': data['model'],
