@@ -103,7 +103,7 @@ class StockMovementReport(models.AbstractModel):
             elif dest_usage == 'customer':
                 location_type='Sale'
             elif dest_usage == 'production' and src_usage == 'Internal':
-                location_type = 'Manufacturing'
+                location_type = 'Manufacturing Out'
             elif src_usage == 'production' and dest_usage == 'Internal':
                 location_type = 'Manufacturing'
             else:
@@ -111,7 +111,7 @@ class StockMovementReport(models.AbstractModel):
 
 
             if product_id != line.product_id.id:
-                if product_id != None:
+                if product_id != None and line_dest.id != line.location_dest_id.id:
                     docs.append({ 'date': '',
                                   'type': '',
                                   'product_name': '',
@@ -139,52 +139,53 @@ class StockMovementReport(models.AbstractModel):
                                   'location_id': '',
                                   'location_dest_id': '',})
 
+                if line_dest.id != line.location_dest_id.id:
 
-                docs.append({ 'date': '',
-                                  'type': '',
-                                  'product_name': '',
-                                  'product_id': '',
-                                  'product_uom': '',
-                              'cost_in': '',
-                              'cost_out': '',
-                              'total_cost': '',
-                                  'product_uom_qty_in': '',
-                                  'product_uom_qty_out': '',
-                                  'reference': '',
-                                  'location_id': '',
-                                  'location_dest_id': '',})
-                item_name = line.product_id.name
-                if line.product_id.product_tmpl_id.x_studio_field_5iBe0 != False:
-                    item_name += ' ('+line.product_id.product_tmpl_id.x_studio_field_5iBe0+') '
+                    docs.append({ 'date': '',
+                                      'type': '',
+                                      'product_name': '',
+                                      'product_id': '',
+                                      'product_uom': '',
+                                  'cost_in': '',
+                                  'cost_out': '',
+                                  'total_cost': '',
+                                      'product_uom_qty_in': '',
+                                      'product_uom_qty_out': '',
+                                      'reference': '',
+                                      'location_id': '',
+                                      'location_dest_id': '',})
+                    item_name = line.product_id.name
+                    if line.product_id.product_tmpl_id.x_studio_field_5iBe0 != False:
+                        item_name += ' ('+line.product_id.product_tmpl_id.x_studio_field_5iBe0+') '
 
-                docs.append({ 'date': '<b>Item: ' + item_name + '</b>',
-                                  'type': '',
-                                  'product_name': '',
-                                  'product_id': '',
-                                  'product_uom': '',
-                              'cost_in': '',
-                              'cost_out': '',
-                              'total_cost': '',
-                                  'product_uom_qty_in': '',
-                                  'product_uom_qty_out': '',
-                                  'reference': '',
-                                  'location_id': '',
-                                  'location_dest_id': '',})
-                docs.append({
-                        'date': '',
-                        'type':'' ,
-                        'product_name':'' ,
-                        'product_id': '',
-                        'product_uom': '',
-                        'cost_in': '',
-                        'cost_out': '',
-                        'total_cost': '',
-                        'product_uom_qty_in':self.get_initial_balance(line.date,line.product_id.id, line.location_dest_id.id),
-                        'product_uom_qty_out': '',
-                        'reference': '<b>BEGINNING BALANCE<b/>',
-                        'location_id': '',
-                        'location_dest_id': '',
-                    })
+                    docs.append({ 'date': '<b>Item: ' + item_name + '</b>',
+                                      'type': '',
+                                      'product_name': '',
+                                      'product_id': '',
+                                      'product_uom': '',
+                                  'cost_in': '',
+                                  'cost_out': '',
+                                  'total_cost': '',
+                                      'product_uom_qty_in': '',
+                                      'product_uom_qty_out': '',
+                                      'reference': '',
+                                      'location_id': '',
+                                      'location_dest_id': '',})
+                    docs.append({
+                            'date': '',
+                            'type':'' ,
+                            'product_name':'' ,
+                            'product_id': '',
+                            'product_uom': '',
+                            'cost_in': '',
+                            'cost_out': '',
+                            'total_cost': '',
+                            'product_uom_qty_in':self.get_initial_balance(line.date,line.product_id.id, line.location_dest_id.id),
+                            'product_uom_qty_out': '',
+                            'reference': '<b>BEGINNING BALANCE<b/>',
+                            'location_id': '',
+                            'location_dest_id': '',
+                        })
 
             product_uom_qty_out = 0.0
             product_uom_qty_in = 0.0
@@ -192,24 +193,31 @@ class StockMovementReport(models.AbstractModel):
             cost_out = 0.0
             total_cost = 0.0
             if location_type =='Internal Transfer':
-                product_uom_qty_in  = 0.0
-                product_uom_qty_out  =  line.product_uom_qty
+                product_uom_qty_in  = line.product_uom_qty
+                product_uom_qty_out  = 0.0
                 cost_in  = 0.0
                 cost_out  = 0.0
                 total_cost = 0.0
             elif location_type == 'Sale':
-                product_uom_qty_in  = line.product_uom_qty
-                product_uom_qty_out  = 0.0
+                product_uom_qty_in  = 0.0
+                product_uom_qty_out  = line.product_uom_qty
                 cost_in  = line.product_id.standard_price
                 total_cost  = line.product_uom_qty * line.product_id.standard_price
                 cost_out  = 0.0
 
             elif location_type == 'Purchase':
-                product_uom_qty_in  = 0.0
-                product_uom_qty_out  = line.product_uom_qty
+                product_uom_qty_in  = line.product_uom_qty
+                product_uom_qty_out  = 0.0
                 cost_in  = 0.0
                 cost_out = line.product_id.standard_price
                 total_cost = line.product_uom_qty * line.product_id.standard_price
+
+            elif location_type == 'Manufacturing Out':
+                product_uom_qty_in  = 0.0
+                product_uom_qty_out  = line.product_uom_qty
+                cost_in = 0.0
+                cost_out = 0.0
+                total_cost = 0.0
 
             elif location_type == 'Manufacturing':
                 product_uom_qty_in  = line.product_uom_qty
