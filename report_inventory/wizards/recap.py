@@ -140,7 +140,7 @@ class StockMovementReport(models.AbstractModel):
                                   'location_id': '',
                                   'location_dest_id': '',})
 
-                if old_location_type == location_type :
+                if old_location_type != location_type :
 
                     docs.append({ 'date': '',
                                       'type': '',
