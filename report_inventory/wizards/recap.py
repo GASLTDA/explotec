@@ -92,6 +92,7 @@ class StockMovementReport(models.AbstractModel):
         product_id = None
         line_date = None
         line_dest = None
+        old_location_type = None
 
         for line in move_lines:
             dest_usage =line.location_dest_id.usage
@@ -111,7 +112,7 @@ class StockMovementReport(models.AbstractModel):
 
 
             if product_id != line.product_id.id:
-                if product_id != None and line_dest.id != line.location_dest_id.id:
+                if product_id != None and old_location_type != location_type:
                     docs.append({ 'date': '',
                                   'type': '',
                                   'product_name': '',
@@ -139,7 +140,7 @@ class StockMovementReport(models.AbstractModel):
                                   'location_id': '',
                                   'location_dest_id': '',})
 
-                if line_dest == None or line_dest.id != line.location_dest_id.id :
+                if old_location_type == location_type :
 
                     docs.append({ 'date': '',
                                       'type': '',
@@ -246,6 +247,7 @@ class StockMovementReport(models.AbstractModel):
             product_id = line.product_id.id
             line_date = line.date
             line_dest = line.location_dest_id
+            old_location_type = location_type
 
         if product_id != None:
             docs.append({ 'date': '',
