@@ -87,7 +87,7 @@ class StockMovementReport(models.AbstractModel):
             domain += [('date','>=',from_date + ' '+'00:00:00'),('date','<=',to_date + ' '+'23:59:59'),('state','=','done')]
 
         docs = []
-        move_lines = self.env['stock.move'].search(domain, order='product_id,location_dest_id asc')
+        move_lines = self.env['stock.move'].search(domain, order='product_id, date asc')
         locale = self._context.get('lang') or 'en_US'
         product_id = None
         line_date = None
@@ -95,24 +95,29 @@ class StockMovementReport(models.AbstractModel):
         old_location_type = None
 
         for line in move_lines:
-            dest_usage =line.location_dest_id.usage
+            dest_usage = line.location_dest_id.usage
             src_usage =line.location_id.usage
             if dest_usage == 'internal' and src_usage == 'internal':
                 location_type='Internal Transfer'
             elif dest_usage == 'vendor':
-                location_type='Purchase'
+                location_type='Purchase Return'
             elif dest_usage == 'customer':
                 location_type='Sale'
             elif dest_usage == 'production' and src_usage == 'Internal':
-                location_type = 'Manufacturing Out'
-            elif src_usage == 'production' and dest_usage == 'Internal':
                 location_type = 'Manufacturing'
+            elif src_usage == 'production' and dest_usage == 'Internal':
+                location_type = 'Production'
+            elif src_usage == 'vendor' and dest_usage == 'Internal':
+                location_type = 'Purchase'
+            elif src_usage == 'customer' and dest_usage == 'Internal':
+                location_type = 'Sales Return'
             else:
                 location_type = 'Internal Transfer'
 
-
             if product_id != line.product_id.id:
-                if product_id != None and old_location_type != location_type:
+
+                if product_id != None:
+
                     docs.append({ 'date': '',
                                   'type': '',
                                   'product_name': '',
@@ -122,7 +127,7 @@ class StockMovementReport(models.AbstractModel):
                                   'cost_out': '',
                                   'total_cost': '',
                                   'product_uom_qty_in': '',
-                                  'product_uom_qty_out': self.get_closing_balance(line_date,product_id, line_dest.id),
+                                  'product_uom_qty_out': self.get_closing_balance(date or to_date,product_id, line_dest.id),
                                   'reference': '<b>CLOSING BALANCE</b>',
                                   'location_id': '',
                                   'location_dest_id': '',})
@@ -140,53 +145,53 @@ class StockMovementReport(models.AbstractModel):
                                   'location_id': '',
                                   'location_dest_id': '',})
 
-                if old_location_type != location_type :
+                if True:
 
                     docs.append({ 'date': '',
-                                      'type': '',
-                                      'product_name': '',
-                                      'product_id': '',
-                                      'product_uom': '',
+                                  'type': '',
+                                  'product_name': '',
+                                  'product_id': '',
+                                  'product_uom': '',
                                   'cost_in': '',
                                   'cost_out': '',
                                   'total_cost': '',
-                                      'product_uom_qty_in': '',
-                                      'product_uom_qty_out': '',
-                                      'reference': '',
-                                      'location_id': '',
-                                      'location_dest_id': '',})
+                                  'product_uom_qty_in': '',
+                                  'product_uom_qty_out': '',
+                                  'reference': '',
+                                  'location_id': '',
+                                  'location_dest_id': '',})
                     item_name = line.product_id.name
-                    if line.product_id.product_tmpl_id.x_studio_field_5iBe0 != False:
-                        item_name += ' ('+line.product_id.product_tmpl_id.x_studio_field_5iBe0+') '
+                    # if line.product_id.product_tmpl_id.x_studio_field_5iBe0 != False:
+                    #     item_name += ' ('+line.product_id.product_tmpl_id.x_studio_field_5iBe0+') '
 
                     docs.append({ 'date': '<b>Item: ' + item_name + '</b>',
-                                      'type': '',
-                                      'product_name': '',
-                                      'product_id': '',
-                                      'product_uom': '',
+                                  'type': '',
+                                  'product_name': '',
+                                  'product_id': '',
+                                  'product_uom': '',
                                   'cost_in': '',
                                   'cost_out': '',
                                   'total_cost': '',
-                                      'product_uom_qty_in': '',
-                                      'product_uom_qty_out': '',
-                                      'reference': '',
-                                      'location_id': '',
-                                      'location_dest_id': '',})
+                                  'product_uom_qty_in': '',
+                                  'product_uom_qty_out': '',
+                                  'reference': '',
+                                  'location_id': '',
+                                  'location_dest_id': '',})
                     docs.append({
-                            'date': '',
-                            'type':'' ,
-                            'product_name':'' ,
-                            'product_id': '',
-                            'product_uom': '',
-                            'cost_in': '',
-                            'cost_out': '',
-                            'total_cost': '',
-                            'product_uom_qty_in':self.get_initial_balance(line.date,line.product_id.id, line.location_dest_id.id),
-                            'product_uom_qty_out': '',
-                            'reference': '<b>BEGINNING BALANCE<b/>',
-                            'location_id': '',
-                            'location_dest_id': '',
-                        })
+                        'date': '',
+                        'type':'' ,
+                        'product_name':'' ,
+                        'product_id': '',
+                        'product_uom': '',
+                        'cost_in': '',
+                        'cost_out': '',
+                        'total_cost': '',
+                        'product_uom_qty_in':self.get_initial_balance(date or from_date,line.product_id.id, line.location_dest_id.id),
+                        'product_uom_qty_out': '',
+                        'reference': '<b>BEGINNING BALANCE<b/>',
+                        'location_id': '',
+                        'location_dest_id': '',
+                    })
 
             product_uom_qty_out = 0.0
             product_uom_qty_in = 0.0
@@ -213,36 +218,49 @@ class StockMovementReport(models.AbstractModel):
                 cost_out = line.product_id.standard_price
                 total_cost = line.product_uom_qty * line.product_id.standard_price
 
-            elif location_type == 'Manufacturing Out':
+            elif location_type == 'Manufacturing':
                 product_uom_qty_in  = 0.0
                 product_uom_qty_out  = line.product_uom_qty
                 cost_in = 0.0
                 cost_out = 0.0
                 total_cost = 0.0
 
-            elif location_type == 'Manufacturing':
+            elif location_type == 'Production':
                 product_uom_qty_in  = line.product_uom_qty
                 product_uom_qty_out  = 0.0
                 cost_in = 0.0
                 cost_out = 0.0
                 total_cost = 0.0
 
-            docs.append({
-                    'date': format_date(self.env,line.date, lang_code=locale),
-                    'type': location_type,
-                    'product_name': '',
-                    'product_id': line.product_id,
-                    'product_uom': line.product_uom.name,
+            elif location_type == 'Purchase Return':
+                product_uom_qty_in  = 0.0
+                product_uom_qty_out  = line.product_uom_qty
+                cost_in  = line.product_id.standard_price
+                total_cost  = line.product_uom_qty * line.product_id.standard_price
+                cost_out  = 0.0
 
-                    'product_uom_qty_in': product_uom_qty_in,
-                    'product_uom_qty_out': product_uom_qty_out,
-                    'cost_in':self.format_value(cost_in),
-                    'cost_out': self.format_value(cost_out),
-                    'total_cost': self.format_value(total_cost),
-                    'reference': line.reference,
-                    'location_id': line.location_id.name,
-                    'location_dest_id': line.location_dest_id.name,
-                })
+            elif location_type == 'Sales Return':
+                product_uom_qty_in  = line.product_uom_qty
+                product_uom_qty_out  = 0.0
+                cost_in  = 0.0
+                cost_out = line.product_id.standard_price
+                total_cost = line.product_uom_qty * line.product_id.standard_price
+
+            docs.append({
+                'date': format_date(self.env,line.date, lang_code=locale),
+                'type': location_type,
+                'product_name': '',
+                'product_id': line.product_id,
+                'product_uom': line.product_uom.name,
+                'product_uom_qty_in': product_uom_qty_in,
+                'product_uom_qty_out': product_uom_qty_out,
+                'cost_in':self.format_value(cost_in),
+                'cost_out': self.format_value(cost_out),
+                'total_cost': self.format_value(total_cost),
+                'reference': line.reference,
+                'location_id': line.location_id.name,
+                'location_dest_id': line.location_dest_id.name,
+            })
 
             product_id = line.product_id.id
             line_date = line.date
@@ -259,7 +277,7 @@ class StockMovementReport(models.AbstractModel):
                           'cost_out': '',
                           'total_cost': '',
                           'product_uom_qty_in': '',
-                          'product_uom_qty_out': self.get_closing_balance(line_date,product_id, line_dest.id),
+                          'product_uom_qty_out': self.get_closing_balance(date or to_date,product_id, line_dest.id),
                           'reference': '<b>CLOSING BALANCE</b>',
                           'location_id': '',
                           'location_dest_id': '',})
@@ -277,7 +295,6 @@ class StockMovementReport(models.AbstractModel):
                           'location_id': '',
                           'location_dest_id': '',})
 
-
         return {
             'doc_ids': data['ids'],
             'doc_model': data['model'],
@@ -287,26 +304,62 @@ class StockMovementReport(models.AbstractModel):
             'from_date':  format_date(self.env,data['form']['from_date'], lang_code=locale),
             'to_date':  format_date(self.env,data['form']['to_date'], lang_code=locale),
             'docs': docs,
-            }
+        }
 
 
     def get_initial_balance(self, date,product_id,location):
-        res = self.env['stock.move.line'].search([('product_id','=', product_id),('location_dest_id','=', location),('date','<',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
+        res = self.env['stock.move.line'].search([('product_id','=', product_id),('date','<',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
         if res:
             qty = 0.0
             for l in res:
-                qty+=l.qty_done
+                dest_usage = l.location_dest_id.usage
+                src_usage = l.location_id.usage
+                if dest_usage == 'internal' and src_usage == 'internal':
+                    qty += l.qty_done
+                elif dest_usage == 'vendor':
+                    qty -= l.qty_done
+                elif dest_usage == 'customer':
+                    qty -= l.qty_done
+                elif dest_usage == 'production' and src_usage == 'Internal':
+                    qty -= l.qty_done
+                elif src_usage == 'production' and dest_usage == 'Internal':
+                    qty += l.qty_done
+                elif src_usage == 'vendor' and dest_usage == 'Internal':
+                    qty += l.qty_done
+                elif src_usage == 'customer' and dest_usage == 'Internal':
+                    qty += l.qty_done
+                else:
+                    qty += l.qty_done
+
             return qty
         else:
             return 0.0
 
     def get_closing_balance(self, date,product_id,location):
 
-        res = self.env['stock.move.line'].search([('product_id','=', product_id),('location_dest_id','=', location),('date','<=',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
+        res = self.env['stock.move.line'].search([('product_id','=', product_id),('date','<=',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
         if res:
             qty = 0.0
             for l in res:
-                qty+=l.qty_done
+                dest_usage = l.location_dest_id.usage
+                src_usage =l.location_id.usage
+                if dest_usage == 'internal' and src_usage == 'internal':
+                    qty += l.qty_done
+                elif dest_usage == 'vendor':
+                    qty -= l.qty_done
+                elif dest_usage == 'customer':
+                    qty -= l.qty_done
+                elif dest_usage == 'production' and src_usage == 'Internal':
+                    qty -= l.qty_done
+                elif src_usage == 'production' and dest_usage == 'Internal':
+                    qty += l.qty_done
+                elif src_usage == 'vendor' and dest_usage == 'Internal':
+                    qty += l.qty_done
+                elif src_usage == 'customer' and dest_usage == 'Internal':
+                    qty += l.qty_done
+                else:
+                    qty += l.qty_done
+
             return qty
 
         else:
