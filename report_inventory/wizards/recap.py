@@ -121,7 +121,7 @@ class StockMovementReport(models.AbstractModel):
                                   'cost_out': '',
                                   'total_cost': '',
                                   'product_uom_qty_in': '',
-                                  'product_uom_qty_out': self.get_closing_balance(line.date,product_id, line.location_dest_id.id),
+                                  'product_uom_qty_out': self.get_closing_balance(line_date,product_id, line_dest.id),
                                   'reference': '<b>CLOSING BALANCE</b>',
                                   'location_id': '',
                                   'location_dest_id': '',})
