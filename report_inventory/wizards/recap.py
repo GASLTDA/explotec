@@ -87,7 +87,7 @@ class StockMovementReport(models.AbstractModel):
             domain += [('date','>=',from_date + ' '+'00:00:00'),('date','<=',to_date + ' '+'23:59:59'),('state','=','done')]
 
         docs = []
-        move_lines = self.env['stock.move'].search(domain, order='product_id, date asc')
+        move_lines = self.env['stock.move'].sudo().search(domain, order='product_id, date asc')
         locale = self._context.get('lang') or 'en_US'
         product_id = None
         line_date = None
@@ -308,7 +308,7 @@ class StockMovementReport(models.AbstractModel):
 
 
     def get_initial_balance(self, date,product_id,location):
-        res = self.env['stock.move.line'].search([('product_id','=', product_id),('date','<',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
+        res = self.env['stock.move.line'].sudo().search([('product_id','=', product_id),('date','<',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
         if res:
             qty = 0.0
             for l in res:
@@ -337,7 +337,7 @@ class StockMovementReport(models.AbstractModel):
 
     def get_closing_balance(self, date,product_id,location):
 
-        res = self.env['stock.move.line'].search([('product_id','=', product_id),('date','<=',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
+        res = self.env['stock.move.line'].sudo().search([('product_id','=', product_id),('date','<=',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
         if res:
             qty = 0.0
             for l in res:
