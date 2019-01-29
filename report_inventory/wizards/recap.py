@@ -161,8 +161,8 @@ class StockMovementReport(models.AbstractModel):
                                   'location_id': '',
                                   'location_dest_id': '',})
                     item_name = line.product_id.name
-                    # if line.product_id.product_tmpl_id.x_studio_field_5iBe0 != False:
-                    #     item_name += ' ('+line.product_id.product_tmpl_id.x_studio_field_5iBe0+') '
+                    if line.product_id.product_tmpl_id.x_studio_field_5iBe0 != False:
+                        item_name += ' ('+line.product_id.product_tmpl_id.x_studio_field_5iBe0+') '
 
                     docs.append({ 'date': '<b>Item: ' + item_name + '</b>',
                                   'type': '',
