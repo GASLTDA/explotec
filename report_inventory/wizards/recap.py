@@ -103,13 +103,13 @@ class StockMovementReport(models.AbstractModel):
                 location_type='Purchase Return'
             elif dest_usage == 'customer':
                 location_type='Sale'
-            elif dest_usage == 'production' and src_usage == 'Internal':
-                location_type = 'Manufacturing'
-            elif src_usage == 'production' and dest_usage == 'Internal':
+            elif dest_usage == 'production':
+                location_type = 'Raw Material'
+            elif src_usage == 'production' and dest_usage == 'internal':
                 location_type = 'Production'
-            elif src_usage == 'vendor' and dest_usage == 'Internal':
+            elif src_usage == 'vendor' and dest_usage == 'internal':
                 location_type = 'Purchase'
-            elif src_usage == 'customer' and dest_usage == 'Internal':
+            elif src_usage == 'customer' and dest_usage == 'internal':
                 location_type = 'Sales Return'
             else:
                 location_type = 'Internal Transfer'
@@ -218,7 +218,7 @@ class StockMovementReport(models.AbstractModel):
                 cost_out = line.product_id.standard_price
                 total_cost = line.product_uom_qty * line.product_id.standard_price
 
-            elif location_type == 'Manufacturing':
+            elif location_type == 'Raw Material':
                 product_uom_qty_in  = 0.0
                 product_uom_qty_out  = line.product_uom_qty
                 cost_in = 0.0
@@ -320,13 +320,13 @@ class StockMovementReport(models.AbstractModel):
                     qty -= l.qty_done
                 elif dest_usage == 'customer':
                     qty -= l.qty_done
-                elif dest_usage == 'production' and src_usage == 'Internal':
+                elif dest_usage == 'production':
                     qty -= l.qty_done
-                elif src_usage == 'production' and dest_usage == 'Internal':
+                elif src_usage == 'production' and dest_usage == 'internal':
                     qty += l.qty_done
-                elif src_usage == 'vendor' and dest_usage == 'Internal':
+                elif src_usage == 'vendor' and dest_usage == 'internal':
                     qty += l.qty_done
-                elif src_usage == 'customer' and dest_usage == 'Internal':
+                elif src_usage == 'customer' and dest_usage == 'internal':
                     qty += l.qty_done
                 else:
                     qty += l.qty_done
@@ -349,13 +349,13 @@ class StockMovementReport(models.AbstractModel):
                     qty -= l.qty_done
                 elif dest_usage == 'customer':
                     qty -= l.qty_done
-                elif dest_usage == 'production' and src_usage == 'Internal':
+                elif dest_usage == 'production':
                     qty -= l.qty_done
-                elif src_usage == 'production' and dest_usage == 'Internal':
+                elif src_usage == 'production' and dest_usage == 'internal':
                     qty += l.qty_done
-                elif src_usage == 'vendor' and dest_usage == 'Internal':
+                elif src_usage == 'vendor' and dest_usage == 'internal':
                     qty += l.qty_done
-                elif src_usage == 'customer' and dest_usage == 'Internal':
+                elif src_usage == 'customer' and dest_usage == 'internal':
                     qty += l.qty_done
                 else:
                     qty += l.qty_done
