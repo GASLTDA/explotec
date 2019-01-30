@@ -1,0 +1,60 @@
+<data>
+    <record id="confirmar_without_invoice_view_form" model="ir.ui.view">
+        <field name="name">confirmar.without.invoice.view.form</field>
+        <field name="model">confirmar.without.invoice</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form create="0" delete="0" edit="0">
+            <sheet>
+                <group>
+                    <group>
+                        <field name="date"/>
+                        <field name="state_invoice_partner"/>
+                        <field name="haicenda_status"/>
+
+                    </group>
+                    <group>
+                        <field name="terminal"/>
+                        <field name="xml_supplier_approval"/>
+                        <field name="company_id"/>
+                    </group>
+
+
+                </group>
+                <group>
+                    <field name="response"/>
+                    <field name="response_xml"/>
+                </group>
+            </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="confirmar_without_invoice_view_tree" model="ir.ui.view">
+        <field name="name">confirmar.without.invoice.view.tree</field>
+        <field name="model">confirmar.without.invoice</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0" edit="0">
+                <field name="date" />
+                <field name="state_invoice_partner" />
+                <field name="terminal" />
+                <field name="haicenda_status" />
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_confirmar_without_invoice" model="ir.actions.act_window">
+        <field name="name">Ver</field>
+        <field name="res_model">confirmar.without.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_bulk_confirmar" name="Bulk Confirmar" parent="account.menu_finance_payables_documents" />
+    <menuitem action="action_confirmar_without_invoice" id="menu_action_confirmar_without_invoice" parent="menu_bulk_confirmar" sequence="10"/>
+
+</data>

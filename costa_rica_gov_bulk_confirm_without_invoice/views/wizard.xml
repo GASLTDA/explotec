@@ -1,0 +1,48 @@
+<data>
+    <record id="confirmar_wizard_without_invoice_view_form" model="ir.ui.view">
+        <field name="name">confirmar.wizard.without.invoice.view.form</field>
+        <field name="model">confirmar.wizard.without.invoice</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form>
+
+                <group>
+                    <group>
+                        <field name="state_invoice_partner"/>
+                    </group>
+                    <group>
+                        <field name="terminal"/>
+                    </group>
+                </group>
+                <group string="Files">
+                    <field name="comfirmar_ids" >
+<tree editable="bottom">
+
+    <field name="sequence"  widget="handle"/>
+    <field name="xml_supplier_approval"/>
+    <field name="terminal" />
+</tree>
+
+                    </field>
+                </group>
+                <footer>
+                    <button name="action_bulk_confirm_xml" type="object" string="Proceso" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_confirmar_wizard_without_invoice" model="ir.actions.act_window">
+        <field name="name">Subir</field>
+        <field name="res_model">confirmar.wizard.without.invoice</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem action="action_confirmar_wizard_without_invoice" parent="menu_bulk_confirmar" id="menu_action_confirmar_wizard_without_invoice"/>
+
+
+</data>

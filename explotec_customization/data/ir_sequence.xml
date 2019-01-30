@@ -1,0 +1,16 @@
+<data>
+    <record id="seq_res_partner" model="ir.sequence">
+            <field name="name">Partner</field>
+            <field name="code">partner</field>
+            <field name="padding">10</field>
+            <field name="company_id" eval="False" />
+    </record>
+
+    <record id="seq_res_product" model="ir.sequence">
+            <field name="name">Product</field>
+            <field name="code">product</field>
+            <field name="padding">10</field>
+            <field name="company_id" eval="False" />
+    </record>
+
+</data>
