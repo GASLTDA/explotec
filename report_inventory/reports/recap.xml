@@ -26,105 +26,105 @@
     <template id="stock_movement">
         <div class="header" style="border-bottom: 2px solid black">
             <t t-raw="date"/>
-            <p class="text-center">
-                <strong><t t-raw="company_id.name"/></strong>
-            </p>
+                <p class="text-center">
+                    <strong><t t-raw="company_id.name"/></strong>
+                </p>
 
-            <t t-if="date">
-                <table class="table table-condensed">
-                    <tbody>
-                        <tr>
-                            <td>Date:</td>
-                            <td><t t-raw="date"/> </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </t>
+                <t t-if="date">
+                    <table class="table table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>Date:</td>
+                                <td><t t-raw="date"/> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
 
-            <t t-if="from_date">
-                <table class="table table-condensed">
-                    <tbody>
-                        <tr>
-                            <td>From Date:</td>
-                            <td><t t-raw="from_date"/> </td>
-                        </tr>
-                        <tr>
-                            <td>To Date:</td>
-                            <td><t t-raw="to_date"/> </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </t>
+                <t t-if="from_date">
+                    <table class="table table-condensed">
+                        <tbody>
+                            <tr>
+                                <td>From Date:</td>
+                                <td><t t-raw="from_date"/> </td>
+                            </tr>
+                            <tr>
+                                <td>To Date:</td>
+                                <td><t t-raw="to_date"/> </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </t>
 
         </div>
 
         <div class="article">
 
-            <div class="col-xs-12">
-                <table>
-                    <thead>
+                <div class="col-xs-12">
+            <table>
+                <thead>
 
-                        <tr style="padding-top:5px;padding-bottom:5px;color: #fff !important"><td><b>Date</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Type</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Reference</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Source Location</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Destination Location</b></td>
-                            <!--<td>Initial Balance</td>-->
-                            <!--<td>Closing Balance</td>-->
-                            <!--<td>Cost-In</td>-->
-                            <!--<td>Cost-Out</td>-->
-                            <!--<td>Product</td>-->
-                            <!--<td>Unit(s)</td>-->
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>In</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Out</b></td>
-                            <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost In</b></td>
-                            <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost Out</b></td>
-                            <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Total Cost</b></td></tr>
+                    <tr style="padding-top:5px;padding-bottom:5px;color: #fff !important"><td><b>Date</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Type</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Reference</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Source Location</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Destination Location</b></td>
+                    <!--<td>Initial Balance</td>-->
+                    <!--<td>Closing Balance</td>-->
+                    <!--<td>Cost-In</td>-->
+                    <!--<td>Cost-Out</td>-->
+                    <!--<td>Product</td>-->
+                        <!--<td>Unit(s)</td>-->
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>In</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Out</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost In</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost Out</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Total Cost</b></td></tr>
 
-                        <tr style="padding-top:5px;padding-bottom:5px;"><td><b>Date</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Type</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Reference</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Source Location</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Destination Location</b></td>
-                            <!--<td>Initial Balance</td>-->
-                            <!--<td>Closing Balance</td>-->
-                            <!--<td>Cost-In</td>-->
-                            <!--<td>Cost-Out</td>-->
-                            <!--<td>Product</td>-->
-                            <!--<td>Unit(s)</td>-->
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>In</b></td>
-                            <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Out</b></td>
-                            <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost In</b></td>
-                            <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost Out</b></td>
-                            <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Total Cost</b></td></tr>
-                    </thead>
-                    <tbody>
-                        <!--<t t-raw="docs"/>-->
-                        <t t-foreach="docs" t-as="d">
-                            <tr style="padding-top:10px;padding-bottom:10px;"><td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['date']"/></td>
-                                <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['type']"/></td>
-                                <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['reference']"/></td>
-                                <!--<td><t t-raw="d['location_id']"/></td>-->
-                                <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['location_id']"/></td>
-                                <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['location_dest_id']"/></td>
-                                <!--<td class="text-right"><t t-raw="d['initial_balance']" /></td>-->
-                                <!--<td class="text-right"><t t-raw="d['closing_balance']" /></td>-->
-                                <!--<td><t t-raw="d['cost_in']"/></td>-->
-                                <!--<td><t t-raw="d['cost_out']"/></td>-->
-                                <!--<td><t t-raw="d['product_id']"/></td>-->
-                                <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['product_uom_qty_in']" /></td>
-                                <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['product_uom_qty_out']" /></td>
-                                <!--<td><t t-raw="d['product_uom']"/></td>        -->
-                                <td class="text-right"><t t-raw="d['cost_in']" /></td>
-                                <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['cost_out']" /></td>
-                                <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['total_cost']" /></td></tr>
+                    <tr style="padding-top:5px;padding-bottom:5px;"><td><b>Date</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Type</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Reference</b></td>
+                        <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Source Location</b></td>
+                        <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Destination Location</b></td>
+                    <!--<td>Initial Balance</td>-->
+                    <!--<td>Closing Balance</td>-->
+                    <!--<td>Cost-In</td>-->
+                    <!--<td>Cost-Out</td>-->
+                    <!--<td>Product</td>-->
+                        <!--<td>Unit(s)</td>-->
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>In</b></td>
+                    <td class="text-center" style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><b>Out</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost In</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Cost Out</b></td>
+                        <td class="text-center" style="padding-left:10px;padding-right:10px;"><b>Total Cost</b></td></tr>
+                </thead>
+                <tbody>
+                    <!--<t t-raw="docs"/>-->
+                    <t t-foreach="docs" t-as="d">
+                        <tr style="padding-top:10px;padding-bottom:10px;"><td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['date']"/></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['type']"/></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['reference']"/></td>
+                        <!--<td><t t-raw="d['location_id']"/></td>-->
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['location_id']"/></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;"><t t-raw="d['location_dest_id']"/></td>
+                        <!--<td class="text-right"><t t-raw="d['initial_balance']" /></td>-->
+                        <!--<td class="text-right"><t t-raw="d['closing_balance']" /></td>-->
+                        <!--<td><t t-raw="d['cost_in']"/></td>-->
+                        <!--<td><t t-raw="d['cost_out']"/></td>-->
+                        <!--<td><t t-raw="d['product_id']"/></td>-->
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['product_uom_qty_in']" /></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['product_uom_qty_out']" /></td>
+                            <!--<td><t t-raw="d['product_uom']"/></td>        -->
+                                      <td class="text-right"><t t-raw="d['cost_in']" /></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['cost_out']" /></td>
+                        <td style="padding-left:5px;padding-right:5px;padding-top:5px;padding-bottom:5px;" class="text-right"><t t-raw="d['total_cost']" /></td></tr>
 
-                        </t>
-                    </tbody>
-                </table>
+                    </t>
+                </tbody>
+            </table>
 
+                </div>
             </div>
-        </div>
 
         <div class="footer">
             <div class="row text-center" style="border-top: 1px solid black;">

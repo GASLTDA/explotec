@@ -7,7 +7,7 @@
     'website': "https://hadoopt.com",
     'category': 'Uncategorized',
     'version': '0.1',
-    'depends': ['base'],
+    'depends': ['base','stock'],
     'data': [
         # 'security/ir.model.access.csv',
         'wizards/recap.xml',
