@@ -161,8 +161,8 @@ class StockMovementReport(models.AbstractModel):
                                   'location_id': '',
                                   'location_dest_id': '',})
                     item_name = line.product_id.name
-                    # if line.product_id.product_tmpl_id.x_studio_field_5iBe0 != False:
-                    #     item_name += ' ('+line.product_id.product_tmpl_id.x_studio_field_5iBe0+') '
+                    if line.product_id.product_tmpl_id.x_studio_field_5iBe0 != False:
+                        item_name += ' ('+line.product_id.product_tmpl_id.x_studio_field_5iBe0+') '
 
                     docs.append({ 'date': '<b>Item: ' + item_name + '</b>',
                                   'type': '',
@@ -308,32 +308,26 @@ class StockMovementReport(models.AbstractModel):
 
 
     def get_initial_balance(self, date,product_id,location):
-        res = self.env['stock.move.line'].sudo().search([('product_id','=', product_id),('date','<',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
+        self.env.context = {'to_date':date, 'company_owned':True}
+        res = self.env['product.product'].sudo().search([('id','=', product_id)])
         if res:
             qty = 0.0
             for l in res:
-                dest_usage = l.location_dest_id.usage
-
-                if dest_usage == 'internal' and l.location_dest_id.is_stock == True:
-                    qty += l.qty_done
+                qty += l.qty_available
 
             return qty
         else:
             return 0.0
 
     def get_closing_balance(self, date,product_id,location):
-
-        res = self.env['stock.move.line'].sudo().search([('product_id','=', product_id),('date','<=',date),('state','=', 'done'),('move_id.company_id','=',self.env.user.company_id.id)])
+        self.env.context = {'to_date':date, 'company_owned':True}
+        res = self.env['product.product'].sudo().search([('id','=', product_id)])
         if res:
             qty = 0.0
             for l in res:
-                dest_usage = l.location_dest_id.usage
-
-                if dest_usage == 'internal' and l.location_dest_id.is_stock == True:
-                    qty += l.qty_done
+                qty += l.qty_available
 
             return qty
-
         else:
             return 0.0
 
