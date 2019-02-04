@@ -1,0 +1,14 @@
+<data>
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">res.company.inherit</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='report_header']" position="after">
+                <field name="product_sequence"/>
+                <field name="customer_supplier_sequence"/>
+            </xpath>
+        </field>
+    </record>
+
+</data>

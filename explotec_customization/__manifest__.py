@@ -5,7 +5,8 @@
     'website': "https://www.hadoopt.com",
     'depends': ['base','product'],
     'data': [
-        'data/ir_sequence.xml'
+        'data/ir_sequence.xml',
+        'views/res_company.xml'
     ],
     'installable': True,
     'auto_install': False,
