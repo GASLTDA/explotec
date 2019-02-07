@@ -15,7 +15,8 @@
                     </group>
                 </group>
                 <footer>
-                    <button type="object" string="Print PDF" name="print_pdf" class="btn-primary"/>
+                    <button type="object" string="PDF" name="print_pdf" class="btn-primary"/>
+                    <button type="object" string="Excel" name="print_excel" class="btn-primary"/>
                     <button special="cancel" string="Cancel" class="btn-default"/>
                 </footer>
             </form>
