@@ -1,4 +1,4 @@
 [submodule "odoo_apps_by_itc"]
 	path = odoo_apps_by_itc
-	url = https://github.com/fdelanuez-itc/odoo_apps_by_itc.git
+	url = git@github.com:fdelanuez-itc/odoo_apps_by_itc.git
 	branch = master
