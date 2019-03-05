@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <!-- Payroll Department Statement Wizard -->
+        <record id="view_payroll_department_statment" model="ir.ui.view">
+            <field name="name">Payroll Department Statement</field>
+            <field name="model">payroll.department.statement</field>
+            <field name="arch" type="xml">
+                <form string="Payroll Department Statement">
+                    <label for="for_genral" string="This wizard export department payroll statement."/>
+                    <group>
+                        <group>
+                            <field name="start_date"/>
+                        </group>
+                        <group>
+                            <field name="end_date"/>
+                            <field name="company_id"/>
+                        </group>
+                    </group>
+                        <group string="Select Department (Optional)">
+                            <field name="department_ids" nolabel="1" colspan="4"/>
+                        </group>
+                    <footer>
+                        <button name="print_payroll_statement_excel" groups="hr.group_hr_user" type="object" string="Export Excel" class="btn-primary"/>
+                        or
+                        <button string="_Cancel" class="btn-default" special="cancel" />
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <!-- Payroll Department Wizard Excel Output -->
+        <record id="payroll_department_statement_xls_output_view" model="ir.ui.view">
+         <field name="name">Excel Output</field>
+         <field name="model">payroll.department.statement.excel</field>
+         <field name="arch" type="xml">
+             <form string="Payroll Department Statement">
+                   <separator colspan="4" string="Please save file as .xls excel format"/>
+                   <field name="name" invisible="1"/>
+                   <field name="xls_output" filename='name'/>
+                   <footer>
+                       <button string="Cancel" class="oe_link" special="cancel"/>
+                   </footer>
+             </form>
+         </field>
+       </record>
+
+        <record id="action_payroll_department_statment" model="ir.actions.act_window">
+            <field name="name">Payroll Department Statement</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">payroll.department.statement</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_payroll_department_statment"/>
+            <field name="target">new</field>
+        </record>
+        
+        <menuitem id="menu_payroll_department_statment_report" parent="hr_payroll.menu_hr_payroll_root" 
+                  name="Report" sequence="200" groups="hr_payroll.group_hr_payroll_user" 
+                  />
+        <menuitem id="menu_payroll_department_statment" parent="menu_payroll_department_statment_report" 
+                  name="Payroll Department Statement" sequence="201" 
+                  action="action_payroll_department_statment" groups="hr_payroll.group_hr_payroll_user"/>
+
+    </data>
+</openerp>

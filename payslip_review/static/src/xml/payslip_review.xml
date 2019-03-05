@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates>
+    <t t-name="Mainpage">
+        <div class="payslip_review_homepage">
+            <div class="payslip_review_search_area"></div>
+            <div class="payslip_review_result_area"></div>
+        </div>
+    </t>
+    <t t-name="SearchForm">
+        <div class="payslip-search-from form-inline">
+            <div class="form-group">
+                <label>Batch:</label>
+                <select name="batch" id="batch">
+                </select>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label>Month:</label>
+                <select name="month" id="month">
+                    <option value="0"></option>
+                    <option value="1">Jan</option>
+                    <option value="2">Feb</option>
+                    <option value="3">Mar</option>
+                    <option value="4">Apr</option>
+                    <option value="5">May</option>
+                    <option value="6">Jun</option>
+                    <option value="7">Jul</option>
+                    <option value="8">Aug</option>
+                    <option value="9">Sep</option>
+                    <option value="10">Oct</option>
+                    <option value="11">Nov</option>
+                    <option value="12">Dec</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Year:</label>
+                <select name="year" id="year">
+                </select>
+            </div>
+            <br/>
+            <div class="form-group">
+                <label>Emplyee:</label>
+                <select name="employee_name" id="employee_name">
+                </select>
+            </div>
+            <div class="form-group form-buttons">
+                <button id="search-payslip" class="btn btn-primary">Search</button>
+                <button id="print-payslip" class="btn">Print</button>
+            </div>
+        </div>
+    </t>
+    <t t-name="ResultForm">
+        <br/>
+        <table class="payslip_data" id="payslip_data">
+            <tbody></tbody>
+        </table>
+        <br/>
+        <div class="clearfix"></div>
+    </t>
+
+    <t t-name="ResultFormCell">
+        <tr class="payslip_row">
+            <t t-set="is_draft" t-value="0"/>
+            <t t-foreach="item" t-as="l">
+                
+                <t t-if ="l_value[0]=='state'">
+                    <t t-if ="l_value[2]=='draft'">
+                        <t t-set="is_draft" t-value="1"/>
+                    </t>
+                </t>
+                <t t-if ="l_value[0]!='state' and l_value[0]!=''">
+                    <td t-att-class="is_draft?'is_draft payslip-cell-item':'payslip-cell-item'">
+                        <t t-if ="l_value[0]=='header'">
+                            <span t-esc="l_value[2]"/>
+                        </t>
+                        <t t-if ="l_value[0]=='compute'">
+                            <t t-if="is_draft">
+                                <span class=""><a t-att-lid="l_value[2]" class="payslip-compute" title="Compute">Compute</a></span>
+                            </t>
+                        </t>
+                        <t t-if ="l_value[0]=='confirm'">
+                            <t t-if="is_draft==1">
+                                <span class=""><a t-att-lid="l_value[2]" class="payslip-confirm" title="Confirm">Confirm</a></span>
+                            </t>
+                        </t>
+                        <t t-if ="l_value[0]=='info'">
+                            <span t-esc="l_value[2]"/>
+                        </t>
+                        <t t-if ="l_value[0]=='input'">
+                            <t t-if="is_draft==1 and l_value[2] >= 0">
+                                <input class="salary-input" t-att-lid="l_value[1]" size="4" type="text" t-att-value="l_value[2]"/>
+                            </t>
+                            <t t-if="is_draft==0 and l_value[2] >= 0">
+                                <span t-esc="l_value[2]"/>
+                            </t>
+                        </t>
+                        <t t-if ="l_value[0]=='rule'">
+                            <t t-if="l_value[2] >= 0">
+                                <span t-esc="l_value[2]"/>
+                            </t>
+                        </t>
+                        <t t-if ="l_value[0]=='footer'">
+                            <t t-if="l_value[2] >= 0">
+                                <span t-attf-id="footer_{{l_value[2]}}">
+                                    <span t-esc="l_value[2]"/>
+                                </span>
+                            </t>
+                        </t>
+                    </td>
+                </t>
+            </t>
+        </tr>
+    </t>
+</templates>

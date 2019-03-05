@@ -1,0 +1,167 @@
+table.payslip_data a:link {
+	color: #666;
+	font-weight: bold;
+	text-decoration:none;
+}
+table.payslip_data a:visited {
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+table.payslip_data a:active,
+table.payslip_data a:hover {
+	color: #bd5a35;
+	text-decoration:underline;
+	cursor:pointer;
+}
+table.payslip_data {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:13px;
+	text-shadow: 1px 1px 0px #fff;
+	background:#eaebec;
+	margin:10px;
+	border:#ccc 1px solid;
+	font-weight:bold;
+	
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+
+	-moz-box-shadow: 0 1px 2px #000;
+	-webkit-box-shadow: 0 1px 2px #000;
+	box-shadow: 0 1px 2px #000;
+}
+table.payslip_data th {
+	padding:21px 25px 22px 25px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+table.payslip_data th:first-child {
+	text-align: left;
+	padding-left:20px;
+}
+table.payslip_data tr:first-child th:first-child {
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}
+table.payslip_data tr:first-child th:last-child {
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}
+table.payslip_data tr {
+	text-align: center;
+	padding-left:20px;
+}
+
+table.payslip_data td:first-child {
+	text-align: left;
+	padding-left:20px;
+	border-left: 0;
+}
+table.payslip_data td {
+	padding:5px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+table.payslip_data tr.even td {
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+table.payslip_data tr:last-child td {
+	border-bottom:0;
+}
+table.payslip_data tr:last-child td:first-child {
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+table.payslip_data tr:last-child td:last-child {
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+table.payslip_data tr:hover td {
+	background: #E0E0E0;
+	background: -webkit-gradient(linear, left top, left bottom, from(#E0E0E0), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #E0E0E0,  #f0f0f0);	
+}
+.payslip-search-from{
+    background: #f0f0ed none repeat scroll 0 0;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    text-align: left;;
+}
+.payslip_review_homepage{
+	min-height: 1200px;
+}
+.payslip_review_result_area,.payslip_review_search_area{
+	overflow:auto;
+	max-width:90%;
+	font-size: 80%;
+}
+.payslip-search-from select{
+	margin: 10px;
+    padding: 4px;
+    width: 200px;
+}
+.payslip-search-from label{
+	display: block;
+	width: 45px;
+	margin: 16px 23px;
+	font-weight: bold;
+	float: left;
+}
+.oe_msg_icons a{
+	color: #fff;
+    text-decoration: none;
+    text-shadow: 0 1px #aaa, 0 -1px #aaa, -1px 0 #aaa, 1px 0 #aaa, 0 3px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s linear 0s;
+	font-family: "entypoRegular" !important;
+    font-size: 34px;
+    font-weight: 300 !important;
+    line-height: 100%;
+}
+.oe_msg_icons a:hover{
+	text-decoration: none !important;
+}
+
+@media print {
+		.oe_msg_icons,
+		.salary-input,
+		.payslip-search-from,
+		.o_sub_menu,
+		.oe_main_menu_navbar,
+		#payslip_data td:nth-child(1),
+		#payslip_data td:nth-child(2),
+		#payslip_data td.header_input,
+		#payslip_data td.footer_input,
+		#payslip_data td.input{
+			display:none !important;
+		}
+		table.payslip_data {
+			font-family:Arial, Helvetica, sans-serif;
+			color:#666;
+			font-size:8px;
+			margin:0px;
+			font-weight:100;
+			margin-top:20px;
+		}
+		table.payslip_data td {
+			padding:2px;
+		}
+}

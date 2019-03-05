@@ -1,0 +1,59 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+            <h2 class="oe_slogan">HR Payroll Department Statement Excel</h2>
+        <p class="oe_mt32">
+This module allow to print department wise payroll summary in excel format.<br/><br/><b>Menus:<br/></b>
+Payroll/Report/Payroll Department Statement<br/><br/>
+Depends on https://pypi.python.org/pypi/xlwt - So you have to install on server.
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Payroll Department Statement Wizard</h2>
+        <br/>
+        <p>
+            By clicking this <b>Export Excel</b> button it will export department wise payroll statement for selected department. Note that department on wizard is option if you do not select department in wizard then module will print for all department in system where payslips have been generated.
+If department is not available on employee form then it will group all those payslips in Unknow department and show in excel as well.
+        </p>
+        <p>
+            <div class="oe_demo oe_screenshot">
+                <img src="wizard_1.png">
+            </div>
+        </p>
+    </div>
+</section>
+
+<section class="oe_container oe_dark">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Output - Excel Report</h2>
+        <br/>
+        <p>
+            <div class="oe_demo oe_screenshot">
+                <img src="report_2.png">
+            </div>
+        </p>
+    </div>
+</section>
+
+<section class="oe_container" >
+    <div class="oe_row oe_spaced">
+        <div class="oe_span6">
+            <div class="oe_picture" style="margin: 25px 10%;">
+                <a href="http://www.probuse.com/">
+                    <img src="logo.png">
+                </a>
+            </div>
+        </div>
+        <div class="oe_span6">
+            <p class="oe_mt32">
+                If you need any help or want more additional features,<br/> you may contact us through:<br/>
+                Email: <a href="mailto:contact@probuse.com">contact@probuse.com</a> <br/>
+                Website: <a href="http://www.probuse.com/" target='new'><u>www.probuse.com</u></a> <br/>
+                Skype: mustufa_probuse<br/>
+            </p>
+        </div>
+    </div>
+</section>
+ 
